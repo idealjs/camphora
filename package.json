@@ -1,19 +1,22 @@
 {
-  "name": "@idealjs/mono-template",
   "private": true,
   "workspaces": [
     "packages/*",
-    "example"
+    "web-app"
   ],
-  "repository": "git@github.com:idealjs/mono-template.git",
+  "repository": "git@github.com:idealjs/camphora.git",
   "license": "MIT",
   "scripts": {
     "lint": "eslint packages/**/*.{tsx,ts} --fix",
     "test": "jest"
   },
   "devDependencies": {
-    "eslint-plugin-simple-import-sort": "^7.0.0",
-    "lerna": "^4.0.0",
+    "eslint": "^8.0.0",
+    "eslint-config-react-app": "^7.0.1",
+    "eslint-plugin-simple-import-sort": "^10.0.0",
+    "lerna": "^6.6.1",
     "lerna-update-wizard": "^1.1.2"
-  }
+  },
+  "packageManager": "yarn@3.5.0",
+  "name": "camphora"
 }
