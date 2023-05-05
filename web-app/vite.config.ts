@@ -11,6 +11,10 @@ export default defineConfig({
         __dirname,
         "../packages/camphora-action/index.ts"
       ),
+      "@idealjs/camphora-styled": path.resolve(
+        __dirname,
+        "../packages/camphora-styled/index.ts"
+      ),
     },
   },
 });
