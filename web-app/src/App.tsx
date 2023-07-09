@@ -1,10 +1,13 @@
 import { clickReaction, clickReactionInput } from "@idealjs/camphora-action";
 import {
+  button,
+  buttonGhost,
   drawer,
   drawerContent,
   drawerMenu,
   drawerOverlay,
   drawerSide,
+  navbar,
 } from "@idealjs/camphora-styled";
 import clsx from "clsx";
 import { Fragment } from "react";
@@ -15,9 +18,14 @@ function App() {
       <div className={clsx(clickReaction, drawer)}>
         <input id="test" type="checkbox" className={clickReactionInput} />
         <div className={drawerContent}>
-          <label htmlFor="test" className={clsx("select-none")}>
-            open
-          </label>
+          <nav className={navbar}>
+            <label
+              htmlFor="test"
+              className={clsx(button, buttonGhost, "select-none")}
+            >
+              open
+            </label>
+          </nav>
         </div>
         <div className={clsx(drawerSide)}>
           <label htmlFor="test" className={drawerOverlay}></label>

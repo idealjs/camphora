@@ -1882,6 +1882,7 @@ __metadata:
   dependencies:
     "@idealjs/camphora-action": ^1.0.0
     "@vanilla-extract/css": ^1.11.0
+    "@vanilla-extract/css-utils": ^0.1.3
     "@vanilla-extract/rollup-plugin": ^1.2.1
     esbuild: ^0.17.18
     rimraf: ^5.0.0
@@ -2950,6 +2951,13 @@ __metadata:
   dependencies:
     "@babel/core": ^7.20.7
   checksum: 4f3e448ae51fe48e73852816e30aef899a27e54dbafb937f8b59534d289322f590e78e089aae643e94853ce869f44e68021e41b208c6eefe7271e745fa710ec0
+  languageName: node
+  linkType: hard
+
+"@vanilla-extract/css-utils@npm:^0.1.3":
+  version: 0.1.3
+  resolution: "@vanilla-extract/css-utils@npm:0.1.3"
+  checksum: fa6c28d3f6c4675a7668f64e7ae8ea7e7af173b49660b1e83b9a9c63dc1a2597db0debb315ebd51f3fc8162900d4f50569b1d65cfccf104b32ed25418db69afd
   languageName: node
   linkType: hard
 
