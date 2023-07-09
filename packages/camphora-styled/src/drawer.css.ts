@@ -53,7 +53,6 @@ export const drawerMenu = style({
       height: "100%",
       width: 300,
       transform: "translateX(-300px)",
-      background: "green",
       transitionProperty: "all",
       transitionTimingFunction: "cubic-bezier(0.4, 0, 0.2, 1)",
       transitionDuration: "300ms",
