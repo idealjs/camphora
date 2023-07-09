@@ -3,7 +3,7 @@ import esbuild from "rollup-plugin-esbuild";
 import { visualizer } from "rollup-plugin-visualizer";
 
 const config = {
-  input: ["./index.ts"],
+  input: ["./src/index.ts"],
   plugins: [
     esbuild(),
     vanillaExtractPlugin(),
