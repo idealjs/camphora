@@ -16,8 +16,8 @@ export const drawerContent = style({
 export const drawerSide = style({
   selectors: {
     [`${drawer} > &`]: {
-      height: "100vh",
-      width: "100vw",
+      height: "100%",
+      width: "100%",
       position: "absolute",
       top: 0,
       overflow: "hidden",
