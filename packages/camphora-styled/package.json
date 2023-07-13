@@ -10,8 +10,8 @@
     "build": "rollup -c rollup.config.js",
     "prepublishOnly": "rimraf dist & yarn build"
   },
-  "dependencies": {
-    "@idealjs/camphora-action": "^1.0.0"
+  "peerDependencies": {
+    "@idealjs/camphora-action": "workspace:^"
   },
   "devDependencies": {
     "@vanilla-extract/css": "^1.11.0",

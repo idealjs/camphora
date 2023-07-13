@@ -7,7 +7,7 @@
   "repository": "git@github.com:idealjs/camphora.git",
   "license": "MIT",
   "scripts": {
-    "lint": "eslint packages/**/*.{tsx,ts} --fix",
+    "lint": "eslint apps/**/*.{tsx,ts} packages/**/*.{tsx,ts} --no-ignore **/node_modules/* --fix",
     "test": "jest"
   },
   "devDependencies": {
@@ -17,6 +17,5 @@
     "lerna": "^6.6.1",
     "lerna-update-wizard": "^1.1.2"
   },
-  "packageManager": "yarn@3.5.0",
-  "name": "camphora"
+  "packageManager": "yarn@3.5.0"
 }

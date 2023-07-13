@@ -1,0 +1,11 @@
+{
+  "position": 2,
+  "link": {
+    "type": "generated-index",
+    "title": "Camphora Guides",
+    "description": "Quick Start in Five Minutes",
+    "slug": "/getting-started",
+    "keywords": ["guides", "starter"],
+    "image": "/img/docusaurus.png"
+  }
+}
