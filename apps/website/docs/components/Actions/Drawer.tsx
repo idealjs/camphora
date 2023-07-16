@@ -1,7 +1,8 @@
-import { clickReaction, clickReactionInput } from "@idealjs/camphora-action";
 import {
   button,
   buttonGhost,
+  clickReaction,
+  clickReactionInput,
   drawer,
   drawerContent,
   drawerMenu,

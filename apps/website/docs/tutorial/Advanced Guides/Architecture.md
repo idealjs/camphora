@@ -1,6 +1,6 @@
 ---
 id: architecture
-sidebar_position: 3
+sidebar_position: 1
 slug: /advanced-guides/architecture
 title: Architecture
 ---

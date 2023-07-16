@@ -4,6 +4,7 @@ const { VanillaExtractPlugin } = require("@vanilla-extract/webpack-plugin");
 
 const lightCodeTheme = require("prism-react-renderer/themes/github");
 const darkCodeTheme = require("prism-react-renderer/themes/dracula");
+const path = require("path");
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
@@ -133,6 +134,14 @@ const config = {
         configureWebpack(config, isServer) {
           return {
             plugins: [new VanillaExtractPlugin()],
+            resolve: {
+              alias: {
+                "@idealjs/camphora-styled": path.resolve(
+                  __dirname,
+                  "../../packages/camphora-styled/index.ts"
+                ),
+              },
+            },
           };
         },
       };
