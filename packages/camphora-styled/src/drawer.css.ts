@@ -1,6 +1,8 @@
 import { clickReaction, clickReactionInput } from "@idealjs/camphora-action";
 import { style } from "@vanilla-extract/css";
 
+import { vars } from "./theme.css";
+
 export const drawer = style({
   position: "relative",
   height: "100vh",
@@ -48,6 +50,7 @@ export const drawerOverlay = style({
 });
 
 export const drawerMenu = style({
+  backgroundColor: vars.color.primary,
   selectors: {
     [`${drawer} > ${drawerSide} &`]: {
       height: "100%",
