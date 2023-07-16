@@ -1,6 +1,6 @@
-import { clickReaction, clickReactionInput } from "@idealjs/camphora-action";
 import { style } from "@vanilla-extract/css";
 
+import { clickReaction, clickReactionInput } from "./actions";
 import { vars } from "./theme.css";
 
 export const drawer = style({

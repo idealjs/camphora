@@ -1,6 +1,7 @@
 import { vanillaExtractPlugin } from "@vanilla-extract/rollup-plugin";
 import esbuild from "rollup-plugin-esbuild";
 import { visualizer } from "rollup-plugin-visualizer";
+import dts from "rollup-plugin-dts";
 
 const config = {
   input: ["./index.ts"],
@@ -14,14 +15,12 @@ const config = {
   ],
   output: [
     {
-      dir: "dist/umd",
-      name: "index",
-      format: "umd",
+      file: "dist/index.js",
+      format: "esm",
     },
     {
-      dir: "dist/esm",
-      name: "index",
-      format: "esm",
+      file: "dist/index.cjs",
+      format: "cjs",
     },
   ],
 };

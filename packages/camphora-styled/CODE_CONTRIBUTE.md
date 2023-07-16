@@ -4,13 +4,13 @@ Each CSS Component should has a root scope.
 
 > For example
 >
-> clickReactionDrawer's and clickReactionDropdown's root classname is clickReaction
+> drawer's root classname is clickReaction and drawer
 
 ## Element State
 
 Html can store boolean in `<input />` Element
 
-Consider use css selector than JS variable
+Use css selector than JS variable
 
 ## Element Can Hidden
 
