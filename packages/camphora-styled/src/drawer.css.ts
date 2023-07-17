@@ -50,7 +50,7 @@ export const drawerOverlay = style({
 });
 
 export const drawerMenu = style({
-  backgroundColor: vars.color.primary,
+  backgroundColor: vars.colors.base[100],
   selectors: {
     [`${drawer} > ${drawerSide} &`]: {
       height: "100%",
@@ -58,7 +58,7 @@ export const drawerMenu = style({
       transform: "translateX(-300px)",
       transitionProperty: "all",
       transitionTimingFunction: "cubic-bezier(0.4, 0, 0.2, 1)",
-      transitionDuration: "300ms",
+      transitionDuration: vars.animation.drawer,
     },
     [`${clickReaction} > ${clickReactionInput}:checked ~ ${drawerSide} &`]: {
       transform: "translateX(0px)",
