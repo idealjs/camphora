@@ -5,7 +5,8 @@ import { vars } from "./theme.css";
 
 export const drawer = style({
   position: "relative",
-  height: "100vh",
+  display: "grid",
+  gridAutoColumns: "auto",
 });
 
 export const drawerContent = style({
