@@ -14,7 +14,7 @@ import clsx from "clsx";
 import React from "react";
 
 const Drawer = () => (
-  <div className={clsx(clickReaction, drawer)}>
+  <div className={clsx(clickReaction, drawer)} style={{ height: 300 }}>
     <input id="test" type="checkbox" className={clickReactionInput} />
     <div className={drawerContent}>
       <nav className={navbar}>
