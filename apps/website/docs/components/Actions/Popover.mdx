@@ -55,3 +55,53 @@ import rightContent from "!!raw-loader!./popover/Right";
     <CodeBlock language="tsx">{rightContent}</CodeBlock>
   </TabItem>
 </Tabs>
+
+## aligns to end
+
+import BottomEnd from "./popover/BottomEnd";
+import TopEnd from "./popover/TopEnd";
+import LeftEnd from "./popover/LeftEnd";
+import RightEnd from "./popover/RightEnd";
+
+<Tabs>
+  <TabItem value="bottom-end" label="bottom-end" default>
+    <div className={previewBlock}>
+      <BottomEnd />
+    </div>
+  </TabItem>
+  <TabItem value="top-end" label="top-end">
+    <div className={previewBlock}>
+      <TopEnd />
+    </div>
+  </TabItem>
+  <TabItem value="left-end" label="left-end">
+    <div className={previewBlock}>
+      <LeftEnd />
+    </div>
+  </TabItem>
+  <TabItem value="right-end" label="right-end">
+    <div className={previewBlock}>
+      <RightEnd />
+    </div>
+  </TabItem>
+</Tabs>
+
+import bottomEndContent from "!!raw-loader!./popover/BottomEnd";
+import topEndContent from "!!raw-loader!./popover/TopEnd";
+import leftEndContent from "!!raw-loader!./popover/LeftEnd";
+import rightEndContent from "!!raw-loader!./popover/RightEnd";
+
+<Tabs>
+  <TabItem value="bottom-end" label="bottom-end" default>
+    <CodeBlock language="tsx">{bottomEndContent}</CodeBlock>
+  </TabItem>
+  <TabItem value="top-end" label="top-end">
+    <CodeBlock language="tsx">{topEndContent}</CodeBlock>
+  </TabItem>
+  <TabItem value="left-end" label="left-end">
+    <CodeBlock language="tsx">{leftEndContent}</CodeBlock>
+  </TabItem>
+  <TabItem value="right-end" label="right-end">
+    <CodeBlock language="tsx">{rightEndContent}</CodeBlock>
+  </TabItem>
+</Tabs>
