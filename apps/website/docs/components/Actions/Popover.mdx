@@ -4,16 +4,54 @@ displayed_sidebar: componentsSidebar
 
 # Popover
 
-import Popover from "./Popover";
 import { previewBlock } from "@idealjs/camphora-styled";
+import Bottom from "./popover/Bottom";
+import Top from "./popover/Top";
+import Left from "./popover/Left";
+import Right from "./popover/Right";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
 
-<div className={previewBlock}>
-  <Popover />
-</div>
+<Tabs>
+  <TabItem value="bottom" label="bottom" default>
+    <div className={previewBlock}>
+      <Bottom />
+    </div>
+  </TabItem>
+  <TabItem value="top" label="top">
+    <div className={previewBlock}>
+      <Top />
+    </div>
+  </TabItem>
+  <TabItem value="left" label="left">
+    <div className={previewBlock}>
+      <Left />
+    </div>
+  </TabItem>
+  <TabItem value="right" label="right">
+    <div className={previewBlock}>
+      <Right />
+    </div>
+  </TabItem>
+</Tabs>
 
 import CodeBlock from "@theme/CodeBlock";
-import Content from "!!raw-loader!./Popover";
+import bottomContent from "!!raw-loader!./popover/Bottom";
+import topContent from "!!raw-loader!./popover/Top";
+import leftContent from "!!raw-loader!./popover/Left";
+import rightContent from "!!raw-loader!./popover/Right";
 
-<CodeBlock language="tsx">
-  {Content}
-</CodeBlock>
+<Tabs>
+  <TabItem value="bottom" label="bottom" default>
+    <CodeBlock language="tsx">{bottomContent}</CodeBlock>
+  </TabItem>
+  <TabItem value="top" label="top">
+    <CodeBlock language="tsx">{topContent}</CodeBlock>
+  </TabItem>
+  <TabItem value="left" label="left">
+    <CodeBlock language="tsx">{leftContent}</CodeBlock>
+  </TabItem>
+  <TabItem value="right" label="right">
+    <CodeBlock language="tsx">{rightContent}</CodeBlock>
+  </TabItem>
+</Tabs>
