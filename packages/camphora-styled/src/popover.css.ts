@@ -51,3 +51,20 @@ export const popoverTop = style({
     },
   },
 });
+
+export const popoverEnd = style({
+  selectors: {
+    [[
+      `${popover}:has(> ${popoverLeft}) > &`,
+      `${popover}:has(> ${popoverRight}) > &`,
+    ].join(",\n")]: {
+      bottom: "0px",
+    },
+    [[
+      `${popover}:has(> ${popoverBottom}) > &`,
+      `${popover}:has(> ${popoverTop}) > &`,
+    ].join(",\n")]: {
+      right: "0px",
+    },
+  },
+});
