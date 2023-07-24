@@ -45,6 +45,9 @@ export const vars = createThemeContract({
       content: null,
     },
   },
+  opacity: {
+    btn: null,
+  },
   animation: {
     btn: null,
     drawer: null,
@@ -98,6 +101,9 @@ export const lightTheme = createTheme(vars, {
       bg: "hsl(348 93% 64%)",
       content: "hsl(348 100% 13%)",
     },
+  },
+  opacity: {
+    btn: "20%",
   },
   animation: {
     btn: "0.25s",
