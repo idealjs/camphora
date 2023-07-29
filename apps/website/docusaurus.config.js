@@ -138,7 +138,7 @@ const config = {
               alias: {
                 "@idealjs/camphora-styled": path.resolve(
                   __dirname,
-                  "../../packages/camphora-styled/index.ts"
+                  "../../packages/camphora-styled/src/index.ts"
                 ),
               },
             },

@@ -1,12 +1,13 @@
 import { vanillaExtractPlugin } from "@vanilla-extract/rollup-plugin";
-import esbuild from "rollup-plugin-esbuild";
+import ts from "rollup-plugin-ts";
 import { visualizer } from "rollup-plugin-visualizer";
-import dts from "rollup-plugin-dts";
+
+import pkg from "./package.json" assert { type: "json" };
 
 const config = {
-  input: ["./index.ts"],
+  input: ["./src/index.ts"],
   plugins: [
-    esbuild(),
+    ts(),
     vanillaExtractPlugin(),
     visualizer({
       emitFile: true,
@@ -15,11 +16,11 @@ const config = {
   ],
   output: [
     {
-      file: "dist/index.js",
+      file: pkg.exports["."].import,
       format: "esm",
     },
     {
-      file: "dist/index.cjs",
+      file: pkg.exports["."].require,
       format: "cjs",
     },
   ],

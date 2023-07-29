@@ -7,7 +7,7 @@
   "repository": "git@github.com:idealjs/camphora.git",
   "license": "MIT",
   "scripts": {
-    "lint": "eslint apps/**/*.{tsx,ts} packages/**/*.{tsx,ts} --no-ignore **/node_modules/* --fix",
+    "lint": "eslint . --ext js,jsx,ts,tsx --fix",
     "test": "jest"
   },
   "devDependencies": {
