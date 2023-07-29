@@ -10,8 +10,11 @@
     ],
     "baseUrl": ".",
     "paths": {
-      "@site/*": ["./*"]
+      "@site/*": ["./*"],
+      "@idealjs/camphora-styled": [
+        "../../packages/camphora-styled/src/index.ts"
+      ]
     }
   },
-  "include": ["**/*.tsx"]
+  "include": ["**/*.tsx", "../../packages/camphora-styled/src"]
 }

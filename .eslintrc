@@ -1,5 +1,12 @@
 {
   "extends": ["react-app", "react-app/jest"],
+  "parserOptions": {
+    "babelOptions": {
+      "parserOpts": {
+        "plugins": ["importAssertions"]
+      }
+    }
+  },
   "plugins": ["simple-import-sort"],
   "rules": {
     "quotes": "warn",
