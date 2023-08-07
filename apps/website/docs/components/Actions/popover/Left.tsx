@@ -22,14 +22,16 @@ const Popover = () => {
         justifyContent: "center",
       }}
     >
-      <label
-        htmlFor={id}
-        className={clsx(clickReaction, popover, button, buttonGhost)}
-      >
-        <input id={id} type="checkbox" className={clickReactionInput} />
-        <div className={clsx(popoverContent, popoverLeft)}>hello popover</div>
-        open
-      </label>
+      <div className={popover}>
+          <label
+            htmlFor={id}
+            className={clsx(clickReaction, button, buttonGhost)}
+          >
+            <input id={id} type="checkbox" className={clickReactionInput} />
+            open
+          </label>
+          <div className={clsx(popoverContent, popoverLeft)}>hello popover</div>
+      </div>
     </div>
   );
 };
