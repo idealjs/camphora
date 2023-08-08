@@ -10,7 +10,7 @@ export const popoverContent = style({
   visibility: "hidden",
   position: "absolute",
   selectors: {
-    [`${clickReaction} > ${clickReactionInput}:checked ~ &`]: {
+    [`${clickReaction}:has(${clickReactionInput}:checked) ~ &`]: {
       visibility: "visible",
     },
   },
@@ -21,6 +21,7 @@ export const popoverLeft = style({
     [`${popover} > &`]: {
       left: "auto",
       right: "100%",
+      top: "0",
     },
   },
 });
@@ -30,6 +31,7 @@ export const popoverRight = style({
     [`${popover} > &`]: {
       left: "100%",
       right: "auto",
+      top: "0",
     },
   },
 });
