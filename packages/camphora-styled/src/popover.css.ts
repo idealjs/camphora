@@ -2,6 +2,8 @@ import { style } from "@vanilla-extract/css";
 
 import { clickReaction, clickReactionInput } from "./actions";
 
+export const popoverHover = style({})
+
 export const popover = style({
   position: "relative",
 });
@@ -11,6 +13,9 @@ export const popoverContent = style({
   position: "absolute",
   selectors: {
     [`${clickReaction}:has(${clickReactionInput}:checked) ~ &`]: {
+      visibility: "visible",
+    },
+    [`${popoverHover}:hover &`]: {
       visibility: "visible",
     },
   },
