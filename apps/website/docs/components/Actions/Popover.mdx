@@ -105,3 +105,53 @@ import rightEndContent from "!!raw-loader!./popover/RightEnd";
     <CodeBlock language="tsx">{rightEndContent}</CodeBlock>
   </TabItem>
 </Tabs>
+
+## hover
+
+import BottomHover from "./popover/BottomHover";
+import TopHover from "./popover/TopHover";
+import LeftHover from "./popover/LeftHover";
+import RightHover from "./popover/RightHover";
+
+<Tabs>
+  <TabItem value="bottom-hover" label="bottom-hover" default>
+    <div className={previewBlock}>
+      <BottomHover />
+    </div>
+  </TabItem>
+  <TabItem value="top-hover" label="top-hover" default>
+    <div className={previewBlock}>
+      <TopHover />
+    </div>
+  </TabItem>
+  <TabItem value="left-hover" label="left-hover" default>
+    <div className={previewBlock}>
+      <LeftHover />
+    </div>
+  </TabItem>
+  <TabItem value="right-hover" label="right-hover" default>
+    <div className={previewBlock}>
+      <RightHover />
+    </div>
+  </TabItem>
+</Tabs>
+
+import bottomHoverContent from "!!raw-loader!./popover/BottomHover";
+import topHoverContent from "!!raw-loader!./popover/TopHover";
+import leftHoverContent from "!!raw-loader!./popover/LeftHover";
+import rightHoverContent from "!!raw-loader!./popover/RightHover";
+
+<Tabs>
+  <TabItem value="bottom-hover" label="bottom-hover" default>
+    <CodeBlock language="tsx">{bottomHoverContent}</CodeBlock>
+  </TabItem>
+  <TabItem value="top-hover" label="top-hover" default>
+    <CodeBlock language="tsx">{topHoverContent}</CodeBlock>
+  </TabItem>
+  <TabItem value="left-hover" label="left-hover" default>
+    <CodeBlock language="tsx">{leftHoverContent}</CodeBlock>
+  </TabItem>
+  <TabItem value="right-hover" label="right-hover" default>
+    <CodeBlock language="tsx">{rightHoverContent}</CodeBlock>
+  </TabItem>
+</Tabs>
