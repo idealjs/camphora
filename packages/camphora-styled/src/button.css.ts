@@ -1,11 +1,3 @@
-/*
- * @Descripttion: 
- * @version: 
- * @Author: wushide
- * @Date: 2023-08-04 09:30:05
- * @LastEditors: wushide
- * @LastEditTime: 2023-08-10 08:52:35
- */
 import { style } from "@vanilla-extract/css";
 
 import { vars } from "./theme.css";
@@ -36,6 +28,7 @@ export const button = style({
   boxShadow: "0 2px 4px rgba(0, 0, 0, 0.1)", // Add a subtle box shadow
   transition: "background-color 0.2s ease-in-out", // Add transition effect
   border: "none", // remove button default border
+  fontSize: "1rem",
   selectors: {
     [`&:active, &${buttonActive}`]: {
       transform: "scale(0.95)", // Add a slight scaling effect on click
