@@ -1,11 +1,3 @@
-/*
- * @Descripttion: 
- * @version: 
- * @Author: wushide
- * @Date: 2023-08-04 09:30:05
- * @LastEditors: wushide
- * @LastEditTime: 2023-08-15 08:49:00
- */
 import { style } from "@vanilla-extract/css";
 
 import { vars } from "./theme.css";
