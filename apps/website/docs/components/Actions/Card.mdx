@@ -1,0 +1,19 @@
+---
+displayed_sidebar: componentsSidebar
+---
+
+# Card
+
+import { previewBlock } from "@idealjs/camphora-styled";
+import Card from "./card/Card";
+
+<div className={previewBlock}>
+  <Card />
+</div>
+
+import CodeBlock from "@theme/CodeBlock";
+import CardContent from "!!raw-loader!./card/Card";
+
+<CodeBlock language="tsx">
+  {CardContent}
+</CodeBlock>
