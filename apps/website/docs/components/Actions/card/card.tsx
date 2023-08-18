@@ -15,7 +15,7 @@ const cardStyle: CSSProperties = {
 }
 
 const otherStyle: CSSProperties = {
-  width: 300
+  width: 400
 }
 
 const Card = () => {
