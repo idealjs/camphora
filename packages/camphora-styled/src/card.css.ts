@@ -19,7 +19,13 @@ export const card = style({
   },
 });
 
-export const cardTitleLeft = style({
+export const cardTitleRight = style({});
+
+export const cardTitleLeft = style({});
+
+export const cardTitleCenter = style({});
+
+export const cardTitle = style({
   selectors: {
     [`${card} > &`]: {
       fontSize: "1.25rem",
@@ -27,59 +33,38 @@ export const cardTitleLeft = style({
       marginBottom: "8px",
       width: "100%",
     },
-  },
-});
-
-export const cardTitleRight = style({
-  selectors: {
-    [`${card} > &`]: {
-      fontSize: "1.25rem",
-      fontWeight: "bold",
-      marginBottom: "8px",
-      width: "100%",
+    [`&${cardTitleRight}`]: {
       textAlign: "right",
     },
-  },
-});
-
-export const cardTitleCenter = style({
-  selectors: {
-    [`${card} > &`]: {
-      fontSize: "1.25rem",
-      fontWeight: "bold",
-      marginBottom: "8px",
-      width: "100%",
-      textAlign: "center",
-    },
-  },
-});
-
-export const cardContentCenter = style({
-  selectors: {
-    [`${card} > &`]: {
-      marginBottom: "16px",
-      textAlign: "center",
-      width: "100%",
-    },
-  },
-});
-
-export const cardContentLeft = style({
-  selectors: {
-    [`${card} > &`]: {
-      marginBottom: "16px",
+    [`&${cardTitleLeft}`]: {
       textAlign: "left",
-      width: "100%",
+    },
+    [`&${cardTitleCenter}`]: {
+      textAlign: "center",
     },
   },
 });
 
-export const cardContentRight = style({
+export const cardContentLeft = style({});
+
+export const cardContentRight = style({});
+
+export const cardContentCenter = style({});
+
+export const cardContent = style({
   selectors: {
     [`${card} > &`]: {
       marginBottom: "16px",
-      textAlign: "right",
       width: "100%",
+    },
+    [`&${cardContentRight}`]: {
+      textAlign: "right",
+    },
+    [`&${cardContentLeft}`]: {
+      textAlign: "left",
+    },
+    [`&${cardContentCenter}`]: {
+      textAlign: "center",
     },
   },
 });

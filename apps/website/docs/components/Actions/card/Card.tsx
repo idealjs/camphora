@@ -2,8 +2,10 @@ import {
   button,
   buttonPrimary,
   card,
+  cardContent,
   cardContentCenter,
   cardShadow,
+  cardTitle,
   cardTitleCenter,
 } from "@idealjs/camphora-styled";
 import clsx from "clsx";
@@ -23,8 +25,8 @@ const Card = () => {
   return (
     <div style={cardStyle}>
       <div className={clsx(card, cardShadow)} style={otherStyle}>
-        <div className={clsx(cardTitleCenter)}>cardTitle!</div>
-        <div className={clsx(cardContentCenter)}>Chinese culture is vast and profound! I love it very much.</div>
+        <div className={clsx(cardTitle, cardTitleCenter)}>cardTitle!</div>
+        <div className={clsx(cardContent, cardContentCenter)}>Chinese culture is vast and profound! I love it very much.</div>
         <button className={clsx(button, buttonPrimary)}>button</button>
       </div>
     </div>
