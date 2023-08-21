@@ -19,20 +19,32 @@ export const card = style({
 });
 
 export const cardTitle = style({
-  fontSize: "1.25rem",
-  fontWeight: "bold",
-  marginBottom: "8px",
+  selectors: {
+    [`${card} > &`]: {
+      fontSize: "1.25rem",
+      fontWeight: "bold",
+      marginBottom: "8px",
+    },
+  },
 });
 
 export const cardContent = style({
-  marginBottom: "16px",
-  textAlign: "center",
+  selectors: {
+    [`${card} > &`]: {
+      marginBottom: "16px",
+      textAlign: "center",
+    },
+  },
 });
 
 export const cardImage = style({
-  width: "100%",
-  maxHeight: "200px",
-  objectFit: "cover",
-  borderRadius: "8px",
-  marginBottom: "16px",
+  selectors: {
+    [`${card} > &`]: {
+      width: "100%",
+      maxHeight: "200px",
+      objectFit: "cover",
+      borderRadius: "8px",
+      marginBottom: "16px",
+    },
+  },
 });
