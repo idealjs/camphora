@@ -1,5 +1,7 @@
 import { style } from "@vanilla-extract/css";
 
+export const cardHover = style({});
+
 export const card = style({
   backgroundColor: "#ffffff",
   borderRadius: "8px",
@@ -12,18 +14,44 @@ export const card = style({
   fontSize: "1rem",
   position: "relative",
   selectors: {
-    "&:hover": {
+    [`&${cardHover}:hover`]: {
       boxShadow: "0 8px 12px rgba(0, 0, 0, 0.2)",
+      transition: "box-shadow 0.3s ease-in-out",
     },
   },
 });
 
-export const cardTitle = style({
+export const cardTitleLeft = style({
   selectors: {
     [`${card} > &`]: {
       fontSize: "1.25rem",
       fontWeight: "bold",
       marginBottom: "8px",
+      width: "100%",
+    },
+  },
+});
+
+export const cardTitleRight = style({
+  selectors: {
+    [`${card} > &`]: {
+      fontSize: "1.25rem",
+      fontWeight: "bold",
+      marginBottom: "8px",
+      width: "100%",
+      textAlign: "right",
+    },
+  },
+});
+
+export const cardTitleCenter = style({
+  selectors: {
+    [`${card} > &`]: {
+      fontSize: "1.25rem",
+      fontWeight: "bold",
+      marginBottom: "8px",
+      width: "100%",
+      textAlign: "center",
     },
   },
 });
@@ -33,6 +61,7 @@ export const cardContent = style({
     [`${card} > &`]: {
       marginBottom: "16px",
       textAlign: "center",
+      width: "100%",
     },
   },
 });
