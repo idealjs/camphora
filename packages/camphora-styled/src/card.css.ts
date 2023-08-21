@@ -1,11 +1,10 @@
 import { style } from "@vanilla-extract/css";
 
-export const cardHover = style({});
+export const cardShadow = style({});
 
 export const card = style({
   backgroundColor: "#ffffff",
   borderRadius: "8px",
-  boxShadow: "0 4px 6px rgba(0, 0, 0, 0.1)",
   padding: "16px",
   display: "flex",
   flexDirection: "column",
@@ -14,9 +13,8 @@ export const card = style({
   fontSize: "1rem",
   position: "relative",
   selectors: {
-    [`&${cardHover}:hover`]: {
-      boxShadow: "0 8px 12px rgba(0, 0, 0, 0.2)",
-      transition: "box-shadow 0.3s ease-in-out",
+    [`&${cardShadow}`]: {
+      boxShadow: "0 4px 6px rgba(0, 0, 0, 0.1)",
     },
   },
 });
@@ -56,11 +54,31 @@ export const cardTitleCenter = style({
   },
 });
 
-export const cardContent = style({
+export const cardContentCenter = style({
   selectors: {
     [`${card} > &`]: {
       marginBottom: "16px",
       textAlign: "center",
+      width: "100%",
+    },
+  },
+});
+
+export const cardContentLeft = style({
+  selectors: {
+    [`${card} > &`]: {
+      marginBottom: "16px",
+      textAlign: "left",
+      width: "100%",
+    },
+  },
+});
+
+export const cardContentRight = style({
+  selectors: {
+    [`${card} > &`]: {
+      marginBottom: "16px",
+      textAlign: "right",
       width: "100%",
     },
   },

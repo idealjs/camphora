@@ -2,9 +2,9 @@ import {
   button,
   buttonPrimary,
   card,
-  cardContent,
-  cardHover,
-  cardTitleCenter
+  cardContentCenter,
+  cardShadow,
+  cardTitleCenter,
 } from "@idealjs/camphora-styled";
 import clsx from "clsx";
 import React, { type CSSProperties } from "react";
@@ -22,9 +22,9 @@ const otherStyle: CSSProperties = {
 const Card = () => {
   return (
     <div style={cardStyle}>
-      <div className={clsx(card, cardHover)} style={otherStyle}>
+      <div className={clsx(card, cardShadow)} style={otherStyle}>
         <div className={clsx(cardTitleCenter)}>cardTitle!</div>
-        <div className={clsx(cardContent)}>If a dog chews shoes whose shoes does he choose?</div>
+        <div className={clsx(cardContentCenter)}>Chinese culture is vast and profound! I love it very much.</div>
         <button className={clsx(button, buttonPrimary)}>button</button>
       </div>
     </div>
