@@ -2,7 +2,7 @@ import {
   button,
   buttonGhost,
   tooltip,
-  tooltipTop,
+  tooltipLeft,
 } from "@idealjs/camphora-styled";
 import clsx from "clsx";
 import React from "react";
@@ -17,7 +17,7 @@ const Tooltip = () => {
         justifyContent: "center",
       }}
     >
-      <div className={clsx(tooltip, tooltipTop)} data-tip="hello tooltip">
+      <div className={clsx(tooltip, tooltipLeft)} data-tip="hello tooltip">
         <button className={clsx(button, buttonGhost)}>Hover me</button>
       </div>
     </div>
