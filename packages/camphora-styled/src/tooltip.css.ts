@@ -47,9 +47,6 @@ export const tooltip = style({
       left: "50%",
       transform: "translateX(-50%)",
       marginBottom: "6px",
-      borderTop: "6px solid rgba(0, 0, 0, 0.8)",
-      borderRight: "6px solid transparent",
-      borderLeft: "6px solid transparent",
     },
     [`&${tooltipTop}:after`]: {
       position: "absolute",
