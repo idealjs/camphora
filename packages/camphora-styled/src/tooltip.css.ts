@@ -8,6 +8,8 @@ export const tooltipLeft = style({});
 
 export const tooltipBottom = style({});
 
+export const tooltipArrow = style({});
+
 export const tooltip = style({
   position: "relative",
   display: "inline-block",
@@ -48,7 +50,7 @@ export const tooltip = style({
       transform: "translateX(-50%)",
       marginBottom: "6px",
     },
-    [`&${tooltipTop}:after`]: {
+    [`&${tooltipArrow}.&${tooltipTop}:after`]: {
       position: "absolute",
       top: "-13%",
       left: "50%",
@@ -65,9 +67,9 @@ export const tooltip = style({
       transform: "translateX(-50%)",
       marginTop: "6px",
     },
-    [`&${tooltipBottom}:after`]: {
+    [`&${tooltipArrow}.&${tooltipBottom}:after`]: {
       position: "absolute",
-      bottom: "-12%",
+      bottom: "-13%",
       left: "50%",
       transform: "translateX(-50%)",
       borderBottom: "6px solid rgba(0, 0, 0, 0.8)",
@@ -82,9 +84,9 @@ export const tooltip = style({
       transform: "translateY(-50%)",
       marginRight: "6px",
     },
-    [`&${tooltipLeft}:after`]: {
+    [`&${tooltipArrow}.&${tooltipLeft}:after`]: {
       position: "absolute",
-      left: "-5.5%",
+      left: "-6%",
       top: "50%",
       transform: "translateY(-50%)",
       borderLeft: "6px solid rgba(0, 0, 0, 0.8)",
@@ -99,9 +101,9 @@ export const tooltip = style({
       transform: "translateY(-50%)",
       marginLeft: "6px",
     },
-    [`&${tooltipRight}:after`]: {
+    [`&${tooltipArrow}.&${tooltipRight}:after`]: {
       position: "absolute",
-      right: "-5.5%",
+      right: "-6%",
       top: "50%",
       transform: "translateY(-50%)",
       borderRight: "6px solid rgba(0, 0, 0, 0.8)",
