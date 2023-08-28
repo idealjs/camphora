@@ -7,3 +7,4 @@ export * from "./popover.css";
 export * from "./previewBlock.css";
 export * from "./theme.css";
 export * from "./tokenField.css";
+export * from "./tooltip.css";
