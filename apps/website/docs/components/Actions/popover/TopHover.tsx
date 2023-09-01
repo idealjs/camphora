@@ -1,6 +1,8 @@
 import {
   button,
   buttonGhost,
+  card,
+  cardContent,
   popover,
   popoverContent,
   popoverHover,
@@ -21,7 +23,9 @@ const Popover = () => {
     >
       <div className={clsx(popover, popoverHover)} >
         <button className={clsx(button, buttonGhost)}>hover</button>
-        <div className={clsx(popoverContent, popoverTop)}>hello popover</div>
+        <div className={clsx(popoverContent, popoverTop)}>
+          <div className={clsx(card, cardContent)}>这是一个弹出框！这是一个弹出框！这是一个弹出框！这是一个弹出框！</div>
+        </div>
       </div>
     </div>
   );

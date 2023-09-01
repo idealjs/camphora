@@ -1,6 +1,8 @@
 import {
   button,
   buttonGhost,
+  card,
+  cardContent,
   clickReaction,
   clickReactionInput,
   popover,
@@ -32,7 +34,7 @@ const Popover = () => {
           open
         </label>
         <div className={clsx(popoverContent, popoverBottom, popoverEnd)}>
-          hello popover
+          <div className={clsx(card, cardContent)}>这是一个弹出框！这是一个弹出框！这是一个弹出框！这是一个弹出框！</div>
         </div>
       </div>
     </div>

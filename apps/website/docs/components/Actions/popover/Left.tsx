@@ -1,6 +1,8 @@
 import {
   button,
   buttonGhost,
+  card,
+  cardContent,
   clickReaction,
   clickReactionInput,
   popover,
@@ -23,14 +25,16 @@ const Popover = () => {
       }}
     >
       <div className={popover}>
-          <label
-            htmlFor={id}
-            className={clsx(clickReaction, button, buttonGhost)}
-          >
-            <input id={id} type="checkbox" className={clickReactionInput} />
-            open
-          </label>
-          <div className={clsx(popoverContent, popoverLeft)}>hello popover</div>
+        <label
+          htmlFor={id}
+          className={clsx(clickReaction, button, buttonGhost)}
+        >
+          <input id={id} type="checkbox" className={clickReactionInput} />
+          open
+        </label>
+        <div className={clsx(popoverContent, popoverLeft)}>
+          <div className={clsx(card, cardContent)}>这是一个弹出框！这是一个弹出框！这是一个弹出框！这是一个弹出框！</div>
+        </div>
       </div>
     </div>
   );
