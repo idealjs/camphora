@@ -16,5 +16,5 @@
       ]
     }
   },
-  "include": ["**/*.tsx", "../../packages/camphora-styled/src"]
+  "include": ["**/*.tsx", "**/*.ts", "../../packages/camphora-styled/src"]
 }
