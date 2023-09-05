@@ -30,7 +30,7 @@ const config = {
   // metadata like html lang. For example, if your site is Chinese, you may want
   // to replace "en" with "zh-Hans".
   i18n: {
-    defaultLocale: "en",
+    defaultLocale: "zh-Hans",
     locales: ["en", "zh-Hans"],
   },
 
@@ -77,6 +77,12 @@ const config = {
             sidebarId: "componentsSidebar",
             position: "left",
             label: "Components",
+          },
+          {
+            type: "docSidebar",
+            sidebarId: "contributeSidebar",
+            position: "left",
+            label: "Contribute",
           },
           {
             href: "https://github.com/idealjs/camphora",
