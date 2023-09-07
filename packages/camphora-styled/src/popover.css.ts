@@ -17,8 +17,6 @@ const fadeIn = keyframes({
 export const popoverContent = style({
   visibility: "hidden",
   position: "absolute",
-  width: "max-content",
-  maxWidth: 300,
   selectors: {
     [`${clickReaction}:has(${clickReactionInput}:checked) ~ &`]: {
       visibility: "visible",

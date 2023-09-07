@@ -14,6 +14,11 @@ import React from "react";
 
 const id = "popoverBottom";
 
+const popoverWidthSty = {
+  width: "max-content",
+  maxWidth: 300,
+}
+
 const Popover = () => {
   return (
     <div
@@ -32,7 +37,7 @@ const Popover = () => {
           <input id={id} type="checkbox" className={clickReactionInput} />
           open
         </label>
-        <div className={clsx(popoverContent, popoverBottom)}>
+        <div className={clsx(popoverContent, popoverBottom)} style={popoverWidthSty}>
           <div className={clsx(card, cardContent)}>这是一个弹出框！这是一个弹出框！这是一个弹出框！这是一个弹出框！</div>
         </div>
       </div>
