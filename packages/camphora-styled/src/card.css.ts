@@ -54,7 +54,6 @@ export const cardContentCenter = style({});
 export const cardContent = style({
   selectors: {
     [`${card} > &`]: {
-      marginBottom: "16px",
       width: "100%",
     },
     [`&${cardContentRight}`]: {
