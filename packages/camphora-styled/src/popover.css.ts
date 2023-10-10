@@ -2,13 +2,14 @@ import { keyframes, style } from "@vanilla-extract/css";
 
 import { clickReaction, clickReactionInput } from "./actions";
 
-export const popoverHover = style({})
+export const popoverHover = style({});
+
+export const popoverFocus = style({});
 
 export const popover = style({
   position: "relative",
 });
 
-// 添加弹出动画的关键帧
 const fadeIn = keyframes({
   from: { opacity: 0 },
   to: { opacity: 1 },
@@ -20,11 +21,15 @@ export const popoverContent = style({
   selectors: {
     [`${clickReaction}:has(${clickReactionInput}:checked) ~ &`]: {
       visibility: "visible",
-      animation: `${fadeIn} 0.3s ease-in-out`, // 添加弹出动画
+      animation: `${fadeIn} 0.3s ease-in-out`,
     },
     [`${popoverHover}:hover &`]: {
       visibility: "visible",
-      animation: `${fadeIn} 0.3s ease-in-out`, // 添加弹出动画
+      animation: `${fadeIn} 0.3s ease-in-out`,
+    },
+    [`${popoverFocus}:focus &`]: {
+      visibility: "visible",
+      animation: `${fadeIn} 0.3s ease-in-out`,
     },
   },
 });
