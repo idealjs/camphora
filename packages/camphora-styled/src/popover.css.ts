@@ -73,6 +73,7 @@ export const popoverEnd = style({
       `${popover}:has(> ${popoverLeft}) > &`,
       `${popover}:has(> ${popoverRight}) > &`,
     ].join(",\n")]: {
+      top: "auto",
       bottom: "0px",
     },
     [[
