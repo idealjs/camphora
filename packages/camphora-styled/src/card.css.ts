@@ -6,7 +6,6 @@ export const card = style({
   backgroundColor: "#ffffff",
   borderRadius: "8px",
   padding: "16px",
-  display: "flex",
   flexDirection: "column",
   alignItems: "center",
   justifyContent: "center",
