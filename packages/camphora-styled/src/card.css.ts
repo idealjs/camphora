@@ -6,10 +6,6 @@ export const card = style({
   backgroundColor: "#ffffff",
   borderRadius: "8px",
   padding: "16px",
-  flexDirection: "column",
-  alignItems: "center",
-  justifyContent: "center",
-  fontSize: "1rem",
   position: "relative",
   selectors: {
     [`&${cardShadow}`]: {
