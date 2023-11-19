@@ -1,6 +1,7 @@
 import { keyframes, style } from "@vanilla-extract/css";
 
 import { clickReaction, clickReactionInput } from "./actions";
+import { vars } from "./theme.css";
 
 export const popoverHover = style({});
 
@@ -15,21 +16,27 @@ const fadeIn = keyframes({
   to: { opacity: 1 },
 });
 
+export const popoverOpen = style({});
+
 export const popoverContent = style({
   visibility: "hidden",
   position: "absolute",
   selectors: {
     [`${clickReaction}:has(${clickReactionInput}:checked) ~ &`]: {
       visibility: "visible",
-      animation: `${fadeIn} 0.3s ease-in-out`,
+      animation: `${fadeIn} ${vars.animation.popover} ease-in-out`,
     },
-    [`${popoverHover}:hover &`]: {
+    [`${popoverOpen} > &`]: {
       visibility: "visible",
-      animation: `${fadeIn} 0.3s ease-in-out`,
+      animation: `${fadeIn} ${vars.animation.popover} ease-in-out`,
     },
-    [`${popoverFocus}:focus &`]: {
+    [`${popoverHover}:hover > &`]: {
       visibility: "visible",
-      animation: `${fadeIn} 0.3s ease-in-out`,
+      animation: `${fadeIn} ${vars.animation.popover} ease-in-out`,
+    },
+    [`${popoverFocus}:focus > &`]: {
+      visibility: "visible",
+      animation: `${fadeIn} ${vars.animation.popover} ease-in-out`,
     },
   },
 });

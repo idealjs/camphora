@@ -51,9 +51,16 @@ export const vars = createThemeContract({
   animation: {
     btn: null,
     drawer: null,
+    popover: null,
   },
   rounded: {
     btn: null,
+    card: null,
+  },
+  padding: {
+    card: null,
+    menuLabel: null,
+    menuBar: null,
   },
 });
 
@@ -108,8 +115,15 @@ export const lightTheme = createTheme(vars, {
   animation: {
     btn: "0.25s",
     drawer: "0.3s",
+    popover: "0.1s",
   },
   rounded: {
-    btn: "0.5rem",
+    btn: "8px",
+    card: "4px",
+  },
+  padding: {
+    card: "4px",
+    menuLabel: "2px 4px",
+    menuBar: "4px 2px",
   },
 });
