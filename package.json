@@ -10,11 +10,11 @@
     "lint": "eslint . --ext js,jsx,ts,tsx --fix"
   },
   "devDependencies": {
-    "eslint": "^8.0.0",
+    "eslint": "^8.54.0",
     "eslint-config-react-app": "^7.0.1",
     "eslint-plugin-simple-import-sort": "^10.0.0",
-    "lerna": "^6.6.1",
+    "lerna": "^8.0.0",
     "lerna-update-wizard": "^1.1.2"
   },
-  "packageManager": "yarn@3.6.1"
+  "packageManager": "yarn@4.0.2"
 }

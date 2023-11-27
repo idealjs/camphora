@@ -1,0 +1,12 @@
+{
+  "position": 1,
+  "label": "Actions",
+  "link": {
+    "type": "generated-index",
+    "title": "Action Components",
+    "description": "Choose your favorite components!",
+    "slug": "/components/actions",
+    "keywords": ["components", "actions"],
+    "image": "/img/docusaurus.png"
+  }
+}

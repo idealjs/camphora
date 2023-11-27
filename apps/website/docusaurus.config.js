@@ -2,8 +2,10 @@
 // Note: type annotations allow type checking and IDEs autocompletion
 const { VanillaExtractPlugin } = require("@vanilla-extract/webpack-plugin");
 
-const lightCodeTheme = require("prism-react-renderer/themes/github");
-const darkCodeTheme = require("prism-react-renderer/themes/dracula");
+const { themes } = require("prism-react-renderer");
+const lightTheme = themes.github;
+const darkTheme = themes.dracula;
+
 const path = require("path");
 
 /** @type {import('@docusaurus/types').Config} */
@@ -128,8 +130,8 @@ const config = {
         copyright: `Copyright © ${new Date().getFullYear()} Idealjs, Inc. Built with Docusaurus.`,
       },
       prism: {
-        theme: lightCodeTheme,
-        darkTheme: darkCodeTheme,
+        theme: lightTheme,
+        darkTheme: darkTheme,
         additionalLanguages: ["jsx", "tsx"],
       },
     }),

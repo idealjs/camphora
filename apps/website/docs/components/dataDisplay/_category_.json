@@ -1,0 +1,12 @@
+{
+  "position": 2,
+  "label": "DataDisplay",
+  "link": {
+    "type": "generated-index",
+    "title": "Data Display Components",
+    "description": "Choose your favorite components!",
+    "slug": "/components/data-display",
+    "keywords": ["components", "data-display"],
+    "image": "/img/docusaurus.png"
+  }
+}

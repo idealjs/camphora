@@ -62,6 +62,13 @@ export const vars = createThemeContract({
     menuLabel: null,
     menuBar: null,
   },
+  size: {
+    card: {
+      small: null,
+      medium: null,
+      large: null,
+    },
+  },
 });
 
 export const lightTheme = createTheme(vars, {
@@ -125,5 +132,12 @@ export const lightTheme = createTheme(vars, {
     card: "4px",
     menuLabel: "2px 4px",
     menuBar: "4px 2px",
+  },
+  size: {
+    card: {
+      small: "384px",
+      medium: "768px",
+      large: "1152px",
+    },
   },
 });

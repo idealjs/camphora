@@ -11,9 +11,11 @@
     "noFallthroughCasesInSwitch": true,
     "module": "ES2020",
     "moduleResolution": "Node",
+    "moduleDetection": "force",
+    "resolveJsonModule": true,
     "isolatedModules": true,
     "declaration": true,
     "composite": true,
-    "rootDir": "."
+    "importHelpers": true
   }
 }

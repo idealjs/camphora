@@ -1,5 +1,5 @@
 import { vanillaExtractPlugin } from "@vanilla-extract/rollup-plugin";
-import ts from "rollup-plugin-ts";
+import esbuild from "rollup-plugin-esbuild";
 import { visualizer } from "rollup-plugin-visualizer";
 
 import pkg from "./package.json" assert { type: "json" };
@@ -7,7 +7,7 @@ import pkg from "./package.json" assert { type: "json" };
 const config = {
   input: ["./src/index.ts"],
   plugins: [
-    ts(),
+    esbuild(),
     vanillaExtractPlugin(),
     visualizer({
       emitFile: true,
