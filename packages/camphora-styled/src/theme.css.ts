@@ -135,9 +135,9 @@ export const lightTheme = createTheme(vars, {
   },
   size: {
     card: {
-      small: "384px",
-      medium: "768px",
-      large: "1152px",
+      small: "256px",
+      medium: "512px",
+      large: "1024px",
     },
   },
 });

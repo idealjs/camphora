@@ -7,8 +7,6 @@ export const cardShadow = style({});
 export const card = style({
   backgroundColor: "#ffffff",
   borderRadius: "8px",
-  padding: "16px",
-  position: "relative",
   width: vars.size.card.small,
   selectors: {
     [`&${cardShadow}`]: {
