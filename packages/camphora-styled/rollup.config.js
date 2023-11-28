@@ -18,10 +18,16 @@ const config = {
     {
       file: pkg.exports["."].import,
       format: "esm",
+      assetFileNames({ name }) {
+        return name?.replace(".css.ts", "") ?? "";
+      }
     },
     {
       file: pkg.exports["."].require,
       format: "cjs",
+      assetFileNames({ name }) {
+        return name?.replace(".css.ts", "") ?? "";
+      }
     },
   ],
 };
