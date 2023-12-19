@@ -1,7 +1,7 @@
 import { style } from "@vanilla-extract/css";
 
 import { vars } from "../theme.css";
-import { clickReaction, clickReactionInput } from ".";
+import { clickReaction, clickReactionInput } from "./reaction.css";
 
 export const drawer = style({
   position: "relative",

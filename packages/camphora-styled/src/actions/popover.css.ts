@@ -1,12 +1,12 @@
 import { keyframes, style } from "@vanilla-extract/css";
 
+import { vars } from "../theme.css";
 import {
   clickReaction,
   clickReactionInput,
   focusReaction,
   hoverReaction,
-} from "..";
-import { vars } from "../theme.css";
+} from "./reaction.css";
 
 export const popover = style({
   position: "relative",
