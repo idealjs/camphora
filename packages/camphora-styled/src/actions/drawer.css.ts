@@ -41,7 +41,7 @@ export const drawerOverlay = style({
       height: "100%",
       transitionProperty: "all",
       transitionTimingFunction: "cubic-bezier(0.4, 0, 0.2, 1)",
-      transitionDuration: "300ms",
+      transitionDuration: vars.animation.drawer,
     },
     [`${clickReaction} > ${clickReactionInput}:checked ~ ${drawerSide} &`]: {
       background: "black",
@@ -55,8 +55,8 @@ export const drawerMenu = style({
   selectors: {
     [`${drawer} > ${drawerSide} &`]: {
       height: "100%",
-      width: 300,
-      transform: "translateX(-300px)",
+      width: "fit-content",
+      transform: "translateX(-100%)",
       transitionProperty: "all",
       transitionTimingFunction: "cubic-bezier(0.4, 0, 0.2, 1)",
       transitionDuration: vars.animation.drawer,

@@ -1,8 +1,13 @@
+import "./global.css";
+
 import { lightTheme } from "@idealjs/camphora-styled";
 import type { Metadata } from "next";
 
-import Drawer from "@/components/Drawer";
-import LabelButton from "@/components/LabelButton";
+import Drawer from "@/aggregations/Drawer";
+import LabelButton from "@/aggregations/LabelButton";
+import Navbar from "@/aggregations/Navbar";
+import { fullScreen } from "@/styles/container.css";
+import SideDrawer from "@/typesetting/SideDrawer";
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -17,9 +22,19 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={lightTheme}>
-        <Drawer drawerId="rootDrawer" sideDrawer={<div>hello</div>}>
-          <LabelButton htmlFor="rootDrawer">hello</LabelButton>
-        </Drawer>
+        <Drawer
+          className={fullScreen}
+          drawerId="rootDrawer"
+          sideDrawer={<SideDrawer />}
+          drawerContent={
+            <div>
+              <Navbar>
+                <LabelButton htmlFor="rootDrawer">hello</LabelButton>
+              </Navbar>
+              {children}
+            </div>
+          }
+        />
       </body>
     </html>
   );

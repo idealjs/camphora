@@ -1,41 +1,33 @@
 import {
-  button,
-  buttonGhost,
   clickReaction,
   clickReactionInput,
   drawer,
-  drawerContent,
   drawerMenu,
-  drawerOverlay,
   drawerSide,
-  navbar,
 } from "@idealjs/camphora-styled";
 import clsx from "clsx";
-import React, { PropsWithChildren, ReactNode } from "react";
+import React, { ReactNode } from "react";
 
 import Overlay from "./DrawerOverlay";
 
 interface IProps {
   drawerId: string;
-  overlay?: ReactNode;
   sideDrawer: ReactNode;
+  drawerContent: ReactNode;
+  overlay?: ReactNode;
+  className?: string;
 }
 
-const Drawer = (props: PropsWithChildren<IProps>) => {
-  const { children, drawerId, sideDrawer, overlay } = props;
+const Drawer = (props: IProps) => {
+  const { drawerId, sideDrawer, drawerContent, overlay, className } = props;
 
   return (
-    <div className={clsx(drawer, clickReaction)}>
+    <div className={clsx(drawer, clickReaction, className)}>
       <input id={drawerId} type="checkbox" className={clickReactionInput} />
-      {children}
+      {drawerContent}
       <div className={clsx(drawerSide)}>
         {overlay ?? <Overlay htmlFor={drawerId} />}
-        <div
-          className={drawerMenu}
-          style={{ background: "white", width: "300px" }}
-        >
-          {sideDrawer}
-        </div>
+        <div className={drawerMenu}>{sideDrawer}</div>
       </div>
     </div>
   );

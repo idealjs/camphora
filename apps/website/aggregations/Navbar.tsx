@@ -7,16 +7,7 @@ interface IProps {}
 const Navbar = (props: PropsWithChildren<IProps>) => {
   const { children } = props;
 
-  return (
-    <nav className={navbar}>
-      <label
-        htmlFor="test"
-        className={clsx(button, buttonGhost, "select-none")}
-      >
-        open
-      </label>
-    </nav>
-  );
+  return <nav className={navbar}>{children}</nav>;
 };
 
 export default Navbar;
