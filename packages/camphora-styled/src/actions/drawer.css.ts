@@ -1,7 +1,7 @@
 import { style } from "@vanilla-extract/css";
 
 import { vars } from "../theme.css";
-import { clickReaction, clickReactionInput } from "./reaction.css";
+import { clickActionInput,clickReaction } from "./reaction.css";
 
 export const drawer = style({
   position: "relative",
@@ -11,7 +11,7 @@ export const drawer = style({
 
 export const drawerContent = style({
   selectors: {
-    [`${clickReactionInput}:checked ~ &`]: {},
+    [`${clickActionInput}:checked ~ &`]: {},
     [`${clickReaction} &`]: {},
   },
 });
@@ -26,7 +26,7 @@ export const drawerSide = style({
       overflow: "hidden",
       visibility: "hidden",
     },
-    [`${clickReaction} > ${clickReactionInput}:checked ~ &`]: {
+    [`${clickReaction} > ${clickActionInput}:checked ~ &`]: {
       visibility: "visible",
     },
   },
@@ -43,7 +43,7 @@ export const drawerOverlay = style({
       transitionTimingFunction: "cubic-bezier(0.4, 0, 0.2, 1)",
       transitionDuration: vars.animation.drawer,
     },
-    [`${clickReaction} > ${clickReactionInput}:checked ~ ${drawerSide} &`]: {
+    [`${clickReaction} > ${clickActionInput}:checked ~ ${drawerSide} &`]: {
       background: "black",
       opacity: 0.4,
     },
@@ -61,7 +61,7 @@ export const drawerMenu = style({
       transitionTimingFunction: "cubic-bezier(0.4, 0, 0.2, 1)",
       transitionDuration: vars.animation.drawer,
     },
-    [`${clickReaction} > ${clickReactionInput}:checked ~ ${drawerSide} &`]: {
+    [`${clickReaction} > ${clickActionInput}:checked ~ ${drawerSide} &`]: {
       transform: "translateX(0px)",
     },
   },

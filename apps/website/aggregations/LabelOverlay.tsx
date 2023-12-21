@@ -1,6 +1,6 @@
-import { drawerOverlay } from "@idealjs/camphora-styled";
+import { drawerOverlay, overlay } from "@idealjs/camphora-styled";
 import clsx from "clsx";
-import React, { forwardRef,PropsWithChildren } from "react";
+import React, { forwardRef, PropsWithChildren } from "react";
 
 interface IProps {
   htmlFor: string;
@@ -13,11 +13,7 @@ const Overlay = forwardRef<HTMLLabelElement, PropsWithChildren<IProps>>(
     const { children, htmlFor, className } = props;
 
     return (
-      <label
-        ref={ref}
-        htmlFor={htmlFor}
-        className={clsx(drawerOverlay, className)}
-      >
+      <label ref={ref} htmlFor={htmlFor} className={clsx(overlay, className)}>
         {children}
       </label>
     );

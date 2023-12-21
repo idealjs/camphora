@@ -1,35 +1,51 @@
 import {
+  absolute,
+  clickAction,
+  clickActionInput,
   clickReaction,
-  clickReactionInput,
-  drawer,
-  drawerMenu,
-  drawerSide,
+  full,
+  runtimeComponent,
+  runtimeContainer,
 } from "@idealjs/camphora-styled";
 import clsx from "clsx";
 import React, { ReactNode } from "react";
 
-import Overlay from "./DrawerOverlay";
+import Container from "@/typesetting/Container";
+
+import LabelOverlay from "./LabelOverlay";
 
 interface IProps {
   drawerId: string;
   sideDrawer: ReactNode;
-  drawerContent: ReactNode;
   overlay?: ReactNode;
   className?: string;
 }
 
 const Drawer = (props: IProps) => {
-  const { drawerId, sideDrawer, drawerContent, overlay, className } = props;
+  const { drawerId, sideDrawer, overlay, className } = props;
 
   return (
-    <div className={clsx(drawer, clickReaction, className)}>
-      <input id={drawerId} type="checkbox" className={clickReactionInput} />
-      {drawerContent}
-      <div className={clsx(drawerSide)}>
-        {overlay ?? <Overlay htmlFor={drawerId} />}
-        <div className={drawerMenu}>{sideDrawer}</div>
+    <Container className={clsx(full)}>
+      <div className={clsx(clickAction, className)}>
+        <input id={drawerId} type="checkbox" className={clickActionInput} />
+        <div className={clsx(clickReaction)}>
+          <Container
+            position="absolute"
+            className={clsx(full, runtimeContainer)}
+          >
+            {overlay ?? (
+              <LabelOverlay className={runtimeComponent} htmlFor={drawerId} />
+            )}
+          </Container>
+          <Container
+            position="absolute"
+            className={clsx(full, runtimeContainer)}
+          >
+            {sideDrawer}
+          </Container>
+        </div>
       </div>
-    </div>
+    </Container>
   );
 };
 

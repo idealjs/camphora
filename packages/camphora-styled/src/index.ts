@@ -1,4 +1,5 @@
 export * from "./actions";
+export * from "./atoms.css";
 export * from "./button.css";
 export * from "./card.css";
 export * from "./navbar.css";

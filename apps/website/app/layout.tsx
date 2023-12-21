@@ -1,12 +1,19 @@
 import "./global.css";
 
-import { lightTheme } from "@idealjs/camphora-styled";
+import {
+  absolute,
+  lightTheme,
+  runtimeComponent,
+  runtimeContainer,
+  screen,
+} from "@idealjs/camphora-styled";
+import clsx from "clsx";
 import type { Metadata } from "next";
 
 import Drawer from "@/aggregations/Drawer";
 import LabelButton from "@/aggregations/LabelButton";
 import Navbar from "@/aggregations/Navbar";
-import { fullScreen } from "@/styles/container.css";
+import Container from "@/typesetting/Container";
 import SideDrawer from "@/typesetting/SideDrawer";
 
 export const metadata: Metadata = {
@@ -22,19 +29,22 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={lightTheme}>
-        <Drawer
-          className={fullScreen}
-          drawerId="rootDrawer"
-          sideDrawer={<SideDrawer />}
-          drawerContent={
-            <div>
-              <Navbar>
-                <LabelButton htmlFor="rootDrawer">hello</LabelButton>
-              </Navbar>
-              {children}
-            </div>
-          }
-        />
+        <Container
+          position="absolute"
+          className={clsx(screen, runtimeContainer)}
+        >
+          <Drawer
+            className={clsx(runtimeComponent)}
+            drawerId="rootDrawer"
+            sideDrawer={<SideDrawer className={runtimeComponent} />}
+          />
+        </Container>
+        <div>
+          <Navbar>
+            <LabelButton htmlFor="rootDrawer">hello</LabelButton>
+          </Navbar>
+          {children}
+        </div>
       </body>
     </html>
   );
