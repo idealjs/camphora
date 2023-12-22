@@ -1,5 +1,4 @@
 import {
-  absolute,
   clickAction,
   clickActionInput,
   clickReaction,
@@ -10,6 +9,7 @@ import {
 import clsx from "clsx";
 import React, { ReactNode } from "react";
 
+import { drawerAnimate, overlayAnimate } from "@/styles/drawer.css";
 import Container from "@/typesetting/Container";
 
 import LabelOverlay from "./LabelOverlay";
@@ -34,12 +34,15 @@ const Drawer = (props: IProps) => {
             className={clsx(full, runtimeContainer)}
           >
             {overlay ?? (
-              <LabelOverlay className={runtimeComponent} htmlFor={drawerId} />
+              <LabelOverlay
+                className={clsx(runtimeComponent, overlayAnimate)}
+                htmlFor={drawerId}
+              />
             )}
           </Container>
           <Container
             position="absolute"
-            className={clsx(full, runtimeContainer)}
+            className={clsx(full, runtimeContainer, drawerAnimate)}
           >
             {sideDrawer}
           </Container>

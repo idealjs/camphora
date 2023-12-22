@@ -121,7 +121,7 @@ export const lightTheme = createTheme(vars, {
   },
   animation: {
     btn: "0.25s",
-    drawer: "0.3s",
+    drawer: "0.4s",
     popover: "0.1s",
   },
   rounded: {

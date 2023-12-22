@@ -5,7 +5,6 @@ export const overlay = style({
   width: "100%",
   display: "block",
   background: "black",
-  opacity: 0.4,
 });
 
 export const screen = style({

@@ -1,4 +1,4 @@
-import { drawerOverlay, overlay } from "@idealjs/camphora-styled";
+import { overlay } from "@idealjs/camphora-styled";
 import clsx from "clsx";
 import React, { forwardRef, PropsWithChildren } from "react";
 
