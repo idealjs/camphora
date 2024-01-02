@@ -1,0 +1,20 @@
+{
+  "extends": "../../tsconfig.base.json",
+  "compilerOptions": {
+    "outDir": "dist",
+    "jsx": "react-jsx",
+    "jsxImportSource": "@idealjs/sapling",
+    "paths": {
+      "@idealjs/camphora-styled": [
+        "../../packages/camphora-styled/src/index.ts"
+      ]
+    }
+  },
+  "references": [
+    {
+      "path": "../../packages/camphora-styled"
+    }
+  ],
+  "include": ["src"],
+  "exclude": ["node_modules"]
+}

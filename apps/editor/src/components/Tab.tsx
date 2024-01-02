@@ -1,0 +1,35 @@
+import { createSelectTabAction } from "@idealjs/layout-manager";
+import { derive } from "@idealjs/sapling";
+
+import { panels, RootLayout, updateLayout } from "../features/store/layout";
+
+const Tab = (props: { panelId: string }) => {
+  const { panelId } = props;
+  const panel = derive(() => panels.val.find((v) => v.id === panelId));
+
+  const style = derive(() => {
+    return {
+      backgroundColor: panel.val?.selected ? "white" : "gray",
+    };
+  });
+
+  return (
+    <div
+      style={() => ({
+        backgroundColor: style.val.backgroundColor,
+      })}
+      onClick={() => {
+        RootLayout.doAction(
+          createSelectTabAction({
+            search: panelId,
+          })
+        );
+        updateLayout();
+      }}
+    >
+      Tab
+    </div>
+  );
+};
+
+export default Tab;
