@@ -23,8 +23,10 @@ export const hoverAction = style({});
 
 export const hoverReaction = style({
   visibility: "hidden",
-  [`${hoverAction}:hover > &`]: {
-    visibility: "visible",
+  selectors: {
+    [`${hoverAction}:hover > &`]: {
+      visibility: "visible",
+    },
   },
 });
 
@@ -32,7 +34,9 @@ export const focusAction = style({});
 
 export const focusReaction = style({
   visibility: "hidden",
-  [`${focusAction}:focus > &`]: {
-    visibility: "visible",
+  selectors: {
+    [`${focusAction}:focus > &`]: {
+      visibility: "visible",
+    },
   },
 });

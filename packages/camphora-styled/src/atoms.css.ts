@@ -5,6 +5,7 @@ export const overlay = style({
   width: "100%",
   display: "block",
   background: "black",
+  opacity: 0.4,
 });
 
 export const screen = style({
@@ -31,4 +32,14 @@ export const runtimeContainer = style({
 
 export const runtimeComponent = style({
   pointerEvents: "auto",
+});
+
+export const editContainer = style({
+  pointerEvents: "auto",
+  width: "fit-content",
+  height: "fit-content",
+});
+
+export const editComponent = style({
+  pointerEvents: "none",
 });
