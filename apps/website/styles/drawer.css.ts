@@ -9,6 +9,7 @@ import { style } from "@vanilla-extract/css";
 export const sideDrawer = style({
   height: "100%",
   backgroundColor: vars.colors.base.content,
+  width: "66%",
   "@media": {
     "screen and (min-width: 375px)": {
       width: "66%",
