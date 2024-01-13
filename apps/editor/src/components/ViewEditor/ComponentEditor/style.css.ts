@@ -7,11 +7,7 @@ export const helpLine = style({
     [`${editContainer}:focus > &`]: {
       visibility: "visible",
     },
-    [`${editContainer}:hover > &:not(:has(~ ${editComponent} ${editContainer}:hover))`]:
-      {
-        visibility: "visible",
-      },
-    [`${editContainer}:hover > &:not(:has(~ ${editComponent} ${editContainer}:hover))`]:
+    [`${editContainer}:not(:has(> ${editComponent} ${editContainer}:hover)):hover > &`]:
       {
         visibility: "visible",
       },
