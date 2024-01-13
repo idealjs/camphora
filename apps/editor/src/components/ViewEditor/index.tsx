@@ -32,33 +32,34 @@ export const components = createProxy<{ val: IComponent[] }>({
       backgroundColor: "blue",
       children: ["b"],
     },
-    // {
-    //   id: "b",
-    //   position: "relative",
-    //   rect: {
-    //     height: 200,
-    //     width: 200,
-    //     top: 0,
-    //     left: 0,
-    //   },
-    //   backgroundColor: "green",
-    //   children: ["c"],
-    // },
-    // {
-    //   id: "c",
-    //   position: "relative",
-    //   rect: {
-    //     height: 100,
-    //     width: 100,
-    //     top: 20,
-    //     left: 20,
-    //   },
-    //   backgroundColor: "red",
-    // },
+    {
+      id: "b",
+      position: "relative",
+      rect: {
+        height: 200,
+        width: 200,
+        top: 0,
+        left: 0,
+      },
+      backgroundColor: "green",
+      children: ["c"],
+    },
+    {
+      id: "c",
+      position: "relative",
+      rect: {
+        height: 100,
+        width: 100,
+        top: 20,
+        left: 20,
+      },
+      backgroundColor: "red",
+    },
   ],
 });
 
 const ViewEditor = () => {
+  console.log("test test ViewEditor");
   return (
     <div className={full} style={{ marginTop: "24px" }}>
       <ComponentEditor componentId={"a"} />

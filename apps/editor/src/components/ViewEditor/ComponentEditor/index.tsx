@@ -1,4 +1,5 @@
 import {
+  absolute,
   editComponent,
   editContainer,
   relative,
@@ -28,33 +29,35 @@ const ComponentEditor = (props: IProps) => {
     return components.val.find((component) => component.id === componentId);
   });
 
-  console.log(
-    "test test child key",
-    componentId,
-    component.val?.children?.map((v) => v)
-  );
-
   return (
-    <div ref={ref} tabIndex={0} className={() => clsx(editContainer, relative)}>
-      <EditBox componentId={componentId} />
+    <div
+      ref={ref}
+      tabIndex={0}
+      className={() => clsx(editContainer, absolute)}
+      style={() => ({
+        height: `${component.val?.rect.height}px`,
+        width: `${component.val?.rect.width}px`,
+        marginTop: `${component.val?.rect.top}px`,
+        marginLeft: `${component.val?.rect.left}px`,
+      })}
+    >
       <div
-        className={editComponent}
+        className={clsx(editComponent, relative)}
         style={() => ({
           height: `${component.val?.rect.height}px`,
           width: `${component.val?.rect.width}px`,
-          top: `${component.val?.rect.top}px`,
-          left: `${component.val?.rect.left}px`,
+          // top: `${component.val?.rect.top}px`,
+          // left: `${component.val?.rect.left}px`,
           backgroundColor: `${component.val?.backgroundColor}`,
         })}
       >
-        <div>
-          {() => {
-            return (component.val?.children ?? []).map((child) => {
-              return <ComponentEditor key={child} componentId={child} />;
-            });
-          }}
-        </div>
+        {() => {
+          return (component.val?.children ?? []).map((child) => {
+            return <ComponentEditor key={child} componentId={child} />;
+          });
+        }}
       </div>
+      <EditBox componentId={componentId} />
     </div>
   );
 };

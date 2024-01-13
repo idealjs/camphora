@@ -23,7 +23,7 @@ const Panel = (props: IProps) => {
   const panel = derive(() => panels.val.find((v) => v.id === panelId));
 
   const Comp = createRef<() => JSX.Element>();
-  effect(() => {
+  useEffect(() => {
     switch (panel.val?.page) {
       case PageType.ViewEditor:
         Comp.current = ViewEditor;
@@ -31,6 +31,10 @@ const Panel = (props: IProps) => {
       default:
         break;
     }
+  });
+
+  useEffect(() => {
+    console.log("test test", Comp.current);
   });
 
   return (
@@ -44,7 +48,10 @@ const Panel = (props: IProps) => {
         backgroundColor: "gray",
       })}
     >
-      {Comp.current ? <Comp.current /> : null}
+      {() => {
+        console.log("test test Comp.current");
+        return Comp.current ? <Comp.current /> : null;
+      }}
     </div>
   );
 };
