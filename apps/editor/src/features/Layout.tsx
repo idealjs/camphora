@@ -1,5 +1,5 @@
 import { LAYOUT_DIRECTION } from "@idealjs/layout-manager";
-import { createState, useEffect } from "@idealjs/sapling";
+import { createProxy, createRef, useEffect } from "@idealjs/sapling";
 
 import Panel from "../components/Panel";
 import Splitter from "../components/Splitter";
@@ -19,25 +19,18 @@ interface IProps {
 
 const Layout = (props: IProps) => {
   const { className } = props;
-  const ref = createState<HTMLDivElement>(null);
-  const layoutRect = createState<{
-    width: number;
-    height: number;
-    left: number;
-    top: number;
-  }>();
+  const ref = createRef<HTMLDivElement>(null);
 
   const updateLayoutRect = () => {
-    if (ref.val != null) {
-      const rect = ref.val.getBoundingClientRect();
+    if (ref.current != null) {
+      const rect = ref.current.getBoundingClientRect();
       if (RootLayout.width !== rect.width || RootLayout.height != rect.height) {
-        layoutRect.val = {
+        updateLayout({
           width: rect.width,
           height: rect.height,
           left: 0,
           top: 0,
-        };
-        updateLayout(layoutRect.val);
+        });
       }
     }
     return requestAnimationFrame(updateLayoutRect);
@@ -58,6 +51,7 @@ const Layout = (props: IProps) => {
     >
       <div>
         {() => {
+          console.log("Test test layouts");
           return panels.val.map((panel) => {
             return <Panel key={panel.id} panelId={panel.id} test-key="panel" />;
           });

@@ -13,11 +13,11 @@ import {
   PanelNode,
   panelNodeToJSON,
 } from "@idealjs/layout-manager";
-import { createState } from "@idealjs/sapling";
+import { createProxy } from "@idealjs/sapling";
 
-export const splitters = createState<ISplitter[]>([]);
-export const layouts = createState<ILayout[]>([]);
-export const panels = createState<IPanel[]>([]);
+export const splitters = createProxy<{ val: ISplitter[] }>({ val: [] });
+export const layouts = createProxy<{ val: ILayout[] }>({ val: [] });
+export const panels = createProxy<{ val: IPanel[] }>({ val: [] });
 
 export const setSplitters = (values: ISplitter[]) => {
   splitters.val = values;
@@ -100,5 +100,3 @@ export const addPanel = (panelNode: PanelNode = new PanelNode()) => {
   );
   updateLayout();
 };
-
-export * from "./menu";

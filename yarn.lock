@@ -1010,12 +1010,20 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@idealjs/eslint-plugin-sapling@npm:^0.1.16":
-  version: 0.1.16
-  resolution: "@idealjs/eslint-plugin-sapling@npm:0.1.16"
+"@idealjs/dnd-core@workspace:^, @idealjs/dnd-core@workspace:packages/dnd-core":
+  version: 0.0.0-use.local
+  resolution: "@idealjs/dnd-core@workspace:packages/dnd-core"
+  dependencies:
+    events: "npm:^3.3.0"
+  languageName: unknown
+  linkType: soft
+
+"@idealjs/eslint-plugin-sapling@npm:^0.1.20":
+  version: 0.1.20
+  resolution: "@idealjs/eslint-plugin-sapling@npm:0.1.20"
   peerDependencies:
     eslint: "*"
-  checksum: f7cb2cbbd5fa412f2fb74d9160fb1ce6bc3e9d515e9168f6b79c13ae318fd83ec476de005a83f6909f61c9ee62dae23a0619e7c485c521ec00562b5db2115605
+  checksum: f9b0448d93b342c5bb5c11b6491c5732385b75510226a49d595223cfe39f83ee39c89b80e454f15ab0d74334301441a35bae1f36efc10bcf6e226cebd5e12027
   languageName: node
   linkType: hard
 
@@ -1028,12 +1036,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@idealjs/sapling@npm:^0.1.16":
-  version: 0.1.16
-  resolution: "@idealjs/sapling@npm:0.1.16"
+"@idealjs/sapling@npm:^0.1.20":
+  version: 0.1.20
+  resolution: "@idealjs/sapling@npm:0.1.20"
   dependencies:
-    csstype: "npm:^3.1.2"
-  checksum: 60b2e4be84a5e53175d6864679a39a8ad63c0fdb5721ff5af924dcf9b190a1211c14de3a8e0a7a0007bd311e74d0444f99d9fac91f3f89832ed79e237588ce35
+    csstype: "npm:^3.1.3"
+  checksum: 4c8235b142af42bd90461ae708d98d7b1997a69177e0b0bfa46220be954974d31f47b000a5576622efdd47183db12974f55129f61b4e41db14fa9e6a288e72b8
   languageName: node
   linkType: hard
 
@@ -1936,40 +1944,6 @@ __metadata:
   version: 2.4.1
   resolution: "@types/normalize-package-data@npm:2.4.1"
   checksum: e87bccbf11f95035c89a132b52b79ce69a1e3652fe55962363063c9c0dae0fe2477ebc585e03a9652adc6f381d24ba5589cc5e51849df4ced3d3e004a7d40ed5
-  languageName: node
-  linkType: hard
-
-"@types/prop-types@npm:*":
-  version: 15.7.11
-  resolution: "@types/prop-types@npm:15.7.11"
-  checksum: 7519ff11d06fbf6b275029fe03fff9ec377b4cb6e864cac34d87d7146c7f5a7560fd164bdc1d2dbe00b60c43713631251af1fd3d34d46c69cd354602bc0c7c54
-  languageName: node
-  linkType: hard
-
-"@types/react-dom@npm:^18":
-  version: 18.2.18
-  resolution: "@types/react-dom@npm:18.2.18"
-  dependencies:
-    "@types/react": "npm:*"
-  checksum: 4ef7725b4cebd4a32e049097ddfdfd855a178e63ead97ab6d3084872e7d6c1acd71aa923488123cd1015f0e0b11489d2b44f674a1df8fe82d7827eabbec6dbf1
-  languageName: node
-  linkType: hard
-
-"@types/react@npm:*, @types/react@npm:^18":
-  version: 18.2.46
-  resolution: "@types/react@npm:18.2.46"
-  dependencies:
-    "@types/prop-types": "npm:*"
-    "@types/scheduler": "npm:*"
-    csstype: "npm:^3.0.2"
-  checksum: 10fb28a5b8504106512ce3b154c45d1ac045c31633786773a29f003b3079b434060368bb56f95ef6c39510835ceec4fb8fdc271d6ca2b9cdd979379cf53f126b
-  languageName: node
-  linkType: hard
-
-"@types/scheduler@npm:*":
-  version: 0.16.8
-  resolution: "@types/scheduler@npm:0.16.8"
-  checksum: 6c091b096daa490093bf30dd7947cd28e5b2cd612ec93448432b33f724b162587fed9309a0acc104d97b69b1d49a0f3fc755a62282054d62975d53d7fd13472d
   languageName: node
   linkType: hard
 
@@ -3332,17 +3306,17 @@ __metadata:
   languageName: node
   linkType: hard
 
-"csstype@npm:^3.0.2, csstype@npm:^3.1.2":
-  version: 3.1.3
-  resolution: "csstype@npm:3.1.3"
-  checksum: f593cce41ff5ade23f44e77521e3a1bcc2c64107041e1bf6c3c32adc5187d0d60983292fda326154d20b01079e24931aa5b08e4467cc488b60bb1e7f6d478ade
-  languageName: node
-  linkType: hard
-
 "csstype@npm:^3.0.7":
   version: 3.1.2
   resolution: "csstype@npm:3.1.2"
   checksum: 1f39c541e9acd9562996d88bc9fb62d1cb234786ef11ed275567d4b2bd82e1ceacde25debc8de3d3b4871ae02c2933fa02614004c97190711caebad6347debc2
+  languageName: node
+  linkType: hard
+
+"csstype@npm:^3.1.2, csstype@npm:^3.1.3":
+  version: 3.1.3
+  resolution: "csstype@npm:3.1.3"
+  checksum: f593cce41ff5ade23f44e77521e3a1bcc2c64107041e1bf6c3c32adc5187d0d60983292fda326154d20b01079e24931aa5b08e4467cc488b60bb1e7f6d478ade
   languageName: node
   linkType: hard
 
@@ -3592,9 +3566,10 @@ __metadata:
   resolution: "editor@workspace:apps/editor"
   dependencies:
     "@idealjs/camphora-styled": "workspace:^"
-    "@idealjs/eslint-plugin-sapling": "npm:^0.1.16"
+    "@idealjs/dnd-core": "workspace:^"
+    "@idealjs/eslint-plugin-sapling": "npm:^0.1.20"
     "@idealjs/layout-manager": "npm:^3.0.0"
-    "@idealjs/sapling": "npm:^0.1.16"
+    "@idealjs/sapling": "npm:^0.1.20"
     "@vanilla-extract/css": "npm:^1.14.0"
     "@vanilla-extract/css-utils": "npm:^0.1.3"
     "@vanilla-extract/vite-plugin": "npm:^3.9.1"
@@ -4509,6 +4484,13 @@ __metadata:
   version: 4.0.7
   resolution: "eventemitter3@npm:4.0.7"
   checksum: 8030029382404942c01d0037079f1b1bc8fed524b5849c237b80549b01e2fc49709e1d0c557fa65ca4498fc9e24cff1475ef7b855121fcc15f9d61f93e282346
+  languageName: node
+  linkType: hard
+
+"events@npm:^3.3.0":
+  version: 3.3.0
+  resolution: "events@npm:3.3.0"
+  checksum: a3d47e285e28d324d7180f1e493961a2bbb4cad6412090e4dec114f4db1f5b560c7696ee8e758f55e23913ede856e3689cd3aa9ae13c56b5d8314cd3b3ddd1be
   languageName: node
   linkType: hard
 
@@ -9833,8 +9815,6 @@ __metadata:
   dependencies:
     "@idealjs/camphora-styled": "workspace:^"
     "@types/node": "npm:^20"
-    "@types/react": "npm:^18"
-    "@types/react-dom": "npm:^18"
     "@vanilla-extract/css": "npm:^1.14.0"
     "@vanilla-extract/next-plugin": "npm:^2.3.2"
     clsx: "npm:^2.0.0"

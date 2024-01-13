@@ -4,11 +4,10 @@ import {
   focusAction,
   focusReaction,
 } from "@idealjs/camphora-styled";
-import { createState } from "@idealjs/sapling";
+import { createRef } from "@idealjs/sapling";
 import clsx from "clsx";
 
 import { popover, popoverBottom, popoverContent } from "../../popover.css";
-import { showMenu } from "../store/layout";
 import MenuItem, { IMenuItem } from "./MenuItem";
 import { menu, menuCard, menuLabel } from "./style.css";
 
@@ -16,9 +15,11 @@ interface IProps {
   menuItem: IMenuItem;
 }
 
+export const showMenu = createRef<HTMLDivElement | null>(null);
+
 const Menu = (props: IProps) => {
   const { menuItem } = props;
-  const ref = createState<HTMLDivElement>(null);
+  const ref = createRef<HTMLDivElement>(null);
 
   return (
     <div
@@ -26,24 +27,23 @@ const Menu = (props: IProps) => {
       tabIndex={0}
       className={() => clsx(menu, popover, focusAction)}
       onBlur={() => {
-        showMenu.val = null;
+        showMenu.current = null;
       }}
     >
       <div
         className={menuLabel}
         onClick={() => {
-          console.log("Test test Menu");
-          if (showMenu.val == ref.val) {
-            ref.val?.blur();
-            showMenu.val = null;
+          if (showMenu.current == ref.current) {
+            ref.current?.blur();
+            showMenu.current = null;
             return;
           }
-          showMenu.val = ref.val;
+          showMenu.current = ref.current;
         }}
         onMouseEnter={() => {
-          if (showMenu.val != null) {
-            ref.val?.focus();
-            showMenu.val = ref.val;
+          if (showMenu.current != null) {
+            ref.current?.focus();
+            showMenu.current = ref.current;
           }
         }}
       >

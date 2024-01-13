@@ -1,6 +1,6 @@
-import { createState } from "@idealjs/sapling";
+import { createProxy } from "@idealjs/sapling";
 
-export const workspace = createState<{
+export const workspace = createProxy<{
   opfsRoot: FileSystemDirectoryHandle | null;
 }>({
   opfsRoot: null,

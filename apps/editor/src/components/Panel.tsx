@@ -1,4 +1,11 @@
-import { derive } from "@idealjs/sapling";
+import {
+  createElement,
+  createRef,
+  derive,
+  effect,
+  useEffect,
+} from "@idealjs/sapling";
+import { JSX } from "@idealjs/sapling/jsx-runtime";
 
 import { panels } from "../features/store/layout";
 import ViewEditor from "./ViewEditor";
@@ -15,10 +22,12 @@ const Panel = (props: IProps) => {
   const { panelId } = props;
   const panel = derive(() => panels.val.find((v) => v.id === panelId));
 
-  const Comp = derive(() => {
+  const Comp = createRef<() => JSX.Element>();
+  effect(() => {
     switch (panel.val?.page) {
       case PageType.ViewEditor:
-        return ViewEditor;
+        Comp.current = ViewEditor;
+        break;
       default:
         break;
     }
@@ -35,9 +44,7 @@ const Panel = (props: IProps) => {
         backgroundColor: "gray",
       })}
     >
-      {() => {
-        return Comp.val ? <Comp.val /> : null;
-      }}
+      {Comp.current ? <Comp.current /> : null}
     </div>
   );
 };
