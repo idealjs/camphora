@@ -1018,12 +1018,12 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@idealjs/eslint-plugin-sapling@npm:^0.1.20":
-  version: 0.1.20
-  resolution: "@idealjs/eslint-plugin-sapling@npm:0.1.20"
+"@idealjs/eslint-plugin-sapling@npm:^0.1.21":
+  version: 0.1.21
+  resolution: "@idealjs/eslint-plugin-sapling@npm:0.1.21"
   peerDependencies:
     eslint: "*"
-  checksum: f9b0448d93b342c5bb5c11b6491c5732385b75510226a49d595223cfe39f83ee39c89b80e454f15ab0d74334301441a35bae1f36efc10bcf6e226cebd5e12027
+  checksum: 5a680d411ae5e63ce6d711ca70a9e561abc866598bcba8801e3f28539c6f07189bf9fbd82fc9d007200f43ce89e0ab613020ba1aef1600c1c6990f3a6b0d8bcb
   languageName: node
   linkType: hard
 
@@ -1036,12 +1036,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@idealjs/sapling@npm:^0.1.20":
-  version: 0.1.20
-  resolution: "@idealjs/sapling@npm:0.1.20"
+"@idealjs/sapling@npm:^0.1.21":
+  version: 0.1.21
+  resolution: "@idealjs/sapling@npm:0.1.21"
   dependencies:
     csstype: "npm:^3.1.3"
-  checksum: 4c8235b142af42bd90461ae708d98d7b1997a69177e0b0bfa46220be954974d31f47b000a5576622efdd47183db12974f55129f61b4e41db14fa9e6a288e72b8
+  checksum: 515edcae9383ee766b63a508fb0a4bd1524bfd27621c9851a2f97ad5c8f56d38905e4d533be518bb1176939565d72b79228cf9528f6c6aa31a3ff8cae948573f
   languageName: node
   linkType: hard
 
@@ -3567,9 +3567,9 @@ __metadata:
   dependencies:
     "@idealjs/camphora-styled": "workspace:^"
     "@idealjs/dnd-core": "workspace:^"
-    "@idealjs/eslint-plugin-sapling": "npm:^0.1.20"
+    "@idealjs/eslint-plugin-sapling": "npm:^0.1.21"
     "@idealjs/layout-manager": "npm:^3.0.0"
-    "@idealjs/sapling": "npm:^0.1.20"
+    "@idealjs/sapling": "npm:^0.1.21"
     "@vanilla-extract/css": "npm:^1.14.0"
     "@vanilla-extract/css-utils": "npm:^0.1.3"
     "@vanilla-extract/vite-plugin": "npm:^3.9.1"
