@@ -11,15 +11,12 @@ const Welcome = (props: IProps) => {
   return (
     <div className={className}>
       {() => {
-        if (workspace.val.opfsRoot == null) {
+        if (workspace.opfsRoot == null) {
           return (
             <div
               onClick={async () => {
-                console.log("test test", workspace.val);
                 const val = await navigator.storage.getDirectory();
-                console.log("test test", val);
-
-                workspace.val.opfsRoot = val;
+                workspace.opfsRoot = val;
               }}
               className={overlay}
             >

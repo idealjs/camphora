@@ -68,17 +68,7 @@ const createLayout = (
 export const { root: RootLayout, updateLayout } = createLayout(
   new LayoutNode({
     direction: LAYOUT_DIRECTION.ROOT,
-    layouts: [
-      {
-        direction: LAYOUT_DIRECTION.ROW,
-        layouts: [
-          {
-            direction: LAYOUT_DIRECTION.TAB,
-            panels: [panelNodeToJSON(new PanelNode())],
-          },
-        ],
-      },
-    ],
+    layouts: [],
   })
 );
 

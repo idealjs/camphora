@@ -1,8 +1,8 @@
-import { derive, JSXChildren } from "@idealjs/sapling";
+import { derive, SaplingNode } from "@idealjs/sapling";
 
 import { layouts } from "../features/store/layout";
 
-const TitleBar = (props: { layoutId: string; children: JSXChildren }) => {
+const TitleBar = (props: { layoutId: string; children: SaplingNode }) => {
   const { children, layoutId } = props;
   const layout = derive(() => layouts.val.find((v) => v.id === layoutId));
 

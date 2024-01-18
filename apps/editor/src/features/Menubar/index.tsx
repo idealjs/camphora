@@ -1,6 +1,9 @@
+import { menu, menuVertical } from "@idealjs/camphora-styled";
 import { PanelNode } from "@idealjs/layout-manager";
+import clsx from "clsx";
 
 import { PageType } from "../../components/Panel";
+import { newFileDialogRef } from "../NewFileModal";
 import { addPanel } from "../store/layout";
 import Menu from "./Menu";
 import { IMenuItem } from "./MenuItem";
@@ -10,6 +13,12 @@ const menuItems: IMenuItem[] = [
   {
     label: "File",
     subMenus: [
+      {
+        label: "New File",
+        onClick(event) {
+          newFileDialogRef.current?.showModal();
+        },
+      },
       {
         label: "Open Recent",
         subMenus: [{ label: "abc" }, { label: "123" }, { label: "xxx" }],
@@ -21,7 +30,7 @@ const menuItems: IMenuItem[] = [
     subMenus: [{ label: "Undo" }, { label: "Redo" }],
   },
   {
-    label: "Layout",
+    label: "View",
     subMenus: [
       {
         label: "Open Layout",
@@ -47,11 +56,11 @@ const menuItems: IMenuItem[] = [
 
 const Menubar = () => {
   return (
-    <div className={menuBar}>
+    <ul className={clsx(menu, menuVertical, menuBar)}>
       {menuItems.map((menuItem) => {
         return <Menu key={menuItem.label} menuItem={menuItem} />;
       })}
-    </div>
+    </ul>
   );
 };
 

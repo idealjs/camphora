@@ -2,6 +2,8 @@ export * from "./actions";
 export * from "./atoms.css";
 export * from "./button.css";
 export * from "./card.css";
+export * from "./menu.css";
+export * from "./modal.css";
 export * from "./navbar.css";
 export * from "./previewBlock.css";
 export * from "./theme.css";

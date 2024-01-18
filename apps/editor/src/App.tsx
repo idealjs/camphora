@@ -11,8 +11,14 @@ import clsx from "clsx";
 import { appStyle } from "./App.css";
 import Layout from "./features/Layout";
 import Menubar from "./features/Menubar";
+import NewFileDialog from "./features/NewFileModal";
 
 const App = () => {
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape") {
+      console.log("test test");
+    }
+  });
   return (
     <div
       style={{
@@ -29,6 +35,7 @@ const App = () => {
         {/* <Welcome className={runtimeComponent} /> */}
         <Layout className={runtimeComponent} />
       </div>
+      <NewFileDialog />
     </div>
   );
 };

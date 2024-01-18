@@ -51,7 +51,6 @@ const Layout = (props: IProps) => {
     >
       <div>
         {() => {
-          console.log("Test test layouts");
           return panels.val.map((panel) => {
             return <Panel key={panel.id} panelId={panel.id} test-key="panel" />;
           });

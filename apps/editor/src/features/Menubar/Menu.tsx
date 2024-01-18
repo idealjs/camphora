@@ -1,31 +1,30 @@
-import {
-  card,
-  cardShadow,
-  focusAction,
-  focusReaction,
-} from "@idealjs/camphora-styled";
+import { card, cardShadow, menu } from "@idealjs/camphora-styled";
 import { createRef } from "@idealjs/sapling";
 import clsx from "clsx";
 
 import { popover, popoverBottom, popoverContent } from "../../popover.css";
 import MenuItem, { IMenuItem } from "./MenuItem";
-import { menu, menuCard, menuLabel } from "./style.css";
+import { menuCard, menuLabel, subMenus } from "./style.css";
 
 interface IProps {
   menuItem: IMenuItem;
 }
 
-export const showMenu = createRef<HTMLDivElement | null>(null);
+export const showMenu = createRef<HTMLLIElement | null>(null);
 
 const Menu = (props: IProps) => {
   const { menuItem } = props;
-  const ref = createRef<HTMLDivElement>(null);
+  const ref = createRef<HTMLLIElement>(null);
 
   return (
-    <div
+    <li
       ref={ref}
       tabIndex={0}
-      className={() => clsx(menu, popover, focusAction)}
+      className={() =>
+        clsx(menu, popover, {
+          showSubMenus: showMenu.current == ref.current,
+        })
+      }
       onBlur={() => {
         showMenu.current = null;
       }}
@@ -33,7 +32,7 @@ const Menu = (props: IProps) => {
       <div
         className={menuLabel}
         onClick={() => {
-          if (showMenu.current == ref.current) {
+          if (showMenu.current === ref.current) {
             ref.current?.blur();
             showMenu.current = null;
             return;
@@ -49,14 +48,15 @@ const Menu = (props: IProps) => {
       >
         {menuItem.label}
       </div>
-      <div
+      <ul
         className={clsx(
+          menu,
           menuCard,
+          subMenus,
           card,
           cardShadow,
           popoverContent,
-          popoverBottom,
-          focusReaction
+          popoverBottom
         )}
       >
         {menuItem.subMenus != null
@@ -64,8 +64,8 @@ const Menu = (props: IProps) => {
               return <MenuItem key={menu.label} item={menu} />;
             })
           : null}
-      </div>
-    </div>
+      </ul>
+    </li>
   );
 };
 

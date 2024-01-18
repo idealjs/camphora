@@ -1,6 +1,10 @@
 import { createTheme, createThemeContract } from "@vanilla-extract/css";
 
 export const vars = createThemeContract({
+  zIndex: {
+    menu: null,
+    dialog: null,
+  },
   colors: {
     base: {
       100: null,
@@ -72,6 +76,10 @@ export const vars = createThemeContract({
 });
 
 export const lightTheme = createTheme(vars, {
+  zIndex: {
+    menu: "1",
+    dialog: "10",
+  },
   colors: {
     base: {
       100: "hsl(240 20% 99%)",
