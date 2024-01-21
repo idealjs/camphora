@@ -79,12 +79,15 @@ const rules = [
   { part: MASK_PART.CENTER, max: 3 },
 ];
 
-export const addPanel = (panelNode: PanelNode = new PanelNode()) => {
+export const addPanel = (
+  panelNode: PanelNode = new PanelNode(),
+  mask = MASK_PART.CENTER
+) => {
   const target = findNodeByRules(RootLayout, rules);
   RootLayout.doAction(
     createAddPanelAction({
       panelNode: panelNode,
-      mask: target?.rule.part ?? MASK_PART.CENTER,
+      mask: target?.rule.part ?? mask,
       target: target?.layoutNode ?? RootLayout,
     })
   );

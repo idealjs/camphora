@@ -9,9 +9,11 @@ import {
 import clsx from "clsx";
 
 import { appStyle } from "./App.css";
+import Menubar from "./components/Menubar";
+import { menuItems } from "./configs";
 import Layout from "./features/Layout";
-import Menubar from "./features/Menubar";
 import NewFileDialog from "./features/NewFileModal";
+import Welcome from "./features/Welcome";
 
 const App = () => {
   document.addEventListener("keydown", (e) => {
@@ -30,9 +32,9 @@ const App = () => {
       }}
       className={clsx(screen, relative, appStyle, lightTheme)}
     >
-      <Menubar />
+      <Menubar menuItems={menuItems} />
       <div className={clsx(full, runtimeContainer)}>
-        {/* <Welcome className={runtimeComponent} /> */}
+        <Welcome className={runtimeComponent} />
         <Layout className={runtimeComponent} />
       </div>
       <NewFileDialog />

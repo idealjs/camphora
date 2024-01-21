@@ -1,21 +1,17 @@
-import {
-  createElement,
-  createRef,
-  derive,
-  effect,
-  useEffect,
-} from "@idealjs/sapling";
+import { createRef, derive, useEffect } from "@idealjs/sapling";
 import { JSX } from "@idealjs/sapling/jsx-runtime";
 
 import { panels } from "../features/store/layout";
+import FileExplorer from "./FileExplorer";
 import ViewEditor from "./ViewEditor";
 
 interface IProps {
   panelId: string;
 }
 
-export enum PageType {
-  ViewEditor = "ViewEditor",
+export enum PAGE_TYPE {
+  VIEW_EDITOR = "VIEW_EDITOR",
+  FILE_EXPLORER = "FILE_EXPLORER",
 }
 
 const Panel = (props: IProps) => {
@@ -25,16 +21,15 @@ const Panel = (props: IProps) => {
   const Comp = createRef<() => JSX.Element>();
   useEffect(() => {
     switch (panel.val?.page) {
-      case PageType.ViewEditor:
+      case PAGE_TYPE.VIEW_EDITOR:
         Comp.current = ViewEditor;
+        break;
+      case PAGE_TYPE.FILE_EXPLORER:
+        Comp.current = FileExplorer;
         break;
       default:
         break;
     }
-  });
-
-  useEffect(() => {
-    console.log("test test", Comp.current);
   });
 
   return (
@@ -49,7 +44,6 @@ const Panel = (props: IProps) => {
       })}
     >
       {() => {
-        console.log("test test Comp.current");
         return Comp.current ? <Comp.current /> : null;
       }}
     </div>

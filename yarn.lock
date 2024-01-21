@@ -1018,12 +1018,12 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@idealjs/eslint-plugin-sapling@npm:^0.1.21":
-  version: 0.1.21
-  resolution: "@idealjs/eslint-plugin-sapling@npm:0.1.21"
+"@idealjs/eslint-plugin-sapling@npm:^0.1.23":
+  version: 0.1.23
+  resolution: "@idealjs/eslint-plugin-sapling@npm:0.1.23"
   peerDependencies:
     eslint: "*"
-  checksum: 5a680d411ae5e63ce6d711ca70a9e561abc866598bcba8801e3f28539c6f07189bf9fbd82fc9d007200f43ce89e0ab613020ba1aef1600c1c6990f3a6b0d8bcb
+  checksum: f57338b7b26197d9a9a5ede1609a09ea2f34e2708b2a11a8552ff54b1c2eaa87fd84c9838fd59e3b906c1c905f579065c088af6919bcb0c838a6e8d11d3ce460
   languageName: node
   linkType: hard
 
@@ -1036,12 +1036,20 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@idealjs/sapling@npm:^0.1.21":
-  version: 0.1.21
-  resolution: "@idealjs/sapling@npm:0.1.21"
+"@idealjs/sapling-reactive@npm:^0.1.23":
+  version: 0.1.23
+  resolution: "@idealjs/sapling-reactive@npm:0.1.23"
+  checksum: bb5b6aedb3f2a2c32340aa18d2f3d5e43af10d81e1487ec9040e36b9679d1461cc50f001244cd392d94d3add36cc9e24d022a3bf0e1772ad2662cabd5ef22566
+  languageName: node
+  linkType: hard
+
+"@idealjs/sapling@npm:^0.1.23":
+  version: 0.1.23
+  resolution: "@idealjs/sapling@npm:0.1.23"
   dependencies:
+    "@idealjs/sapling-reactive": "npm:^0.1.23"
     csstype: "npm:^3.1.3"
-  checksum: 515edcae9383ee766b63a508fb0a4bd1524bfd27621c9851a2f97ad5c8f56d38905e4d533be518bb1176939565d72b79228cf9528f6c6aa31a3ff8cae948573f
+  checksum: b2165a9507f047df7e913eeb3530094bcebbdf997b0cd366cac80b9902be2e49ff4ed70a8baa44952e45dea1f246b19675e80cb36698ea5164397dac87250df9
   languageName: node
   linkType: hard
 
@@ -1914,6 +1922,22 @@ __metadata:
   version: 0.0.29
   resolution: "@types/json5@npm:0.0.29"
   checksum: 4e5aed58cabb2bbf6f725da13421aa50a49abb6bc17bfab6c31b8774b073fa7b50d557c61f961a09a85f6056151190f8ac95f13f5b48136ba5841f7d4484ec56
+  languageName: node
+  linkType: hard
+
+"@types/lodash.debounce@npm:^4.0.9":
+  version: 4.0.9
+  resolution: "@types/lodash.debounce@npm:4.0.9"
+  dependencies:
+    "@types/lodash": "npm:*"
+  checksum: 8183a152e01928e3b97ca773f6ae6038b8695e76493ba8bf6b743ec143948a62294fbc9d49fa4a78b52265b3ba4892ef57534e0c13d04aa0f111671b5a944feb
+  languageName: node
+  linkType: hard
+
+"@types/lodash@npm:*":
+  version: 4.14.202
+  resolution: "@types/lodash@npm:4.14.202"
+  checksum: 1bb9760a5b1dda120132c4b987330d67979c95dbc22612678682cd61b00302e190f4207228f3728580059cdab5582362262e3819aea59960c1017bd2b9fb26f6
   languageName: node
   linkType: hard
 
@@ -3567,14 +3591,16 @@ __metadata:
   dependencies:
     "@idealjs/camphora-styled": "workspace:^"
     "@idealjs/dnd-core": "workspace:^"
-    "@idealjs/eslint-plugin-sapling": "npm:^0.1.21"
+    "@idealjs/eslint-plugin-sapling": "npm:^0.1.23"
     "@idealjs/layout-manager": "npm:^3.0.0"
-    "@idealjs/sapling": "npm:^0.1.21"
+    "@idealjs/sapling": "npm:^0.1.23"
+    "@types/lodash.debounce": "npm:^4.0.9"
     "@vanilla-extract/css": "npm:^1.14.0"
     "@vanilla-extract/css-utils": "npm:^0.1.3"
     "@vanilla-extract/vite-plugin": "npm:^3.9.1"
     clsx: "npm:^2.0.0"
     csstype: "npm:^3.1.2"
+    lodash.debounce: "npm:^4.0.8"
     nanoid: "npm:^5.0.3"
     typescript: "npm:^5.3.3"
     vite: "npm:^5.0.10"
@@ -6427,6 +6453,13 @@ __metadata:
   dependencies:
     p-locate: "npm:^5.0.0"
   checksum: 72eb661788a0368c099a184c59d2fee760b3831c9c1c33955e8a19ae4a21b4116e53fa736dc086cdeb9fce9f7cc508f2f92d2d3aae516f133e16a2bb59a39f5a
+  languageName: node
+  linkType: hard
+
+"lodash.debounce@npm:^4.0.8":
+  version: 4.0.8
+  resolution: "lodash.debounce@npm:4.0.8"
+  checksum: cd0b2819786e6e80cb9f5cda26b1a8fc073daaf04e48d4cb462fa4663ec9adb3a5387aa22d7129e48eed1afa05b482e2a6b79bfc99b86886364449500cbb00fd
   languageName: node
   linkType: hard
 

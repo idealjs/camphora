@@ -1,5 +1,16 @@
-import { overlay } from "@idealjs/camphora-styled";
+import {
+  button,
+  buttonPrimary,
+  card,
+  cardShadow,
+  modal,
+  overlay,
+} from "@idealjs/camphora-styled";
+import { createRef, useEffect } from "@idealjs/sapling";
+import clsx from "clsx";
+import debounce from "lodash.debounce";
 
+import { modalCard } from "../NewFileModal/style.css";
 import { workspace } from "../store/workspace";
 
 interface IProps {
@@ -8,20 +19,40 @@ interface IProps {
 
 const Welcome = (props: IProps) => {
   const { className } = props;
+  const ref = createRef<HTMLDialogElement>(null);
+  useEffect(
+    debounce(() => {
+      if (ref.current != null) {
+        ref.current.showModal();
+      }
+    })
+  );
   return (
     <div className={className}>
       {() => {
         if (workspace.opfsRoot == null) {
           return (
-            <div
-              onClick={async () => {
-                const val = await navigator.storage.getDirectory();
-                workspace.opfsRoot = val;
-              }}
-              className={overlay}
+            <dialog
+              ref={ref}
+              className={clsx(modal, modalCard, card, cardShadow)}
             >
-              no opfsRoot
-            </div>
+              <div>Welcome, Please Create Your Workspace</div>
+              <button
+                className={clsx(button, buttonPrimary)}
+                onClick={async () => {
+                  const val = await navigator.storage.getDirectory();
+                  workspace.opfsRoot = val;
+                }}
+              >
+                create workspace
+              </button>
+              <div>
+                project powerd by{" "}
+                <a href="https://github.com/idealjs/sapling">
+                  @idealjs/sapling
+                </a>
+              </div>
+            </dialog>
           );
         }
         return <div>has opfsRoot</div>;

@@ -59,7 +59,6 @@ export const components = createProxy<{ val: IComponent[] }>({
 });
 
 const ViewEditor = () => {
-  console.log("test test ViewEditor");
   return (
     <div className={full} style={{ marginTop: "24px" }}>
       <ComponentEditor componentId={"a"} />
