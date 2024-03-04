@@ -21,6 +21,7 @@ export const menuItem = style({
     ["&:hover"]: {
       backgroundColor: vars.colors.secondary.focus,
       borderRadius: vars.rounded.card,
+      cursor: "pointer",
     },
   },
 });

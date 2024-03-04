@@ -47,7 +47,7 @@ const Welcome = (props: IProps) => {
                 create workspace
               </button>
               <div>
-                project powerd by{" "}
+                <span style={{ marginRight: "8px" }}>Project Powerd by</span>
                 <a href="https://github.com/idealjs/sapling">
                   @idealjs/sapling
                 </a>
