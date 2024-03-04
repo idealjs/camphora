@@ -1,20 +1,32 @@
 {
-  // This file is not used in compilation. It is here just for a nice editor experience.
   "extends": "../../tsconfig.base.json",
   "compilerOptions": {
-    "jsx": "react",
-    "types": [
-      "node",
-      "@docusaurus/module-type-aliases",
-      "@docusaurus/theme-classic"
+    "noEmit": true,
+    "jsx": "preserve",
+    "incremental": true,
+    "plugins": [
+      {
+        "name": "next"
+      }
     ],
-    "baseUrl": ".",
     "paths": {
-      "@site/*": ["./*"],
+      "@/*": ["./*"],
       "@idealjs/camphora-styled": [
         "../../packages/camphora-styled/src/index.ts"
       ]
     }
   },
-  "include": ["**/*.tsx", "**/*.ts", "../../packages/camphora-styled/src"]
+  "references": [
+    {
+      "path": "../../packages/camphora-styled"
+    }
+  ],
+  "include": [
+    "next-env.d.ts",
+    "**/*.ts",
+    "**/*.tsx",
+    ".next/types/**/*.ts",
+    "../../packages/camphora-styled/src"
+  ],
+  "exclude": ["node_modules"]
 }

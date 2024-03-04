@@ -1,0 +1,24 @@
+{
+  "extends": "../../tsconfig.base.json",
+  "compilerOptions": {
+    "outDir": "dist",
+    "jsx": "react-jsx",
+    "jsxImportSource": "@idealjs/sapling",
+    "paths": {
+      "@idealjs/camphora-styled": [
+        "../../packages/camphora-styled/src/index.ts"
+      ],
+      "@idealjs/dnd-core": ["../../packages/dnd-core/src/index.ts"]
+    }
+  },
+  "references": [
+    {
+      "path": "../../packages/camphora-styled"
+    },
+    {
+      "path": "../../packages/dnd-core"
+    }
+  ],
+  "include": ["src"],
+  "exclude": ["node_modules"]
+}
