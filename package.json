@@ -7,13 +7,15 @@
   "repository": "git@github.com:idealjs/camphora.git",
   "license": "MIT",
   "scripts": {
-    "lint": "eslint . --ext js,jsx,ts,tsx --fix"
+    "lint": "yarn workspaces foreach -A run lint"
   },
   "devDependencies": {
-    "eslint": "^8.54.0",
-    "eslint-config-react-app": "^7.0.1",
-    "eslint-plugin-simple-import-sort": "^10.0.0",
-    "lerna": "^8.0.0",
+    "@typescript-eslint/eslint-plugin": "^7.7.0",
+    "@typescript-eslint/parser": "^7.7.0",
+    "eslint": "^9.0.0",
+    "eslint-config-next": "^14.2.1",
+    "eslint-plugin-simple-import-sort": "^12.1.0",
+    "lerna": "^8.1.2",
     "lerna-update-wizard": "^1.1.2"
   },
   "packageManager": "yarn@4.0.2"

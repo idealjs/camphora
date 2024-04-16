@@ -3,5 +3,5 @@
   "buildCommand": "yarn workspace website build",
   "installCommand": "yarn install --immutable",
   "framework": "docusaurus-2",
-  "outputDirectory": "./apps/website/build"
+  "outputDirectory": "./apps/website/.next"
 }
