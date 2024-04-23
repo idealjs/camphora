@@ -16,7 +16,8 @@
     "eslint-config-next": "^14.2.1",
     "eslint-plugin-simple-import-sort": "^12.1.0",
     "lerna": "^8.1.2",
-    "lerna-update-wizard": "^1.1.2"
+    "lerna-update-wizard": "^1.1.2",
+    "vercel": "^34.1.1"
   },
   "packageManager": "yarn@4.0.2"
 }
