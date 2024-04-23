@@ -12,9 +12,8 @@
   },
   "license": "MIT",
   "scripts": {
-    "build": "rollup -c rollup.config.js",
-    "typings": "tsc -v && tsc -b -v",
-    "prepack": "rimraf dist && yarn typings && yarn build"
+    "build": "tsc -v && tsc -b -v",
+    "prepack": "rimraf dist && yarn build"
   },
   "devDependencies": {
     "@vanilla-extract/css": "^1.14.2",
