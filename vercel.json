@@ -3,5 +3,6 @@
   "buildCommand": "yarn workspace website build",
   "installCommand": "yarn install --immutable",
   "framework": "nextjs",
-  "outputDirectory": "./apps/website/.next"
+  "outputDirectory": "./apps/website/.next",
+  "devCommand": "yarn workspace website dev"
 }
