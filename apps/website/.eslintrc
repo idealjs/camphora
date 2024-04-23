@@ -1,12 +1,5 @@
 {
   "extends": ["next/core-web-vitals"],
-  "parserOptions": {
-    "babelOptions": {
-      "parserOpts": {
-        "plugins": ["importAssertions"]
-      }
-    }
-  },
   "plugins": ["simple-import-sort"],
   "rules": {
     "quotes": [
