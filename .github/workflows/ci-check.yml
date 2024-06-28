@@ -21,10 +21,10 @@ jobs:
         with:
           app_id: ${{ secrets.IDEALJS_BOT_APP_ID }}
           private_key: ${{ secrets.IDEALJS_BOT_PRIVATE_KEY }}
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
         with:
           token: ${{ steps.generate_token.outputs.token }}
-      - uses: actions/setup-node@v3
+      - uses: actions/setup-node@v4
         with:
           node-version: 18
           cache: yarn
@@ -32,14 +32,14 @@ jobs:
         run: yarn install --immutable
       - name: Install Playwright Browsers
         run: yarn workspace website playwright install --with-deps
-      - name: Update Playwright Snapshot
-        run: yarn workspace website test:e2e -u
+      - name: Update Vitest Snapshot
+        run: yarn workspace website test -u
       - uses: stefanzweifel/git-auto-commit-action@v4
         with:
           commit_message: "chore: update image snapshot"
-      - name: Upload playwright-report
-        uses: actions/upload-artifact@v3
-        if: always()
-        with:
-          path: apps/website/playwright-report/
-          retention-days: 30
+      # - name: Upload playwright-report
+      #   uses: actions/upload-artifact@v3
+      #   if: always()
+      #   with:
+      #     path: apps/website/playwright-report/
+      #     retention-days: 30

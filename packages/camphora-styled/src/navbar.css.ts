@@ -1,25 +1,24 @@
-import { globalStyle, style } from "@vanilla-extract/css";
+import { style } from "@vanilla-extract/css";
 
 export const navbar = style({
+  position: "sticky",
+  top: "0px",
+  padding: "8px",
   display: "flex",
   alignItems: "center",
+  gap: "8px",
 });
 
-globalStyle(`${navbar} > *`, {
-  display: "inline-flex",
-  alignItems: "center",
-});
-
-export const navStart = style({
+export const navbarStart = style({
   width: "50%",
   justifyContent: "flex-start",
 });
 
-export const navEnd = style({
+export const navbarEnd = style({
   width: "50%",
   justifyContent: "flex-end",
 });
 
-export const navCenter = style({
+export const navbarCenter = style({
   flexShrink: 0,
 });

@@ -16,6 +16,7 @@
       {
         "enableDangerousAutofixThisMayCauseInfiniteLoops": true
       }
-    ]
+    ],
+    "max-lines": ["warn", 200]
   }
 }
