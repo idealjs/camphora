@@ -29,7 +29,7 @@ export const tooltip = style({
       zIndex: 1,
     },
     "&:after": {
-      content: "\"\"",
+      content: '""',
       opacity: 0,
       visibility: "hidden",
       transition: "opacity 0.2s, visibility 0.2s",
@@ -43,7 +43,6 @@ export const tooltip = style({
       visibility: "visible",
     },
 
-    // tooltipTop
     [`&${tooltipTop}:before`]: {
       bottom: "100%",
       left: "50%",
@@ -60,7 +59,6 @@ export const tooltip = style({
       borderLeft: "6px solid transparent",
     },
 
-    // tooltipBottom
     [`&${tooltipBottom}:before`]: {
       top: "100%",
       left: "50%",
@@ -76,8 +74,7 @@ export const tooltip = style({
       borderRight: "6px solid transparent",
       borderLeft: "6px solid transparent",
     },
-    
-    // tooltipLeft
+
     [`&${tooltipLeft}:before`]: {
       right: "100%",
       top: "50%",
@@ -93,8 +90,7 @@ export const tooltip = style({
       borderTop: "6px solid transparent",
       borderBottom: "6px solid transparent",
     },
-    
-    // tooltipRight
+
     [`&${tooltipRight}:before`]: {
       left: "100%",
       top: "50%",

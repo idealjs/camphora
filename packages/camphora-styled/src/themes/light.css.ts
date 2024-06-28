@@ -1,77 +1,8 @@
-import { createTheme, createThemeContract } from "@vanilla-extract/css";
+import { createTheme } from "@vanilla-extract/css";
 
-export const vars = createThemeContract({
-  colors: {
-    base: {
-      100: null,
-      200: null,
-      300: null,
-      content: null,
-    },
-    primary: {
-      bg: null,
-      focus: null,
-      content: null,
-    },
-    secondary: {
-      bg: null,
-      focus: null,
-      content: null,
-    },
-    accent: {
-      bg: null,
-      focus: null,
-      content: null,
-    },
-    neutral: {
-      bg: null,
-      focus: null,
-      content: null,
-    },
-    info: {
-      bg: null,
-      content: null,
-    },
-    success: {
-      bg: null,
-      content: null,
-    },
-    warning: {
-      bg: null,
-      content: null,
-    },
-    error: {
-      bg: null,
-      content: null,
-    },
-  },
-  opacity: {
-    btn: null,
-  },
-  animation: {
-    btn: null,
-    drawer: null,
-    popover: null,
-  },
-  rounded: {
-    btn: null,
-    card: null,
-  },
-  padding: {
-    card: null,
-    menuLabel: null,
-    menuBar: null,
-  },
-  size: {
-    card: {
-      small: null,
-      medium: null,
-      large: null,
-    },
-  },
-});
+import { vars } from "./contract.css";
 
-export const lightTheme = createTheme(vars, {
+export const light = createTheme(vars, {
   colors: {
     base: {
       100: "hsl(240 20% 99%)",
@@ -122,7 +53,7 @@ export const lightTheme = createTheme(vars, {
   animation: {
     btn: "0.25s",
     drawer: "0.3s",
-    popover: "0.1s",
+    dropdown: "0.1s",
   },
   rounded: {
     btn: "8px",
@@ -133,11 +64,33 @@ export const lightTheme = createTheme(vars, {
     menuLabel: "2px 4px",
     menuBar: "4px 2px",
   },
-  size: {
+  width: {
     card: {
-      small: "256px",
-      medium: "512px",
-      large: "1024px",
+      "extra-small": "144px",
+      small: "192px",
+      medium: "256px",
+      large: "512px",
+    },
+    drawerMenu: {
+      small: "100px",
+      medium: "200px",
+      large: "300px",
+    },
+  },
+  height: {
+    input: {
+      "extra-small": "24px",
+      small: "32px",
+      medium: "48px",
+      large: "64px",
+    },
+  },
+  lineHeight: {
+    input: {
+      "extra-small": "20px",
+      small: "24px",
+      medium: "28px",
+      large: "36px",
     },
   },
 });
