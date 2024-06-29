@@ -17,7 +17,7 @@ jobs:
     steps:
       - name: Generate a token
         id: generate_token
-        uses: tibdex/github-app-token@b62528385c34dbc9f38e5f4225ac829252d1ea92
+        uses: tibdex/github-app-token@v2
         with:
           app_id: ${{ secrets.IDEALJS_BOT_APP_ID }}
           private_key: ${{ secrets.IDEALJS_BOT_PRIVATE_KEY }}
@@ -34,7 +34,7 @@ jobs:
         run: yarn workspace website playwright install --with-deps
       - name: Update Vitest Snapshot
         run: yarn workspace website test -u
-      - uses: stefanzweifel/git-auto-commit-action@v4
+      - uses: stefanzweifel/git-auto-commit-action@v5
         with:
           commit_message: "chore: update image snapshot"
       # - name: Upload playwright-report
