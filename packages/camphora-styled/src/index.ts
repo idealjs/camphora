@@ -7,5 +7,6 @@ export * from "./interactive.css";
 export * from "./menu.css";
 export * from "./navbar.css";
 export * from "./paper.css";
+export * from "./tabs.css";
 export * from "./themes";
 export * from "./tooltip.css";
