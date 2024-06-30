@@ -13,6 +13,7 @@ interface IProps {
 
 export const DrawerSide = (props: PropsWithChildren<IProps>) => {
   const { children, drawerId, overlay } = props;
+
   return (
     <div className={drawerSide}>
       {overlay ?? <label htmlFor={drawerId} className={drawerOverlay} />}

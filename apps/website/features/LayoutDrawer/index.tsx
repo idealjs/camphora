@@ -41,7 +41,7 @@ const LayoutDrawer = (props: PropsWithChildren<IProps>) => {
           <li style={{ height: "8px" }}></li>
           <li>
             <Link
-              href={"/tutorial/quickstart"}
+              href={"/tutorials/quickstart"}
               className={clsx(menuItem, button, buttonGhost)}
             >
               quick start

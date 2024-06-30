@@ -6,6 +6,7 @@ interface IProps {}
 
 const DrawerContent = (props: PropsWithChildren<IProps>) => {
   const { children } = props;
+  
   return <div className={clsx(drawerContent)}>{children}</div>;
 };
 

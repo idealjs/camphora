@@ -4,7 +4,7 @@ export const Ia = style({});
 
 export const IaData = style({
   selectors: {
-    [`${Ia} > &`]: {
+    [`${Ia} &`]: {
       display: "none",
     },
   },
