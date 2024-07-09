@@ -21,11 +21,11 @@ export const dropdownContent = style({
   selectors: {
     [`${dropdown}:focus-within > &`]: {
       visibility: "visible",
-      animation: `${fadeIn} ${vars.animation.dropdown} ease-in-out`,
+      animation: vars.animation.dropdown,
     },
     [`${dropdownOpen} > &`]: {
       visibility: "visible",
-      animation: `${fadeIn} ${vars.animation.dropdown} ease-in-out`,
+      animation: vars.animation.dropdown,
     },
     [`${dropdown}${dropdownEnd} > &`]: {
       right: "0px",

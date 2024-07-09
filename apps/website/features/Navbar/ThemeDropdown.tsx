@@ -25,22 +25,12 @@ const ThemeDropdown = () => {
       >
         theme
       </button>
-      <ul
-        tabIndex={0}
-        className={clsx(
-          dropdownContent,
-          card,
-          cardXs,
-          cardSeondary,
-          cardShadow,
-          menu
-        )}
-      >
+      <ul tabIndex={0} className={clsx(dropdownContent, menu)}>
         <li>
-          <div className={clsx(menuItem, button, buttonGhost)}>dark</div>
+          <div className={clsx(menuItem)}>dark</div>
         </li>
         <li>
-          <div className={clsx(menuItem, button, buttonGhost)}>light</div>
+          <div className={clsx(menuItem)}>light</div>
         </li>
       </ul>
     </div>

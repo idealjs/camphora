@@ -48,6 +48,9 @@ export const vars = createThemeContract({
   opacity: {
     btn: null,
   },
+  shadow: {
+    menu: null,
+  },
   animation: {
     btn: null,
     drawer: null,
@@ -56,11 +59,15 @@ export const vars = createThemeContract({
   rounded: {
     btn: null,
     card: null,
+    menuItem: null,
+    menu: null,
   },
   padding: {
     card: null,
     menuLabel: null,
     menuBar: null,
+    menuItem: null,
+    menu: null,
   },
   width: {
     card: {

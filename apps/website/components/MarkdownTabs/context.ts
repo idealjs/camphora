@@ -1,7 +1,7 @@
 import serverContext, {
   getServerContext,
   setServerContext,
-} from "../utils/serverContext";
+} from "@/components/utils/serverContext";
 
 const groupNameContext = serverContext<string | null>(null);
 

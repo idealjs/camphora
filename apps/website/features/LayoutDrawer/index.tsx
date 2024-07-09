@@ -1,11 +1,5 @@
-import {
-  button,
-  buttonGhost,
-  input,
-  menu,
-  menuItem,
-  paper,
-} from "@idealjs/camphora-styled";
+import { menu, menuItem, paper, vars } from "@idealjs/camphora-styled";
+import { assignInlineVars } from "@vanilla-extract/dynamic";
 import clsx from "clsx";
 import Link from "next/link";
 import React, { PropsWithChildren } from "react";
@@ -28,34 +22,29 @@ const LayoutDrawer = (props: PropsWithChildren<IProps>) => {
         {children}
       </DrawerContent>
       <DrawerSide drawerId="main-drawer">
-        <ul
-          className={clsx(menu, paper)}
-          style={{
-            minHeight: "100%",
-            padding: "12px 16px 0px 16px",
-          }}
-        >
-          <li>
-            <SearchInput />
-          </li>
-          <li style={{ height: "8px" }}></li>
-          <li>
-            <Link
-              href={"/tutorials/quickstart"}
-              className={clsx(menuItem, button, buttonGhost)}
-            >
-              quick start
-            </Link>
-          </li>
-          <li>
-            <Link
-              href={"/docs/components"}
-              className={clsx(menuItem, button, buttonGhost)}
-            >
-              components
-            </Link>
-          </li>
-        </ul>
+        <div className={paper} style={{ height: "100%" }}>
+          <ul
+            className={clsx(menu)}
+            style={assignInlineVars({
+              [vars.shadow.menu]: "0",
+            })}
+          >
+            <li>
+              <SearchInput />
+            </li>
+            <li style={{ height: "8px" }}></li>
+            <li>
+              <Link href={"/tutorials/quickstart"} className={clsx(menuItem)}>
+                quick start
+              </Link>
+            </li>
+            <li>
+              <Link href={"/docs/components"} className={clsx(menuItem)}>
+                components
+              </Link>
+            </li>
+          </ul>
+        </div>
       </DrawerSide>
     </Drawer>
   );
