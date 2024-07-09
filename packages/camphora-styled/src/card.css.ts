@@ -9,8 +9,6 @@ export const cardSm = style({});
 export const cardMd = style({});
 export const cardLg = style({});
 
-export const cardSeondary = style({});
-
 export const card = style({
   backgroundColor: "#ffffff",
   borderRadius: "8px",
@@ -31,8 +29,21 @@ export const card = style({
     [`&${cardLg}`]: {
       width: vars.width.card.large,
     },
-    [`&${cardSeondary}`]: {
+  },
+});
+
+export const cardSeondary = style({
+  selectors: {
+    [`${card}&`]: {
       backgroundColor: vars.colors.base[200],
+    },
+  },
+});
+
+export const cardPrimary = style({
+  selectors: {
+    [`${card}&`]: {
+      backgroundColor: vars.colors.base[100],
     },
   },
 });

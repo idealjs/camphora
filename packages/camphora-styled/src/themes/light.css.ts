@@ -1,6 +1,11 @@
-import { createTheme } from "@vanilla-extract/css";
+import { createTheme, keyframes } from "@vanilla-extract/css";
 
 import { vars } from "./contract.css";
+
+const fadeIn = keyframes({
+  from: { opacity: 0 },
+  to: { opacity: 1 },
+});
 
 export const light = createTheme(vars, {
   colors: {
@@ -50,19 +55,26 @@ export const light = createTheme(vars, {
   opacity: {
     btn: "20%",
   },
+  shadow: {
+    menu: "0 4px 6px rgba(0, 0, 0, 0.1)",
+  },
   animation: {
     btn: "0.25s",
     drawer: "0.3s",
-    dropdown: "0.1s",
+    dropdown: `${fadeIn} 0.1s ease-in-out`,
   },
   rounded: {
     btn: "8px",
     card: "4px",
+    menuItem: "4px",
+    menu: "8px",
   },
   padding: {
     card: "4px",
     menuLabel: "2px 4px",
     menuBar: "4px 2px",
+    menuItem: "4px 8px",
+    menu: "4px",
   },
   width: {
     card: {

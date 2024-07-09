@@ -25,22 +25,12 @@ const LanguageDropdown = () => {
       >
         language
       </button>
-      <ul
-        tabIndex={0}
-        className={clsx(
-          dropdownContent,
-          card,
-          cardXs,
-          cardSeondary,
-          cardShadow,
-          menu
-        )}
-      >
+      <ul tabIndex={0} className={clsx(dropdownContent, menu)}>
         <li>
-          <div className={clsx(menuItem, button, buttonGhost)}>english</div>
+          <div className={clsx(menuItem)}>english</div>
         </li>
         <li>
-          <div className={clsx(menuItem, button, buttonGhost)}>中文</div>
+          <div className={clsx(menuItem)}>中文</div>
         </li>
       </ul>
     </div>
