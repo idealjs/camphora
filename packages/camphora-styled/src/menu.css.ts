@@ -1,11 +1,12 @@
 import { style } from "@vanilla-extract/css";
 
-import { vars } from "./themes";
+import { card } from "./card.css";
+import { themeVars } from "./themes";
 
 export const menuItem = style({
   position: "relative",
-  borderRadius: vars.rounded.menuItem,
-  padding: vars.padding.menuItem,
+  borderRadius: themeVars.rounded.menuItem,
+  padding: themeVars.padding.menuItem,
   get selectors() {
     return {
       [`${menu} &`]: {
@@ -15,37 +16,35 @@ export const menuItem = style({
         gap: "8px",
         gridAutoColumns: "minmax(auto, max-content) auto max-content",
         cursor: "pointer",
-        color: vars.colors.primary.content,
+        color: themeVars.colors.primary.content,
       },
       [`${menu} &:hover`]: {
-        backgroundColor: vars.colors.primary.bg,
+        backgroundColor: themeVars.colors.primary.bg,
       },
       [`${menu} &:not(:has(${menu})):active`]: {
-        backgroundColor: vars.colors.primary.focus,
+        backgroundColor: themeVars.colors.primary.focus,
       },
     };
   },
 });
 
-export const menu = style({
-  borderRadius: vars.rounded.menu,
-  padding: vars.padding.menu,
-  boxShadow: vars.shadow.menu,
-  backgroundColor: vars.colors.base[100],
-  width: vars.width.card["extra-small"],
-  selectors: {
-    ["ul&"]: {
-      listStyleType: "none",
-      margin: "0px",
-    },
-    ["& &"]: {
-      position: "absolute",
-      display: "none",
-    },
-    [`& ${menuItem}:hover > &`]: {
-      display: "block",
-      top: "0px",
-      left: "100%",
+export const menu = style([
+  card,
+  {
+    selectors: {
+      ["ul&"]: {
+        listStyleType: "none",
+        margin: "0px",
+      },
+      ["& &"]: {
+        position: "absolute",
+        display: "none",
+      },
+      [`& ${menuItem}:hover > &`]: {
+        display: "block",
+        top: "0px",
+        left: "100%",
+      },
     },
   },
-});
+]);

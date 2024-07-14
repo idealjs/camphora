@@ -1,20 +1,6 @@
 import { style } from "@vanilla-extract/css";
 
-import { vars } from "./themes/contract.css";
-
-export const buttonActive = style({});
-
-export const buttonPrimary = style({});
-
-export const buttonSecondary = style({});
-
-export const buttonNeutral = style({});
-
-export const buttonAccent = style({});
-
-export const buttonGhost = style({});
-
-export const buttonLink = style({});
+import { themeVars } from "./themes/defaultTheme.css";
 
 export const button = style({
   cursor: "pointer",
@@ -24,58 +10,97 @@ export const button = style({
   height: "48px",
   minHeight: "48px",
   padding: "0px 16px 0px 16px",
-  borderRadius: vars.rounded.btn,
+  borderRadius: themeVars.rounded.btn,
   transition: "background-color 0.2s ease-in-out",
   border: "none",
   fontSize: "16px",
   textDecoration: "none",
   selectors: {
-    [`&:active, &${buttonActive}`]: {
+    ["&:active"]: {
       transform: "scale(0.95)",
     },
+  },
+});
 
-    [`&${buttonPrimary}`]: {
-      backgroundColor: vars.colors.primary.bg,
-      color: vars.colors.primary.content,
+export const buttonActive = style({
+  selectors: {
+    [`${button}&`]: {
+      transform: "scale(0.95)",
     },
-    [`&${buttonPrimary}:hover`]: {
-      backgroundColor: vars.colors.primary.focus,
-    },
+  },
+});
 
-    [`&${buttonNeutral}`]: {
-      backgroundColor: vars.colors.neutral.bg,
-      color: vars.colors.neutral.content,
+export const buttonPrimary = style({
+  selectors: {
+    [`${button}&`]: {
+      backgroundColor: themeVars.colors.primary.bg,
+      color: themeVars.colors.primary.content,
     },
-    [`&${buttonNeutral}:hover`]: {
-      backgroundColor: vars.colors.neutral.focus,
+    [`${button}&:hover`]: {
+      backgroundColor: themeVars.colors.primary.focus,
     },
+    [`${button}&:active`]: {},
+  },
+});
 
-    [`&${buttonSecondary}`]: {
-      backgroundColor: vars.colors.secondary.bg,
-      color: vars.colors.secondary.content,
+export const buttonSecondary = style({
+  selectors: {
+    [`${button}&`]: {
+      backgroundColor: themeVars.colors.secondary.bg,
+      color: themeVars.colors.secondary.content,
     },
-    [`&${buttonSecondary}:hover`]: {
-      backgroundColor: vars.colors.secondary.focus,
+    [`${button}&:hover`]: {
+      backgroundColor: themeVars.colors.secondary.focus,
     },
+    [`${button}&:active`]: {},
+  },
+});
 
-    [`&${buttonAccent}`]: {
-      backgroundColor: vars.colors.accent.bg,
-      color: vars.colors.accent.content,
+export const buttonNeutral = style({
+  selectors: {
+    [`${button}&`]: {
+      backgroundColor: themeVars.colors.neutral.bg,
+      color: themeVars.colors.neutral.content,
     },
-    [`&${buttonAccent}:hover`]: {
-      backgroundColor: vars.colors.accent.focus,
+    [`${button}&:hover`]: {
+      backgroundColor: themeVars.colors.neutral.focus,
     },
+    [`${button}&:active`]: {},
+  },
+});
 
-    [`&${buttonGhost}`]: {
+export const buttonAccent = style({
+  selectors: {
+    [`${button}&`]: {
+      backgroundColor: themeVars.colors.accent.bg,
+      color: themeVars.colors.accent.content,
+    },
+    [`${button}&:hover`]: {
+      backgroundColor: themeVars.colors.accent.focus,
+    },
+    [`${button}&:active`]: {},
+  },
+});
+
+export const buttonGhost = style({
+  selectors: {
+    [`${button}&`]: {
       backgroundColor: "transparent",
       color: "currentcolor",
     },
-    [`&${buttonGhost}:hover`]: {
-      backgroundColor: `color-mix(in srgb, ${vars.colors.base.content} ${vars.opacity.btn}, #fff0)`,
+    [`${button}&:hover`]: {
+      backgroundColor: `color-mix(in srgb, ${themeVars.colors.base.content} ${themeVars.opacity.btn}, #fff0)`,
     },
-    [`&${buttonLink}`]: {
+    [`${button}&:active`]: {},
+  },
+});
+
+export const buttonLink = style({
+  selectors: {
+    [`${button}&`]: {
       textDecoration: "underline",
     },
-    [`&${buttonLink}:hover`]: {},
+    [`${button}&:hover`]: {},
+    [`${button}&:active`]: {},
   },
 });

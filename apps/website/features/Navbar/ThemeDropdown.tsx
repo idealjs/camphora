@@ -1,8 +1,6 @@
 import {
   button,
   buttonGhost,
-  card,
-  cardSeondary,
   cardShadow,
   cardXs,
   dropdown,
@@ -25,7 +23,10 @@ const ThemeDropdown = () => {
       >
         theme
       </button>
-      <ul tabIndex={0} className={clsx(dropdownContent, menu)}>
+      <ul
+        tabIndex={0}
+        className={clsx(dropdownContent, menu, cardXs, cardShadow)}
+      >
         <li>
           <div className={clsx(menuItem)}>dark</div>
         </li>
