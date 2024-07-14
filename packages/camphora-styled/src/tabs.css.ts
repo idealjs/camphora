@@ -1,6 +1,6 @@
 import { style } from "@vanilla-extract/css";
 
-import { vars } from "./themes";
+import { themeVars } from "./themes";
 
 export const tabs = style({
   display: "grid",
@@ -14,11 +14,11 @@ export const tab = style({
       appearance: "none",
       gridRowStart: 1,
       margin: "0px",
-      backgroundColor: vars.colors.primary.bg,
-      color: vars.colors.primary.content,
+      backgroundColor: themeVars.colors.primary.bg,
+      color: themeVars.colors.primary.content,
     },
     [`${tabs} &:checked`]: {
-      backgroundColor: vars.colors.primary.focus,
+      backgroundColor: themeVars.colors.primary.focus,
     },
     ["&:after"]: {
       content: "attr(aria-label)",

@@ -1,6 +1,8 @@
 import {
   button,
   buttonGhost,
+  cardShadow,
+  cardXs,
   dropdown,
   dropdownContent,
   menu,
@@ -25,7 +27,10 @@ const VersionDropdown = () => {
       >
         {version}
       </div>
-      <ul tabIndex={0} className={clsx(dropdownContent, menu)}>
+      <ul
+        tabIndex={0}
+        className={clsx(dropdownContent, menu, cardXs, cardShadow)}
+      >
         <li>
           <Link href={"/docs/changelog"} className={clsx(menuItem)}>
             <svg

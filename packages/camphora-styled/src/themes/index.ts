@@ -1,2 +1,1 @@
-export * from "./contract.css";
-export * from "./light.css";
+export * from "./defaultTheme.css";

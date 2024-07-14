@@ -1,33 +1,27 @@
 import { style } from "@vanilla-extract/css";
 
-import { vars } from "./themes/contract.css";
-
-export const cardShadow = style({});
-
-export const cardXs = style({});
-export const cardSm = style({});
-export const cardMd = style({});
-export const cardLg = style({});
+import { themeVars } from "./themes/defaultTheme.css";
 
 export const card = style({
-  backgroundColor: "#ffffff",
-  borderRadius: "8px",
-  padding: vars.padding.card,
-  selectors: {
-    [`&${cardShadow}`]: {
-      boxShadow: "0 4px 6px rgba(0, 0, 0, 0.1)",
+  borderRadius: themeVars.card.rounded.xs,
+  padding: themeVars.card.padding.xs,
+  width: themeVars.card.width.xs,
+  backgroundColor: themeVars.card.backgroundColor.default,
+  "@media": {
+    "screen and (min-width: 768px)": {
+      borderRadius: themeVars.card.rounded.sm,
+      padding: themeVars.card.padding.sm,
+      width: themeVars.card.width.sm,
     },
-    [`&${cardXs}`]: {
-      width: vars.width.card["extra-small"],
+    "screen and (min-width: 1024px)": {
+      borderRadius: themeVars.card.rounded.md,
+      padding: themeVars.card.padding.md,
+      width: themeVars.card.width.md,
     },
-    [`&${cardSm}`]: {
-      width: vars.width.card.small,
-    },
-    [`&${cardMd}`]: {
-      width: vars.width.card.medium,
-    },
-    [`&${cardLg}`]: {
-      width: vars.width.card.large,
+    "screen and (min-width: 2048px)": {
+      borderRadius: themeVars.card.rounded.lg,
+      padding: themeVars.card.padding.lg,
+      width: themeVars.card.width.lg,
     },
   },
 });
@@ -35,7 +29,7 @@ export const card = style({
 export const cardSeondary = style({
   selectors: {
     [`${card}&`]: {
-      backgroundColor: vars.colors.base[200],
+      backgroundColor: themeVars.colors.base[200],
     },
   },
 });
@@ -43,7 +37,57 @@ export const cardSeondary = style({
 export const cardPrimary = style({
   selectors: {
     [`${card}&`]: {
-      backgroundColor: vars.colors.base[100],
+      backgroundColor: themeVars.colors.base[100],
+    },
+  },
+});
+
+export const cardShadow = style({
+  selectors: {
+    [`${card}&`]: {
+      boxShadow: themeVars.card.shadow.xs,
+      "@media": {
+        "screen and (min-width: 768px)": {
+          boxShadow: themeVars.card.shadow.sm,
+        },
+        "screen and (min-width: 1024px)": {
+          boxShadow: themeVars.card.shadow.md,
+        },
+        "screen and (min-width: 2048px)": {
+          boxShadow: themeVars.card.shadow.lg,
+        },
+      },
+    },
+  },
+});
+
+export const cardXs = style({
+  selectors: {
+    [`${card}&`]: {
+      width: themeVars.card.width.xs,
+    },
+  },
+});
+
+export const cardSm = style({
+  selectors: {
+    [`${card}&`]: {
+      width: themeVars.card.width.sm,
+    },
+  },
+});
+
+export const cardMd = style({
+  selectors: {
+    [`${card}&`]: {
+      width: themeVars.card.width.md,
+    },
+  },
+});
+export const cardLg = style({
+  selectors: {
+    [`${card}&`]: {
+      width: themeVars.card.width.lg,
     },
   },
 });

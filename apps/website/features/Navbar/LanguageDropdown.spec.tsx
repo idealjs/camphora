@@ -1,4 +1,4 @@
-import { light } from "@idealjs/camphora-styled";
+import { defaultTheme } from "@idealjs/camphora-styled";
 import { expect as playwrightExpect } from "@playwright/test";
 import { render } from "@testing-library/react";
 import { page } from "@vitest/browser/context";

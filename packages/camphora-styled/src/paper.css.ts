@@ -1,6 +1,6 @@
 import { style } from "@vanilla-extract/css";
 
-import { vars } from "./themes";
+import { themeVars } from "./themes";
 
 export const paperShadow = style({});
 
@@ -16,7 +16,7 @@ export const paper = style({
 export const paperPrimary = style({
   selectors: {
     [`${paper}&`]: {
-      backgroundColor: vars.colors.base[100],
+      backgroundColor: themeVars.colors.base[100],
     },
   },
 });
@@ -24,7 +24,7 @@ export const paperPrimary = style({
 export const paperSecondary = style({
   selectors: {
     [`${paper}&`]: {
-      backgroundColor: vars.colors.base[200],
+      backgroundColor: themeVars.colors.base[200],
     },
   },
 });

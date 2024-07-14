@@ -1,13 +1,11 @@
-import { createTheme, keyframes } from "@vanilla-extract/css";
-
-import { vars } from "./contract.css";
+import { createTheme, createVar, keyframes } from "@vanilla-extract/css";
 
 const fadeIn = keyframes({
   from: { opacity: 0 },
   to: { opacity: 1 },
 });
 
-export const light = createTheme(vars, {
+export const [defaultTheme, themeVars] = createTheme({
   colors: {
     base: {
       100: "hsl(240 20% 99%)",
@@ -103,6 +101,39 @@ export const light = createTheme(vars, {
       small: "24px",
       medium: "28px",
       large: "36px",
+    },
+  },
+  card: {
+    rounded: {
+      xs: "4px",
+      sm: "6px",
+      md: "8px",
+      lg: "12px",
+    },
+    padding: {
+      xs: "2px",
+      sm: "4px",
+      md: "4px",
+      lg: "8px",
+    },
+    shadow: {
+      none: "0",
+      xs: "0 2px 3px rgba(0, 0, 0, 0.1)",
+      sm: "0 4px 6px rgba(0, 0, 0, 0.1)",
+      md: "0 4px 6px rgba(0, 0, 0, 0.1)",
+      lg: "0 6px 8px rgba(0, 0, 0, 0.1)",
+    },
+    width: {
+      xs: "144px",
+      sm: "192px",
+      md: "256px",
+      lg: "512px",
+    },
+    backgroundColor: {
+      default: "#fff",
+      100: "hsl(240 20% 99%)",
+      200: "hsl(240 20% 89%)",
+      300: "hsl(240 21% 79%)",
     },
   },
 });

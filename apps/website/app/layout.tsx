@@ -1,4 +1,4 @@
-import { light } from "@idealjs/camphora-styled";
+import { defaultTheme } from "@idealjs/camphora-styled";
 import type { Metadata } from "next";
 
 import LayoutDrawer from "@/features/LayoutDrawer";
@@ -15,7 +15,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body style={{ margin: 0, height: "100vh" }} className={light}>
+      <body style={{ margin: 0, height: "100vh" }} className={defaultTheme}>
         <LayoutDrawer>{children}</LayoutDrawer>
       </body>
     </html>

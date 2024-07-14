@@ -1,6 +1,6 @@
 import { keyframes, style } from "@vanilla-extract/css";
 
-import { vars } from "./themes/contract.css";
+import { themeVars } from "./themes/defaultTheme.css";
 
 export const dropdown = style({
   position: "relative",
@@ -21,11 +21,11 @@ export const dropdownContent = style({
   selectors: {
     [`${dropdown}:focus-within > &`]: {
       visibility: "visible",
-      animation: vars.animation.dropdown,
+      animation: themeVars.animation.dropdown,
     },
     [`${dropdownOpen} > &`]: {
       visibility: "visible",
-      animation: vars.animation.dropdown,
+      animation: themeVars.animation.dropdown,
     },
     [`${dropdown}${dropdownEnd} > &`]: {
       right: "0px",

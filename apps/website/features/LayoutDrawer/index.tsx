@@ -1,5 +1,4 @@
-import { menu, menuItem, paper, vars } from "@idealjs/camphora-styled";
-import { assignInlineVars } from "@vanilla-extract/dynamic";
+import { menuItem, overlay } from "@idealjs/camphora-styled";
 import clsx from "clsx";
 import Link from "next/link";
 import React, { PropsWithChildren } from "react";
@@ -21,30 +20,113 @@ const LayoutDrawer = (props: PropsWithChildren<IProps>) => {
         <Navbar drawerId="main-drawer" />
         {children}
       </DrawerContent>
+      <label htmlFor={"main-drawer"} className={overlay} />
       <DrawerSide drawerId="main-drawer">
-        <div className={paper} style={{ height: "100%" }}>
-          <ul
-            className={clsx(menu)}
-            style={assignInlineVars({
-              [vars.shadow.menu]: "0",
-            })}
-          >
-            <li>
-              <SearchInput />
-            </li>
-            <li style={{ height: "8px" }}></li>
-            <li>
-              <Link href={"/tutorials/quickstart"} className={clsx(menuItem)}>
-                quick start
-              </Link>
-            </li>
-            <li>
-              <Link href={"/docs/components"} className={clsx(menuItem)}>
-                components
-              </Link>
-            </li>
-          </ul>
+        <li>
+          <SearchInput />
+        </li>
+        <li style={{ height: "8px" }}></li>
+        <li>
+          <Link href={"/tutorials/quickstart"} className={clsx(menuItem)}>
+            quick start
+          </Link>
+        </li>
+        <li>
+          <Link href={"/docs/components"} className={clsx(menuItem)}>
+            components
+          </Link>
+        </li>
+{/* 
+        <div>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia id
+          repudiandae quasi tempore dolore. Omnis cumque id modi dolor veniam,
+          hic voluptate odio. Ut, laudantium quod optio soluta hic velit?
         </div>
+        <div>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia id
+          repudiandae quasi tempore dolore. Omnis cumque id modi dolor veniam,
+          hic voluptate odio. Ut, laudantium quod optio soluta hic velit?
+        </div>
+        <div>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia id
+          repudiandae quasi tempore dolore. Omnis cumque id modi dolor veniam,
+          hic voluptate odio. Ut, laudantium quod optio soluta hic velit?
+        </div>
+        <div>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia id
+          repudiandae quasi tempore dolore. Omnis cumque id modi dolor veniam,
+          hic voluptate odio. Ut, laudantium quod optio soluta hic velit?
+        </div>
+        <div>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia id
+          repudiandae quasi tempore dolore. Omnis cumque id modi dolor veniam,
+          hic voluptate odio. Ut, laudantium quod optio soluta hic velit?
+        </div>
+        <div>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia id
+          repudiandae quasi tempore dolore. Omnis cumque id modi dolor veniam,
+          hic voluptate odio. Ut, laudantium quod optio soluta hic velit?
+        </div>
+        <div>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia id
+          repudiandae quasi tempore dolore. Omnis cumque id modi dolor veniam,
+          hic voluptate odio. Ut, laudantium quod optio soluta hic velit?
+        </div>
+        <div>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia id
+          repudiandae quasi tempore dolore. Omnis cumque id modi dolor veniam,
+          hic voluptate odio. Ut, laudantium quod optio soluta hic velit?
+        </div>
+        <div>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia id
+          repudiandae quasi tempore dolore. Omnis cumque id modi dolor veniam,
+          hic voluptate odio. Ut, laudantium quod optio soluta hic velit?
+        </div>
+        <div>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia id
+          repudiandae quasi tempore dolore. Omnis cumque id modi dolor veniam,
+          hic voluptate odio. Ut, laudantium quod optio soluta hic velit?
+        </div>
+        <div>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia id
+          repudiandae quasi tempore dolore. Omnis cumque id modi dolor veniam,
+          hic voluptate odio. Ut, laudantium quod optio soluta hic velit?
+        </div>
+        <div>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia id
+          repudiandae quasi tempore dolore. Omnis cumque id modi dolor veniam,
+          hic voluptate odio. Ut, laudantium quod optio soluta hic velit?
+        </div>
+        <div>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia id
+          repudiandae quasi tempore dolore. Omnis cumque id modi dolor veniam,
+          hic voluptate odio. Ut, laudantium quod optio soluta hic velit?
+        </div>
+        <div>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia id
+          repudiandae quasi tempore dolore. Omnis cumque id modi dolor veniam,
+          hic voluptate odio. Ut, laudantium quod optio soluta hic velit?
+        </div>
+        <div>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia id
+          repudiandae quasi tempore dolore. Omnis cumque id modi dolor veniam,
+          hic voluptate odio. Ut, laudantium quod optio soluta hic velit?
+        </div>
+        <div>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia id
+          repudiandae quasi tempore dolore. Omnis cumque id modi dolor veniam,
+          hic voluptate odio. Ut, laudantium quod optio soluta hic velit?
+        </div>
+        <div>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia id
+          repudiandae quasi tempore dolore. Omnis cumque id modi dolor veniam,
+          hic voluptate odio. Ut, laudantium quod optio soluta hic velit?
+        </div>
+        <div>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia id
+          repudiandae quasi tempore dolore. Omnis cumque id modi dolor veniam,
+          hic voluptate odio. Ut, laudantium quod optio soluta hic velit?
+        </div> */}
       </DrawerSide>
     </Drawer>
   );
