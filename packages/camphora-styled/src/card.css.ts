@@ -1,6 +1,6 @@
 import { style } from "@vanilla-extract/css";
 
-import { themeVars } from "./themes/defaultTheme.css";
+import { paletteVars, themeVars } from "./themes/defaultTheme.css";
 
 export const card = style({
   borderRadius: themeVars.card.rounded.xs,
@@ -29,7 +29,7 @@ export const card = style({
 export const cardSeondary = style({
   selectors: {
     [`${card}&`]: {
-      backgroundColor: themeVars.colors.base[200],
+      backgroundColor: paletteVars.base[200],
     },
   },
 });
@@ -37,7 +37,7 @@ export const cardSeondary = style({
 export const cardPrimary = style({
   selectors: {
     [`${card}&`]: {
-      backgroundColor: themeVars.colors.base[100],
+      backgroundColor: paletteVars.base[100],
     },
   },
 });

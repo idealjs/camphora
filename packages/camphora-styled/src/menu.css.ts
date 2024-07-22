@@ -1,7 +1,7 @@
 import { style } from "@vanilla-extract/css";
 
 import { card } from "./card.css";
-import { themeVars } from "./themes";
+import { paletteVars, themeVars } from "./themes";
 
 export const menuItem = style({
   position: "relative",
@@ -16,13 +16,12 @@ export const menuItem = style({
         gap: "8px",
         gridAutoColumns: "minmax(auto, max-content) auto max-content",
         cursor: "pointer",
-        color: themeVars.colors.primary.content,
       },
       [`${menu} &:hover`]: {
-        backgroundColor: themeVars.colors.primary.bg,
+        backgroundColor: paletteVars.primary.bg,
       },
       [`${menu} &:not(:has(${menu})):active`]: {
-        backgroundColor: themeVars.colors.primary.focus,
+        backgroundColor: paletteVars.primary.focus,
       },
     };
   },

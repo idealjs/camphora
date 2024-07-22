@@ -1,6 +1,6 @@
 import { style } from "@vanilla-extract/css";
 
-import { themeVars } from "./themes/defaultTheme.css";
+import { paletteVars, themeVars } from "./themes/defaultTheme.css";
 
 export const button = style({
   cursor: "pointer",
@@ -33,11 +33,11 @@ export const buttonActive = style({
 export const buttonPrimary = style({
   selectors: {
     [`${button}&`]: {
-      backgroundColor: themeVars.colors.primary.bg,
-      color: themeVars.colors.primary.content,
+      backgroundColor: paletteVars.primary.bg,
+      color: paletteVars.primary.content,
     },
     [`${button}&:hover`]: {
-      backgroundColor: themeVars.colors.primary.focus,
+      backgroundColor: paletteVars.primary.focus,
     },
     [`${button}&:active`]: {},
   },
@@ -46,11 +46,11 @@ export const buttonPrimary = style({
 export const buttonSecondary = style({
   selectors: {
     [`${button}&`]: {
-      backgroundColor: themeVars.colors.secondary.bg,
-      color: themeVars.colors.secondary.content,
+      backgroundColor: paletteVars.secondary.bg,
+      color: paletteVars.secondary.content,
     },
     [`${button}&:hover`]: {
-      backgroundColor: themeVars.colors.secondary.focus,
+      backgroundColor: paletteVars.secondary.focus,
     },
     [`${button}&:active`]: {},
   },
@@ -59,11 +59,11 @@ export const buttonSecondary = style({
 export const buttonNeutral = style({
   selectors: {
     [`${button}&`]: {
-      backgroundColor: themeVars.colors.neutral.bg,
-      color: themeVars.colors.neutral.content,
+      backgroundColor: paletteVars.neutral.bg,
+      color: paletteVars.neutral.content,
     },
     [`${button}&:hover`]: {
-      backgroundColor: themeVars.colors.neutral.focus,
+      backgroundColor: paletteVars.neutral.focus,
     },
     [`${button}&:active`]: {},
   },
@@ -72,11 +72,11 @@ export const buttonNeutral = style({
 export const buttonAccent = style({
   selectors: {
     [`${button}&`]: {
-      backgroundColor: themeVars.colors.accent.bg,
-      color: themeVars.colors.accent.content,
+      backgroundColor: paletteVars.accent.bg,
+      color: paletteVars.accent.content,
     },
     [`${button}&:hover`]: {
-      backgroundColor: themeVars.colors.accent.focus,
+      backgroundColor: paletteVars.accent.focus,
     },
     [`${button}&:active`]: {},
   },
@@ -89,9 +89,12 @@ export const buttonGhost = style({
       color: "currentcolor",
     },
     [`${button}&:hover`]: {
-      backgroundColor: `color-mix(in srgb, ${themeVars.colors.base.content} ${themeVars.opacity.btn}, #fff0)`,
+      backgroundColor: `color-mix(in srgb, ${paletteVars.base[300]} ${themeVars.btn.opacity.ghost}, #fff0)`,
     },
     [`${button}&:active`]: {},
+    [`${button}&:focus-within`]: {
+      backgroundColor: `color-mix(in srgb, ${paletteVars.base.content} ${themeVars.btn.opacity.ghost}, #fff0)`,
+    },
   },
 });
 
