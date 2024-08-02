@@ -4,16 +4,18 @@ on:
   pull_request:
     branches:
       - main
-      - dev
+
   merge_group:
     branches:
       - main
-      - dev
 
 jobs:
-  ci-test:
+  ci-check:
     name: CI Check
     runs-on: ubuntu-latest
+    container:
+      image: mcr.microsoft.com/playwright:v1.45.1-jammy
+      options: --user 1001
     steps:
       - name: Generate a token
         id: generate_token
@@ -26,20 +28,41 @@ jobs:
           token: ${{ steps.generate_token.outputs.token }}
       - uses: actions/setup-node@v4
         with:
-          node-version: 18
+          node-version: 20
           cache: yarn
       - name: Install Dependencies
         run: yarn install --immutable
-      - name: Install Playwright Browsers
-        run: yarn workspace website playwright install --with-deps
-      - name: Update Vitest Snapshot
+      - name: Update Playwright Snapshot
+        run: yarn workspace website test
+
+  update-snapshot:
+    needs: [ci-check]
+    if: ${{ always() && contains(join(needs.*.result, ','), 'failure') }}
+    name: Update Snapshot
+    environment:
+      name: snapshot-updater
+    runs-on: ubuntu-latest
+    container:
+      image: mcr.microsoft.com/playwright:v1.45.1-jammy
+      options: --user 1001
+    steps:
+      - name: Generate a token
+        id: generate_token
+        uses: tibdex/github-app-token@v2
+        with:
+          app_id: ${{ secrets.IDEALJS_BOT_APP_ID }}
+          private_key: ${{ secrets.IDEALJS_BOT_PRIVATE_KEY }}
+      - uses: actions/checkout@v4
+        with:
+          token: ${{ steps.generate_token.outputs.token }}
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: yarn
+      - name: Install Dependencies
+        run: yarn install --immutable
+      - name: Update Playwright Snapshot
         run: yarn workspace website test -u
       - uses: stefanzweifel/git-auto-commit-action@v5
         with:
           commit_message: "chore: update image snapshot"
-      # - name: Upload playwright-report
-      #   uses: actions/upload-artifact@v3
-      #   if: always()
-      #   with:
-      #     path: apps/website/playwright-report/
-      #     retention-days: 30

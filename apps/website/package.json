@@ -7,7 +7,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "test": "vitest"
+    "test": "playwright test"
   },
   "dependencies": {
     "@idealjs/camphora-styled": "workspace:^",
@@ -18,23 +18,18 @@
     "clsx": "^2.1.1",
     "nanoid": "^5.0.7",
     "next": "^15.0.0-rc.0",
-    "react": "19.0.0-rc-df5f2736-20240712",
-    "react-dom": "19.0.0-rc-df5f2736-20240712"
+    "react": "19.0.0-rc-fb9a90fa48-20240614",
+    "react-dom": "19.0.0-rc-fb9a90fa48-20240614"
   },
   "devDependencies": {
-    "@playwright/test": "^1.45.1",
+    "@playwright/test": "^1.45.3",
     "@testing-library/react": "^16.0.0",
     "@types/mdx": "^2.0.13",
-    "@types/node": "^20.14.10",
+    "@types/node": "^20.14.14",
     "@types/react": "^18.3.3",
     "@types/react-dom": "^18.3.0",
     "@vanilla-extract/css": "^1.15.3",
     "@vanilla-extract/next-plugin": "^2.4.3",
-    "@vanilla-extract/vite-plugin": "^4.0.13",
-    "@vitejs/plugin-react": "^4.3.1",
-    "@vitest/browser": "^2.0.2",
-    "typescript": "^5.5.3",
-    "vite-tsconfig-paths": "^4.3.2",
-    "vitest": "^2.0.2"
+    "typescript": "^5.5.4"
   }
 }
