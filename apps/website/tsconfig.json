@@ -4,18 +4,13 @@
     "noEmit": true,
     "jsx": "preserve",
     "incremental": true,
-    "types": [
-      "vitest/importMeta"
-    ],
     "plugins": [
       {
         "name": "next"
       }
     ],
     "paths": {
-      "@/*": [
-        "./*"
-      ],
+      "@/*": ["./*"],
       "@idealjs/camphora-styled": [
         "../../packages/camphora-styled/src/index.ts"
       ]
@@ -26,13 +21,6 @@
       "path": "../../packages/camphora-styled"
     }
   ],
-  "include": [
-    "next-env.d.ts",
-    ".next/types/**/*.ts",
-    "**/*.ts",
-    "**/*.tsx"
-  ],
-  "exclude": [
-    "node_modules"
-  ]
+  "include": ["next-env.d.ts", ".next/types/**/*.ts", "**/*.ts", "**/*.tsx"],
+  "exclude": ["node_modules"]
 }
