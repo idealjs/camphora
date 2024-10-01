@@ -33,8 +33,12 @@ export default defineConfig({
   /* Configure projects for major browsers */
   projects: [
     {
-      name: "chromium",
+      name: "desktop chromium",
       use: { ...devices["Desktop Chrome"] },
+    },
+    {
+      name: "mobile chromium",
+      use: { ...devices["iPhone SE"] },
     },
   ],
 
