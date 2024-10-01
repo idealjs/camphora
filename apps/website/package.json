@@ -10,6 +10,7 @@
     "test": "playwright test"
   },
   "dependencies": {
+    "@idealjs/camphora-react": "workspace:^",
     "@idealjs/camphora-styled": "workspace:^",
     "@mdx-js/loader": "^3.0.1",
     "@mdx-js/react": "^3.0.1",

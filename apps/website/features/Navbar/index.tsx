@@ -9,19 +9,26 @@ import clsx from "clsx";
 import Link from "next/link";
 
 import LanguageDropdown from "./LanguageDropdown";
+import { responsiveDrawerButton } from "./style.css";
 import ThemeDropdown from "./ThemeDropdown";
 import VersionDropdown from "./VersionDropdown";
 
 interface IProps {
   drawerId: string;
+  responsive?: boolean;
 }
 
 const Navbar = (props: IProps) => {
-  const { drawerId } = props;
+  const { drawerId, responsive } = props;
   return (
     <nav className={clsx(navbar, paper, paperShadow)}>
       <div style={{ display: "flex", flex: 1, gap: "8px" }}>
-        <label htmlFor={drawerId} className={clsx(button, buttonGhost)}>
+        <label
+          htmlFor={drawerId}
+          className={clsx(button, buttonGhost, {
+            [responsiveDrawerButton]: responsive,
+          })}
+        >
           <svg
             width="20"
             height="20"

@@ -8,3 +8,11 @@ export const selectedButtonStyle = style({
     },
   },
 });
+
+export const responsiveDrawerButton = style({
+  "@media": {
+    "(min-width: 1024px)": {
+      display: "none",
+    },
+  },
+});

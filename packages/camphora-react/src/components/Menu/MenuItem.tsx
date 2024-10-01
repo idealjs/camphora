@@ -1,6 +1,6 @@
-import { button, menuItem } from "@idealjs/camphora-styled";
+import { menuItem } from "@idealjs/camphora-styled";
 import clsx from "clsx";
-import React, { PropsWithChildren } from "react";
+import { PropsWithChildren } from "react";
 
 interface IProps {
   className?: string;

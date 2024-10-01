@@ -1,5 +1,4 @@
 import { style } from "@vanilla-extract/css";
-import { calc } from "@vanilla-extract/css-utils";
 
 import { IaData } from "./interactive.css";
 import { menu } from "./menu.css";
@@ -23,12 +22,6 @@ export const drawerContent = style({
   },
 });
 
-export const drawerPermanent = style({
-  selectors: {
-    [`${drawer} > &`]: {},
-  },
-});
-
 export const drawerSide = style({
   selectors: {
     [`${drawer} > &`]: {
@@ -38,7 +31,6 @@ export const drawerSide = style({
       position: "absolute",
       visibility: "hidden",
       overflowY: "hidden",
-
       transform: "translateX(-100%)",
       transitionProperty: "all",
       transitionTimingFunction: "cubic-bezier(0.4, 0, 0.2, 1)",
@@ -48,13 +40,6 @@ export const drawerSide = style({
       visibility: "visible",
       overflowY: "auto",
       transform: "translateX(0px)",
-    },
-    [`${drawerPermanent} > &`]: {
-      position: "static",
-      visibility: "visible",
-      overflowY: "auto",
-      transform: "none",
-      transition: "none",
     },
   },
 });

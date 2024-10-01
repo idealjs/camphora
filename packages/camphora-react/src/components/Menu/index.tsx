@@ -1,4 +1,4 @@
-import { menu, paper } from "@idealjs/camphora-styled";
+import { menu } from "@idealjs/camphora-styled";
 import clsx from "clsx";
 import React, { PropsWithChildren } from "react";
 
@@ -18,3 +18,5 @@ const Menu = (props: PropsWithChildren<IProps>) => {
 };
 
 export default Menu;
+
+export { default as MenuItem } from "./MenuItem";

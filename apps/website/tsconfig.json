@@ -10,17 +10,32 @@
       }
     ],
     "paths": {
-      "@/*": ["./*"],
+      "@/*": [
+        "./*"
+      ],
       "@idealjs/camphora-styled": [
         "../../packages/camphora-styled/src/index.ts"
+      ],
+      "@idealjs/camphora-react": [
+        "../../packages/camphora-react/src/index.ts"
       ]
     }
   },
   "references": [
     {
       "path": "../../packages/camphora-styled"
+    },
+    {
+      "path": "../../packages/camphora-react"
     }
   ],
-  "include": ["next-env.d.ts", ".next/types/**/*.ts", "**/*.ts", "**/*.tsx"],
-  "exclude": ["node_modules"]
+  "include": [
+    "**/*.ts",
+    "**/*.tsx",
+    "next-env.d.ts",
+    ".next/types/**/*.ts"
+  ],
+  "exclude": [
+    "node_modules"
+  ]
 }

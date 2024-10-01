@@ -1,27 +1,34 @@
+import { Drawer, DrawerContent, DrawerSide } from "@idealjs/camphora-react";
 import { menuItem, overlay } from "@idealjs/camphora-styled";
 import clsx from "clsx";
 import Link from "next/link";
 import React, { PropsWithChildren } from "react";
 
-import Drawer from "@/components/Drawer";
-import DrawerContent from "@/components/Drawer/DrawerContent";
-import { DrawerSide } from "@/components/Drawer/DrawerSide";
 import SearchInput from "@/components/SearchInput";
 
 import Navbar from "../Navbar";
+import { responsiveDrawerSide } from "./style.css";
 
-interface IProps {}
+interface IProps {
+  responsive?: boolean;
+}
 
 const LayoutDrawer = (props: PropsWithChildren<IProps>) => {
-  const { children } = props;
+  const { children, responsive } = props;
+
   return (
     <Drawer drawerId="main-drawer">
       <DrawerContent>
-        <Navbar drawerId="main-drawer" />
+        <Navbar drawerId="main-drawer" responsive={responsive} />
         {children}
       </DrawerContent>
       <label htmlFor={"main-drawer"} className={overlay} />
-      <DrawerSide drawerId="main-drawer">
+      <DrawerSide
+        drawerId="main-drawer"
+        className={clsx({
+          [responsiveDrawerSide]: responsive,
+        })}
+      >
         <li>
           <SearchInput />
         </li>
@@ -36,7 +43,7 @@ const LayoutDrawer = (props: PropsWithChildren<IProps>) => {
             components
           </Link>
         </li>
-{/* 
+        {/* 
         <div>
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia id
           repudiandae quasi tempore dolore. Omnis cumque id modi dolor veniam,

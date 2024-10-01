@@ -1,8 +1,5 @@
+import { Menu, MenuItem, Preview } from "@idealjs/camphora-react";
 import React from "react";
-
-import Preview from "../Preview";
-import Menu from ".";
-import MenuItem from "./MenuItem";
 
 const page = () => {
   return (

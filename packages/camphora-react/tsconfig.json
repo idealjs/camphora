@@ -1,0 +1,22 @@
+{
+  "extends": "../../tsconfig.base.json",
+  "compilerOptions": {
+    "rootDir": "./src",
+    "outDir": "./dist",
+    "tsBuildInfoFile": "./dist/tsconfig.tsbuildinfo",
+    "paths": {
+      "@/*": ["./*"],
+      "@idealjs/camphora-styled": [
+        "../../packages/camphora-styled/src/index.ts"
+      ]
+    },
+    "jsx": "react-jsx"
+  },
+  "references": [
+    {
+      "path": "../../packages/camphora-styled"
+    }
+  ],
+  "include": ["src"],
+  "exclude": ["node_modules"]
+}

@@ -5,14 +5,17 @@ import { PropsWithChildren, ReactNode } from "react";
 interface IProps {
   drawerId: string;
   overlay?: ReactNode;
+  className?: string;
 }
 
-export const DrawerSide = (props: PropsWithChildren<IProps>) => {
-  const { children } = props;
+const DrawerSide = (props: PropsWithChildren<IProps>) => {
+  const { children, className } = props;
 
   return (
-    <aside className={clsx(drawerSide)}>
+    <aside className={clsx(drawerSide, className)}>
       <ul className={clsx(drawerMenu)}>{children}</ul>
     </aside>
   );
 };
+
+export default DrawerSide;
