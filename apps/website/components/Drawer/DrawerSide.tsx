@@ -11,7 +11,7 @@ export const DrawerSide = (props: PropsWithChildren<IProps>) => {
   const { children } = props;
 
   return (
-    <aside className={drawerSide}>
+    <aside className={clsx(drawerSide)}>
       <ul className={clsx(drawerMenu)}>{children}</ul>
     </aside>
   );

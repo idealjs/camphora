@@ -8,7 +8,7 @@ import { themeVars } from "./themes/defaultTheme.css";
 export const drawer = style({
   position: "relative",
   display: "grid",
-  gridAutoColumns: "auto",
+  gridAutoColumns: "max-content auto",
   height: "100%",
 });
 
@@ -16,14 +16,24 @@ export const drawerContent = style({
   selectors: {
     [`${IaData}:checked ~ &`]: {},
     [`${drawer} &`]: {
+      gridColumnStart: 2,
+      gridRowStart: 1,
       overflowY: "auto",
     },
+  },
+});
+
+export const drawerPermanent = style({
+  selectors: {
+    [`${drawer} > &`]: {},
   },
 });
 
 export const drawerSide = style({
   selectors: {
     [`${drawer} > &`]: {
+      gridColumnStart: 1,
+      gridRowStart: 1,
       height: "100%",
       position: "absolute",
       visibility: "hidden",
@@ -38,6 +48,13 @@ export const drawerSide = style({
       visibility: "visible",
       overflowY: "auto",
       transform: "translateX(0px)",
+    },
+    [`${drawerPermanent} > &`]: {
+      position: "static",
+      visibility: "visible",
+      overflowY: "auto",
+      transform: "none",
+      transition: "none",
     },
   },
 });

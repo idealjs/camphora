@@ -1,3 +1,5 @@
+import "./global.css";
+
 import { defaultPalette, defaultTheme } from "@idealjs/camphora-styled";
 import clsx from "clsx";
 import type { Metadata } from "next";
