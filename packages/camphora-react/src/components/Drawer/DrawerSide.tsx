@@ -4,7 +4,6 @@ import { PropsWithChildren, ReactNode } from "react";
 
 interface IProps {
   drawerId: string;
-  overlay?: ReactNode;
   className?: string;
 }
 
