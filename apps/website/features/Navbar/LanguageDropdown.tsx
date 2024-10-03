@@ -1,8 +1,6 @@
 import {
   button,
   buttonGhost,
-  card,
-  cardSeondary,
   cardShadow,
   cardXs,
   dropdown,

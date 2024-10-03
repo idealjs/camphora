@@ -9,7 +9,7 @@ export const card = style({
   backgroundColor: themeVars.card.backgroundColor.default,
 });
 
-export const cardSeondary = style({
+export const cardSecondary = style({
   selectors: {
     [`${card}&`]: {
       backgroundColor: paletteVars.base[200],
