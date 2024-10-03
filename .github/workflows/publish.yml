@@ -20,5 +20,6 @@ jobs:
       - name: Publish Package
         run: |
           yarn workspace @idealjs/camphora-styled npm publish
+          yarn workspace @idealjs/camphora-react npm publish
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
