@@ -51,3 +51,19 @@ export const drawerMenu = style([
     boxSizing: "border-box",
   },
 ]);
+
+export const responsiveDrawerSide = style({
+  selectors: {
+    [`${drawer} > &`]: {
+      "@media": {
+        "(min-width: 1024px)": {
+          position: "static",
+          visibility: "visible",
+          overflowY: "auto",
+          transform: "none",
+          transition: "none",
+        },
+      },
+    },
+  },
+});

@@ -7,7 +7,6 @@ import React, { PropsWithChildren } from "react";
 import SearchInput from "@/components/SearchInput";
 
 import Navbar from "../Navbar";
-import { responsiveDrawerSide } from "./style.css";
 
 interface IProps {
   responsive?: boolean;
@@ -23,12 +22,7 @@ const LayoutDrawer = (props: PropsWithChildren<IProps>) => {
         {children}
       </DrawerContent>
       <label htmlFor={"main-drawer"} className={overlay} />
-      <DrawerSide
-        drawerId="main-drawer"
-        className={clsx({
-          [responsiveDrawerSide]: responsive,
-        })}
-      >
+      <DrawerSide drawerId="main-drawer" responsive={responsive}>
         <li>
           <SearchInput />
         </li>
