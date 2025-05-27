@@ -12,6 +12,7 @@ import LanguageDropdown from "./LanguageDropdown";
 import { responsiveDrawerButton } from "./style.css";
 import ThemeDropdown from "./ThemeDropdown";
 import VersionDropdown from "./VersionDropdown";
+import { DrawerToggle } from "@idealjs/camphora-react";
 
 interface IProps {
   drawerId: string;
@@ -23,8 +24,8 @@ const Navbar = (props: IProps) => {
   return (
     <nav className={clsx(navbar, paper, paperShadow)}>
       <div style={{ display: "flex", flex: 1, gap: "8px" }}>
-        <label
-          htmlFor={drawerId}
+        <DrawerToggle
+          drawerId={drawerId}
           className={clsx(button, buttonGhost, {
             [responsiveDrawerButton]: responsive,
           })}
@@ -44,7 +45,7 @@ const Navbar = (props: IProps) => {
               d="M4 6h16M4 12h16M4 18h16"
             ></path>
           </svg>
-        </label>
+        </DrawerToggle>
         <Link href={"/"} className={clsx(button, buttonGhost)}>
           <h3 style={{ margin: 0 }}>🌳Camphora</h3>
         </Link>

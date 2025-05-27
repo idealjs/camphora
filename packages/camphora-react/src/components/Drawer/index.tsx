@@ -27,3 +27,4 @@ export default Drawer;
 
 export { default as DrawerContent } from "./DrawerContent";
 export { default as DrawerSide } from "./DrawerSide";
+export { default as DrawerToggle } from "./DrawerToggle";
