@@ -33,11 +33,14 @@ const LayoutDrawer = (props: PropsWithChildren<IProps>) => {
           </Link>
         </li>
         <li>
-          <Link href={"/docs/components"} className={clsx(menuItem)}>
-            components
+          <Link href={"/components/menu"} className={clsx(menuItem)}>
+            menu
+          </Link>
+          <Link href={"/components/drawer"} className={clsx(menuItem)}>
+            drawer
           </Link>
         </li>
-        {/* 
+        
         <div>
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia id
           repudiandae quasi tempore dolore. Omnis cumque id modi dolor veniam,
@@ -127,7 +130,7 @@ const LayoutDrawer = (props: PropsWithChildren<IProps>) => {
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia id
           repudiandae quasi tempore dolore. Omnis cumque id modi dolor veniam,
           hic voluptate odio. Ut, laudantium quod optio soluta hic velit?
-        </div> */}
+        </div>
       </DrawerSide>
     </Drawer>
   );
