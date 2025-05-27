@@ -1,5 +1,4 @@
 import Navbar from "@/features/Navbar";
-import { responsiveDrawerButton } from "@/features/Navbar/style.css";
 import {
   button,
   buttonGhost,
@@ -30,9 +29,8 @@ const page = () => {
               >
                 <DrawerToggle
                   drawerId={"1-drawer"}
-                  className={clsx(button, buttonGhost, {
-                    [responsiveDrawerButton]: true,
-                  })}
+                  className={clsx(button, buttonGhost)}
+                  responsive={true}
                 >
                   <svg
                     width="20"
@@ -248,9 +246,8 @@ const page = () => {
               >
                 <DrawerToggle
                   drawerId={"2-drawer"}
-                  className={clsx(button, buttonGhost, {
-                    [responsiveDrawerButton]: false,
-                  })}
+                  className={clsx(button, buttonGhost)}
+                  responsive={false}
                 >
                   <svg
                     width="20"

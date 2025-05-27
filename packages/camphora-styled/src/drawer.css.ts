@@ -67,3 +67,15 @@ export const responsiveDrawerSide = style({
     },
   },
 });
+
+export const responsiveDrawerToggle = style({
+  selectors: {
+    [`${drawer} &`]: {
+      "@media": {
+        "(min-width: 1024px)": {
+          display: "none",
+        },
+      },
+    },
+  },
+});

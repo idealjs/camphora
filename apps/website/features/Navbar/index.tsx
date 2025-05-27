@@ -9,7 +9,6 @@ import clsx from "clsx";
 import Link from "next/link";
 
 import LanguageDropdown from "./LanguageDropdown";
-import { responsiveDrawerButton } from "./style.css";
 import ThemeDropdown from "./ThemeDropdown";
 import VersionDropdown from "./VersionDropdown";
 import { DrawerToggle } from "@idealjs/camphora-react";
@@ -26,9 +25,8 @@ const Navbar = (props: IProps) => {
       <div style={{ display: "flex", flex: 1, gap: "8px" }}>
         <DrawerToggle
           drawerId={drawerId}
-          className={clsx(button, buttonGhost, {
-            [responsiveDrawerButton]: responsive,
-          })}
+          className={clsx(button, buttonGhost)}
+          responsive={responsive}
         >
           <svg
             width="20"
