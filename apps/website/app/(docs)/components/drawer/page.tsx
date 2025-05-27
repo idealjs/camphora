@@ -19,7 +19,11 @@ import React from "react";
 
 const page = () => {
   return (
-    <div>
+    <div
+      style={{
+        zIndex: 1,
+      }}
+    >
       <Preview style={{ height: "300px" }}>
         <Drawer drawerId="1-drawer">
           <DrawerContent>
