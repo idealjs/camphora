@@ -16,12 +16,12 @@
     "prepack": "rimraf dist && yarn build"
   },
   "devDependencies": {
-    "esbuild": "^0.25.0",
+    "esbuild": "^0.25.5",
     "rimraf": "^6.0.1",
-    "rollup": "^4.35.0",
+    "rollup": "^4.41.1",
     "rollup-plugin-esbuild": "^6.2.1",
-    "rollup-plugin-visualizer": "^5.14.0",
-    "typescript": "^5.8.2"
+    "rollup-plugin-visualizer": "^6.0.0",
+    "typescript": "^5.8.3"
   },
   "dependencies": {
     "@idealjs/camphora-styled": "workspace:^"
