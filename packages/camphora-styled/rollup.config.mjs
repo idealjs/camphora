@@ -2,8 +2,6 @@ import { vanillaExtractPlugin } from "@vanilla-extract/rollup-plugin";
 import esbuild from "rollup-plugin-esbuild";
 import { visualizer } from "rollup-plugin-visualizer";
 
-import pkg from "./package.json" assert { type: "json" };
-
 const config = {
   input: ["./src/index.ts"],
   plugins: [
@@ -16,18 +14,20 @@ const config = {
   ],
   output: [
     {
-      file: pkg.exports["."].import,
+      dir: "./dist/esm",
       format: "esm",
+      preserveModules: true,
       assetFileNames({ name }) {
         return name?.replace(".css.ts", "") ?? "";
-      }
+      },
     },
     {
-      file: pkg.exports["."].require,
+      dir: "./dist/cjs",
       format: "cjs",
+      preserveModules: true,
       assetFileNames({ name }) {
         return name?.replace(".css.ts", "") ?? "";
-      }
+      },
     },
   ],
 };

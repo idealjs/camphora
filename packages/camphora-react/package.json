@@ -6,14 +6,15 @@
   "types": "dist/index.d.ts",
   "exports": {
     ".": {
-      "require": "./dist/index.cjs",
-      "import": "./dist/index.js"
+      "require": "./dist/cjs/index.js",
+      "import": "./dist/esm/index.js"
     }
   },
   "license": "MIT",
   "scripts": {
-    "build": "tsc -v && tsc -b -v",
-    "prepack": "rimraf dist && yarn build"
+    "build": "rollup --config rollup.config.mjs",
+    "typings": "tsc -v && tsc -b -v",
+    "prepack": "rimraf dist && yarn typings && yarn build"
   },
   "devDependencies": {
     "esbuild": "^0.25.5",
