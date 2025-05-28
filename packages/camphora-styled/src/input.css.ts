@@ -1,6 +1,6 @@
 import { style } from "@vanilla-extract/css";
 
-import { paletteVars, themeVars } from "./themes";
+import { paletteVars, sizeVars } from "./themes";
 
 export const inputActive = style({});
 export const inputGhost = style({});
@@ -20,8 +20,8 @@ export const inputLg = style({});
 
 export const inputContainer = style({
   margin: "4px",
-  height: themeVars.input.height.medium,
-  lineHeight: themeVars.input.lineHeight.medium,
+  height: sizeVars.input.height.md,
+  lineHeight: sizeVars.input.lineHeight.md,
   display: "flex",
   alignItems: "center",
   borderRadius: "8px",
@@ -44,8 +44,8 @@ export const inputContainer = style({
 export const input = style({
   width: "100%",
   boxSizing: "border-box",
-  height: themeVars.input.height.medium,
-  lineHeight: themeVars.input.lineHeight.medium,
+  height: sizeVars.input.height.md,
+  lineHeight: sizeVars.input.lineHeight.md,
   borderRadius: "8px",
   paddingRight: "16px",
   paddingLeft: "16px",

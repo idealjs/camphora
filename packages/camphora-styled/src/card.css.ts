@@ -1,12 +1,12 @@
 import { style } from "@vanilla-extract/css";
 
-import { paletteVars, themeVars } from "./themes/defaultTheme.css";
+import { paletteVars, sizeVars } from "./themes/defaultTheme.css";
 
 export const card = style({
-  borderRadius: themeVars.card.rounded.md,
-  padding: themeVars.card.padding.md,
-  width: themeVars.card.width.md,
-  backgroundColor: themeVars.card.backgroundColor.default,
+  borderRadius: sizeVars.card.rounded.md,
+  padding: sizeVars.card.padding.md,
+  width: sizeVars.card.width.md,
+  backgroundColor: paletteVars.base[100],
 });
 
 export const cardSecondary = style({
@@ -28,7 +28,7 @@ export const cardPrimary = style({
 export const cardShadow = style({
   selectors: {
     [`${card}&`]: {
-      boxShadow: themeVars.card.shadow.md,
+      boxShadow: sizeVars.card.shadow.md,
     },
   },
 });
@@ -36,8 +36,8 @@ export const cardShadow = style({
 export const cardXs = style({
   selectors: {
     [`${card}&`]: {
-      boxShadow: themeVars.card.shadow.xs,
-      width: themeVars.card.width.xs,
+      boxShadow: sizeVars.card.shadow.xs,
+      width: sizeVars.card.width.xs,
     },
   },
 });
@@ -45,8 +45,8 @@ export const cardXs = style({
 export const cardSm = style({
   selectors: {
     [`${card}&`]: {
-      boxShadow: themeVars.card.shadow.sm,
-      width: themeVars.card.width.sm,
+      boxShadow: sizeVars.card.shadow.sm,
+      width: sizeVars.card.width.sm,
     },
   },
 });
@@ -54,8 +54,8 @@ export const cardSm = style({
 export const cardMd = style({
   selectors: {
     [`${card}&`]: {
-      boxShadow: themeVars.card.shadow.md,
-      width: themeVars.card.width.md,
+      boxShadow: sizeVars.card.shadow.md,
+      width: sizeVars.card.width.md,
     },
   },
 });
@@ -63,8 +63,8 @@ export const cardMd = style({
 export const cardLg = style({
   selectors: {
     [`${card}&`]: {
-      boxShadow: themeVars.card.shadow.lg,
-      width: themeVars.card.width.lg,
+      boxShadow: sizeVars.card.shadow.lg,
+      width: sizeVars.card.width.lg,
     },
   },
 });

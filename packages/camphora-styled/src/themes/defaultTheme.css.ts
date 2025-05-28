@@ -1,11 +1,6 @@
-import { createTheme, keyframes } from "@vanilla-extract/css";
+import { createGlobalTheme } from "@vanilla-extract/css";
 
-const fadeIn = keyframes({
-  from: { opacity: 0 },
-  to: { opacity: 1 },
-});
-
-export const [defaultPalette, paletteVars] = createTheme({
+export const paletteVars = createGlobalTheme(":root", {
   base: {
     100: "hsl(240 20% 99%)",
     200: "hsl(240 20% 89%)",
@@ -50,49 +45,52 @@ export const [defaultPalette, paletteVars] = createTheme({
   },
 });
 
-export const [defaultTheme, themeVars] = createTheme({
+export const sizeVars = createGlobalTheme(":root", {
   btn: {
-    opacity: { ghost: "20%" },
+    rounded: {
+      md: "8px",
+    },
   },
-  shadow: {
-    menu: "0 4px 6px rgba(0, 0, 0, 0.1)",
+  menuLabel: {
+    padding: {
+      md: "2px 4px",
+    },
   },
-  animation: {
-    btn: "0.25s",
-    drawer: "0.3s",
-    dropdown: `${fadeIn} 0.1s ease-in-out`,
+  menuBar: {
+    padding: {
+      md: "4px 2px",
+    },
   },
-  rounded: {
-    btn: "8px",
-
-    menuItem: "4px",
-    menu: "8px",
+  menuItem: {
+    padding: {
+      md: "4px 8px",
+    },
+    rounded: {
+      md: "4px",
+    },
   },
-  padding: {
-    menuLabel: "2px 4px",
-    menuBar: "4px 2px",
-    menuItem: "4px 8px",
-    menu: "4px",
+  menu: {
+    shadow: {
+      md: "0 4px 6px rgba(0, 0, 0, 0.1)",
+    },
+    padding: {
+      md: "4px",
+    },
+    rounded: {
+      md: "8px",
+    },
   },
-  width: {
-    drawerMenu: {
-      small: "100px",
-      medium: "200px",
-      large: "300px",
+  drawerMenu: {
+    width: {
+      md: "200px",
     },
   },
   input: {
     height: {
-      "extra-small": "24px",
-      small: "32px",
-      medium: "48px",
-      large: "64px",
+      md: "48px",
     },
     lineHeight: {
-      "extra-small": "20px",
-      small: "24px",
-      medium: "28px",
-      large: "36px",
+      md: "28px",
     },
   },
   card: {
@@ -120,12 +118,6 @@ export const [defaultTheme, themeVars] = createTheme({
       sm: "192px",
       md: "256px",
       lg: "512px",
-    },
-    backgroundColor: {
-      default: "#fff",
-      100: "hsl(240 20% 99%)",
-      200: "hsl(240 20% 89%)",
-      300: "hsl(240 21% 79%)",
     },
   },
 });

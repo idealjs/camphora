@@ -1,6 +1,6 @@
 import { style } from "@vanilla-extract/css";
 
-import { paletteVars, themeVars } from "./themes/defaultTheme.css";
+import { paletteVars, sizeVars } from "./themes/defaultTheme.css";
 
 export const button = style({
   cursor: "pointer",
@@ -10,7 +10,7 @@ export const button = style({
   height: "48px",
   minHeight: "48px",
   padding: "0px 16px 0px 16px",
-  borderRadius: themeVars.rounded.btn,
+  borderRadius: sizeVars.btn.rounded.md,
   transition: "background-color 0.2s ease-in-out",
   border: "none",
   fontSize: "16px",
@@ -89,11 +89,11 @@ export const buttonGhost = style({
       color: "currentcolor",
     },
     [`${button}&:hover`]: {
-      backgroundColor: `color-mix(in srgb, ${paletteVars.base[300]} ${themeVars.btn.opacity.ghost}, #fff0)`,
+      backgroundColor: `color-mix(in srgb, ${paletteVars.base[300]} 20%, #fff0)`,
     },
     [`${button}&:active`]: {},
     [`${button}&:focus-within`]: {
-      backgroundColor: `color-mix(in srgb, ${paletteVars.base.content} ${themeVars.btn.opacity.ghost}, #fff0)`,
+      backgroundColor: `color-mix(in srgb, ${paletteVars.base.content} 20%, #fff0)`,
     },
   },
 });

@@ -1,12 +1,12 @@
 import { style } from "@vanilla-extract/css";
 
 import { card } from "./card.css";
-import { paletteVars, themeVars } from "./themes";
+import { paletteVars, sizeVars } from "./themes";
 
 export const menuItem = style({
   position: "relative",
-  borderRadius: themeVars.rounded.menuItem,
-  padding: themeVars.padding.menuItem,
+  borderRadius: sizeVars.menuItem.rounded.md,
+  padding: sizeVars.menuItem.padding.md,
   get selectors() {
     return {
       [`${menu} &`]: {
