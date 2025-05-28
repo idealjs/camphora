@@ -2,10 +2,9 @@
   "name": "@idealjs/camphora-react",
   "version": "0.0.9",
   "type": "module",
-  "main": "dist/index.js",
-  "types": "dist/index.d.ts",
   "exports": {
     ".": {
+      "types": "./dist/index.d.ts",
       "require": "./dist/cjs/index.js",
       "import": "./dist/esm/index.js"
     }
