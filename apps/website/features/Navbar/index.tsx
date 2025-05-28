@@ -21,7 +21,7 @@ interface IProps {
 const Navbar = (props: IProps) => {
   const { drawerId, responsive } = props;
   return (
-    <nav className={clsx(navbar, paper, paperShadow)} style={{ zIndex: 2 }}>
+    <nav className={clsx(navbar, paper, paperShadow)}>
       <div style={{ display: "flex", flex: 1, gap: "8px" }}>
         <DrawerToggle
           drawerId={drawerId}

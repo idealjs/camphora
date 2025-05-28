@@ -1,6 +1,8 @@
 import {
   button,
   buttonGhost,
+  card,
+  cardPrimary,
   Drawer,
   DrawerContent,
   DrawerSide,
@@ -16,11 +18,7 @@ import React from "react";
 
 const page = () => {
   return (
-    <div
-      style={{
-        zIndex: 1,
-      }}
-    >
+    <div>
       <Preview style={{ height: "300px" }}>
         <Drawer drawerId="1-drawer">
           <DrawerContent>
@@ -59,7 +57,11 @@ const page = () => {
             </div>
           </DrawerContent>
           <label htmlFor={"1-drawer"} className={overlay} />
-          <DrawerSide drawerId="1-drawer" responsive={true}>
+          <DrawerSide
+            drawerId="1-drawer"
+            responsive={true}
+            className={clsx(card, cardPrimary)}
+          >
             <div>
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia id
               repudiandae quasi tempore dolore. Omnis cumque id modi dolor
@@ -108,7 +110,11 @@ const page = () => {
             </div>
           </DrawerContent>
           <label htmlFor={"2-drawer"} className={overlay} />
-          <DrawerSide drawerId="2-drawer" responsive={false}>
+          <DrawerSide
+            drawerId="2-drawer"
+            responsive={false}
+            className={clsx(card, cardPrimary)}
+          >
             <div>
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia id
               repudiandae quasi tempore dolore. Omnis cumque id modi dolor

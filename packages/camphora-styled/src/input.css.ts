@@ -5,7 +5,6 @@ import { paletteVars, sizeVars } from "./themes";
 export const inputActive = style({});
 export const inputGhost = style({});
 
-export const inputPrimary = style({});
 export const inputSecondary = style({});
 
 export const inputInfo = style({});
@@ -27,16 +26,25 @@ export const inputContainer = style({
   borderRadius: "8px",
   paddingRight: "16px",
   paddingLeft: "16px",
-  border: `1px solid ${paletteVars.neutral.bg}`,
   selectors: {
     ["&:focus-within"]: {
       outlineStyle: "solid",
       outlineWidth: "2px",
       outlineOffset: "2px",
-      outlineColor: paletteVars.neutral.bg,
     },
     [`${inputGhost}&`]: {
       border: "0px",
+    },
+  },
+});
+
+export const inputContainerPrimary = style({
+  selectors: {
+    [`${inputContainer}&`]: {
+      border: `1px solid ${paletteVars.neutral.bg}`,
+    },
+    [`${inputContainer}&:focus-within`]: {
+      outlineColor: paletteVars.neutral.bg,
     },
   },
 });
@@ -49,13 +57,11 @@ export const input = style({
   borderRadius: "8px",
   paddingRight: "16px",
   paddingLeft: "16px",
-  border: `1px solid ${paletteVars.neutral.bg}`,
   selectors: {
     ["&:focus"]: {
       outlineStyle: "solid",
       outlineWidth: "2px",
       outlineOffset: "2px",
-      outlineColor: paletteVars.neutral.bg,
     },
     [`${inputContainer} &:focus`]: {
       outlineWidth: "0px",
@@ -71,3 +77,14 @@ export const input = style({
 });
 
 export const inputGroup = style({});
+
+export const inputPrimary = style({
+  selectors: {
+    [`${input}&`]: {
+      border: `1px solid ${paletteVars.neutral.bg}`,
+    },
+    [`${input}&:focus`]: {
+      outlineColor: paletteVars.neutral.bg,
+    },
+  },
+});

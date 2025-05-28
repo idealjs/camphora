@@ -17,12 +17,6 @@ export const menuItem = style({
         gridAutoColumns: "minmax(auto, max-content) auto max-content",
         cursor: "pointer",
       },
-      [`${menu} &:hover`]: {
-        backgroundColor: paletteVars.primary.bg,
-      },
-      [`${menu} &:not(:has(${menu})):active`]: {
-        backgroundColor: paletteVars.primary.focus,
-      },
     };
   },
 });
@@ -47,3 +41,14 @@ export const menu = style([
     },
   },
 ]);
+
+export const menuItemPrimary = style({
+  selectors: {
+    [`${menu} &:hover`]: {
+      backgroundColor: paletteVars.primary.bg,
+    },
+    [`${menu} &:not(:has(${menu})):active`]: {
+      backgroundColor: paletteVars.primary.focus,
+    },
+  },
+});

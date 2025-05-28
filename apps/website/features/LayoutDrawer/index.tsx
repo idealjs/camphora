@@ -1,5 +1,5 @@
 import { Drawer, DrawerContent, DrawerSide } from "@idealjs/camphora-react";
-import { menuItem, overlay } from "@idealjs/camphora-styled";
+import { card, cardPrimary, menuItem, overlay } from "@idealjs/camphora-styled";
 import clsx from "clsx";
 import Link from "next/link";
 import React, { PropsWithChildren } from "react";
@@ -22,7 +22,11 @@ const LayoutDrawer = (props: PropsWithChildren<IProps>) => {
         {children}
       </DrawerContent>
       <label htmlFor={"main-drawer"} className={overlay} />
-      <DrawerSide drawerId="main-drawer" responsive={responsive}>
+      <DrawerSide
+        drawerId="main-drawer"
+        responsive={responsive}
+        className={clsx(card, cardPrimary)}
+      >
         <li>
           <SearchInput />
         </li>

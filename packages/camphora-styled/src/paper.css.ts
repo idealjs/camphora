@@ -1,6 +1,6 @@
 import { style } from "@vanilla-extract/css";
 
-import { paletteVars, sizeVars } from "./themes";
+import { paletteVars } from "./themes";
 
 export const paperShadow = style({});
 

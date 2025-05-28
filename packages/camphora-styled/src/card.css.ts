@@ -6,21 +6,20 @@ export const card = style({
   borderRadius: sizeVars.card.rounded.md,
   padding: sizeVars.card.padding.md,
   width: sizeVars.card.width.md,
-  backgroundColor: paletteVars.base[100],
-});
-
-export const cardSecondary = style({
-  selectors: {
-    [`${card}&`]: {
-      backgroundColor: paletteVars.base[200],
-    },
-  },
 });
 
 export const cardPrimary = style({
   selectors: {
     [`${card}&`]: {
       backgroundColor: paletteVars.base[100],
+    },
+  },
+});
+
+export const cardSecondary = style({
+  selectors: {
+    [`${card}&`]: {
+      backgroundColor: paletteVars.base[200],
     },
   },
 });

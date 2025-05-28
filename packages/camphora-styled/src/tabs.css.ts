@@ -8,17 +8,24 @@ export const tabs = style({
   selectors: {},
 });
 
+export const tabPrimary = style({
+  selectors: {
+    [`${tabs} &`]: {
+      backgroundColor: paletteVars.primary.bg,
+      color: paletteVars.primary.content,
+    },
+    [`${tabs} &:checked`]: {
+      backgroundColor: paletteVars.primary.focus,
+    },
+  },
+});
+
 export const tab = style({
   selectors: {
     [`${tabs} &`]: {
       appearance: "none",
       gridRowStart: 1,
       margin: "0px",
-      backgroundColor: paletteVars.primary.bg,
-      color: paletteVars.primary.content,
-    },
-    [`${tabs} &:checked`]: {
-      backgroundColor: paletteVars.primary.focus,
     },
     ["&:after"]: {
       content: "attr(aria-label)",
