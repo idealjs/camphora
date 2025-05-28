@@ -1,6 +1,8 @@
 import {
   button,
   buttonGhost,
+  card,
+  cardPrimary,
   cardShadow,
   cardXs,
   dropdown,
@@ -8,6 +10,7 @@ import {
   dropdownEnd,
   menu,
   menuItem,
+  menuItemPrimary,
 } from "@idealjs/camphora-styled";
 import clsx from "clsx";
 import React from "react";
@@ -25,13 +28,20 @@ const LanguageDropdown = () => {
       </button>
       <ul
         tabIndex={0}
-        className={clsx(dropdownContent, menu, cardXs, cardShadow)}
+        className={clsx(
+          dropdownContent,
+          menu,
+          card,
+          cardPrimary,
+          cardXs,
+          cardShadow
+        )}
       >
         <li>
-          <div className={clsx(menuItem)}>english</div>
+          <div className={clsx(menuItem, menuItemPrimary)}>english</div>
         </li>
         <li>
-          <div className={clsx(menuItem)}>中文</div>
+          <div className={clsx(menuItem, menuItemPrimary)}>中文</div>
         </li>
       </ul>
     </div>

@@ -1,12 +1,15 @@
 import {
   button,
   buttonGhost,
+  card,
+  cardPrimary,
   cardShadow,
   cardXs,
   dropdown,
   dropdownContent,
   menu,
   menuItem,
+  menuItemPrimary,
 } from "@idealjs/camphora-styled";
 import clsx from "clsx";
 import getConfig from "next/config";
@@ -29,10 +32,20 @@ const VersionDropdown = () => {
       </div>
       <ul
         tabIndex={0}
-        className={clsx(dropdownContent, menu, cardXs, cardShadow)}
+        className={clsx(
+          dropdownContent,
+          menu,
+          card,
+          cardPrimary,
+          cardXs,
+          cardShadow
+        )}
       >
         <li>
-          <Link href={"/docs/changelog"} className={clsx(menuItem)}>
+          <Link
+            href={"/docs/changelog"}
+            className={clsx(menuItem, menuItemPrimary)}
+          >
             <svg
               width="14"
               height="14"
@@ -66,7 +79,10 @@ const VersionDropdown = () => {
           </Link>
         </li>
         <li>
-          <Link href={"/docs/roadmap"} className={clsx(menuItem)}>
+          <Link
+            href={"/docs/roadmap"}
+            className={clsx(menuItem, menuItemPrimary)}
+          >
             <svg
               width="14"
               height="14"

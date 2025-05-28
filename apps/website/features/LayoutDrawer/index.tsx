@@ -7,6 +7,7 @@ import React, { PropsWithChildren } from "react";
 import SearchInput from "@/components/SearchInput";
 
 import Navbar from "../Navbar";
+import { customDrawerContent } from "./style.css";
 
 interface IProps {
   responsive?: boolean;
@@ -17,9 +18,9 @@ const LayoutDrawer = (props: PropsWithChildren<IProps>) => {
 
   return (
     <Drawer drawerId="main-drawer">
-      <DrawerContent>
-        <Navbar drawerId="main-drawer" responsive={responsive} />
+      <DrawerContent className={customDrawerContent}>
         {children}
+        <Navbar drawerId="main-drawer" responsive={responsive} />
       </DrawerContent>
       <label htmlFor={"main-drawer"} className={overlay} />
       <DrawerSide

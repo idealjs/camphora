@@ -2,12 +2,14 @@ import { drawerContent } from "@idealjs/camphora-styled";
 import clsx from "clsx";
 import { PropsWithChildren } from "react";
 
-interface IProps {}
+interface IProps {
+  className?: string;
+}
 
 const DrawerContent = (props: PropsWithChildren<IProps>) => {
-  const { children } = props;
-  
-  return <div className={clsx(drawerContent)}>{children}</div>;
+  const { children, className } = props;
+
+  return <div className={clsx(drawerContent, className)}>{children}</div>;
 };
 
 export default DrawerContent;
