@@ -28,7 +28,7 @@ jobs:
           token: ${{ steps.generate_token.outputs.token }}
       - uses: actions/setup-node@v4
         with:
-          node-version: 20
+          node-version: 22
           cache: yarn
       - name: Install Dependencies
         run: yarn install --immutable
@@ -57,7 +57,7 @@ jobs:
           token: ${{ steps.generate_token.outputs.token }}
       - uses: actions/setup-node@v4
         with:
-          node-version: 20
+          node-version: 22
           cache: yarn
       - name: Install Dependencies
         run: yarn install --immutable
