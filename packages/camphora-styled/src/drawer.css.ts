@@ -31,6 +31,7 @@ export const drawerSide = style({
       position: "absolute",
       visibility: "hidden",
       overflowY: "hidden",
+      overflowX: "hidden",
       transform: "translateX(-100%)",
       transitionProperty: "all",
       transitionTimingFunction: "cubic-bezier(0.4, 0, 0.2, 1)",

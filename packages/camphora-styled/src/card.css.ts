@@ -5,7 +5,7 @@ import { paletteVars, sizeVars } from "./themes/defaultTheme.css";
 export const card = style({
   borderRadius: sizeVars.card.rounded.md,
   padding: sizeVars.card.padding.md,
-  width: sizeVars.card.width.md,
+  boxSizing: "border-box",
 });
 
 export const cardPrimary = style({

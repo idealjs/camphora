@@ -1,4 +1,4 @@
-import { tab, tabPanel } from "@idealjs/camphora-styled";
+import { tab, tabPanel, tabPrimary } from "@idealjs/camphora-styled";
 import clsx from "clsx";
 import React, { Fragment, PropsWithChildren } from "react";
 
@@ -17,7 +17,7 @@ const TabItem = (props: PropsWithChildren<IProps>) => {
   return (
     <Fragment>
       <input
-        className={clsx(tab)}
+        className={clsx(tab, tabPrimary)}
         type="radio"
         name={groupName}
         defaultChecked={value == defaultValue}

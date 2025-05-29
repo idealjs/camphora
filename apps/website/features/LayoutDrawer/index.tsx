@@ -1,5 +1,16 @@
-import { Drawer, DrawerContent, DrawerSide } from "@idealjs/camphora-react";
-import { card, cardPrimary, menuItem, overlay } from "@idealjs/camphora-styled";
+import {
+  Drawer,
+  DrawerContent,
+  DrawerSide,
+  Menu,
+} from "@idealjs/camphora-react";
+import {
+  card,
+  cardPrimary,
+  menuItem,
+  menuItemPrimary,
+  overlay,
+} from "@idealjs/camphora-styled";
 import clsx from "clsx";
 import Link from "next/link";
 import React, { PropsWithChildren } from "react";
@@ -19,8 +30,8 @@ const LayoutDrawer = (props: PropsWithChildren<IProps>) => {
   return (
     <Drawer drawerId="main-drawer">
       <DrawerContent className={customDrawerContent}>
-        {children}
         <Navbar drawerId="main-drawer" responsive={responsive} />
+        {children}
       </DrawerContent>
       <label htmlFor={"main-drawer"} className={overlay} />
       <DrawerSide
@@ -28,23 +39,35 @@ const LayoutDrawer = (props: PropsWithChildren<IProps>) => {
         responsive={responsive}
         className={clsx(card, cardPrimary)}
       >
-        <li>
-          <SearchInput />
-        </li>
-        <li style={{ height: "8px" }}></li>
-        <li>
-          <Link href={"/tutorials/quickstart"} className={clsx(menuItem)}>
-            quick start
-          </Link>
-        </li>
-        <li>
-          <Link href={"/components/menu"} className={clsx(menuItem)}>
-            menu
-          </Link>
-          <Link href={"/components/drawer"} className={clsx(menuItem)}>
-            drawer
-          </Link>
-        </li>
+        <Menu>
+          <li>
+            <SearchInput />
+          </li>
+          <li>
+            <Link
+              href={"/tutorials/quickstart"}
+              className={clsx(menuItem, menuItemPrimary)}
+            >
+              quick start
+            </Link>
+          </li>
+          <li>
+            <Link
+              href={"/components/menu"}
+              className={clsx(menuItem, menuItemPrimary)}
+            >
+              menu
+            </Link>
+          </li>
+          <li>
+            <Link
+              href={"/components/drawer"}
+              className={clsx(menuItem, menuItemPrimary)}
+            >
+              drawer
+            </Link>
+          </li>
+        </Menu>
       </DrawerSide>
     </Drawer>
   );

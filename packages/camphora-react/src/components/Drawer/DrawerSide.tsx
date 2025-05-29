@@ -23,7 +23,7 @@ const DrawerSide = (props: PropsWithChildren<IProps>) => {
         className
       )}
     >
-      <ul className={clsx(drawerMenu)}>{children}</ul>
+      {children}
     </aside>
   );
 };

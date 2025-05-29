@@ -10,7 +10,9 @@ export const metadata = {
 export default function Layout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en">
-      <body style={{ margin: 0, height: "100vh" }}>{children}</body>
+      <body style={{ margin: 0, height: "100vh", overflowY: "hidden" }}>
+        {children}
+      </body>
     </html>
   );
 }
