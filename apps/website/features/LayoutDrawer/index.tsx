@@ -68,6 +68,14 @@ const LayoutDrawer = (props: PropsWithChildren<IProps>) => {
               drawer
             </Link>
           </li>
+          <li>
+            <Link
+              href={"/components/tabs"}
+              className={clsx(menuItem, menuItemPrimary)}
+            >
+              tabs
+            </Link>
+          </li>
         </DrawerMenu>
       </DrawerSide>
     </Drawer>

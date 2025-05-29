@@ -24,6 +24,7 @@
     "typescript": "^5.8.3"
   },
   "dependencies": {
-    "@idealjs/camphora-styled": "workspace:^"
+    "@idealjs/camphora-styled": "workspace:^",
+    "clsx": "^2.1.1"
   }
 }

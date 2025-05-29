@@ -27,9 +27,6 @@ export const tab = style({
       gridRowStart: 1,
       margin: "0px",
     },
-    ["&:after"]: {
-      content: "attr(aria-label)",
-    },
   },
 });
 

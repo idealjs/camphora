@@ -607,6 +607,7 @@ __metadata:
   resolution: "@idealjs/camphora-react@workspace:packages/camphora-react"
   dependencies:
     "@idealjs/camphora-styled": "workspace:^"
+    clsx: "npm:^2.1.1"
     esbuild: "npm:^0.25.5"
     rimraf: "npm:^6.0.1"
     rollup: "npm:^4.41.1"
