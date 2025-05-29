@@ -2,6 +2,7 @@ import {
   button,
   buttonGhost,
   card,
+  cardMd,
   cardPrimary,
   Drawer,
   DrawerContent,
@@ -60,7 +61,7 @@ const page = () => {
           <DrawerSide
             drawerId="1-drawer"
             responsive={true}
-            className={clsx(card, cardPrimary)}
+            className={clsx(card, cardMd, cardPrimary)}
           >
             <div>
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia id
@@ -113,7 +114,7 @@ const page = () => {
           <DrawerSide
             drawerId="2-drawer"
             responsive={false}
-            className={clsx(card, cardPrimary)}
+            className={clsx(card, cardMd, cardPrimary)}
           >
             <div>
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia id

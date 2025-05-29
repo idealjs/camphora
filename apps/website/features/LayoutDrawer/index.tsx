@@ -1,11 +1,12 @@
 import {
   Drawer,
   DrawerContent,
+  DrawerMenu,
   DrawerSide,
-  Menu,
 } from "@idealjs/camphora-react";
 import {
   card,
+  cardMd,
   cardPrimary,
   menuItem,
   menuItemPrimary,
@@ -37,9 +38,9 @@ const LayoutDrawer = (props: PropsWithChildren<IProps>) => {
       <DrawerSide
         drawerId="main-drawer"
         responsive={responsive}
-        className={clsx(card, cardPrimary)}
+        className={clsx(card, cardMd, cardPrimary)}
       >
-        <Menu>
+        <DrawerMenu className={card}>
           <li>
             <SearchInput />
           </li>
@@ -67,7 +68,7 @@ const LayoutDrawer = (props: PropsWithChildren<IProps>) => {
               drawer
             </Link>
           </li>
-        </Menu>
+        </DrawerMenu>
       </DrawerSide>
     </Drawer>
   );

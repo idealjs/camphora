@@ -1,6 +1,5 @@
 import { style } from "@vanilla-extract/css";
 
-import { card } from "./card.css";
 import { paletteVars, sizeVars } from "./themes";
 
 export const menuItem = style({
@@ -22,7 +21,6 @@ export const menuItem = style({
 });
 
 export const menu = style([
-  card,
   {
     selectors: {
       ["ul&"]: {
@@ -52,3 +50,11 @@ export const menuItemPrimary = style({
     },
   },
 });
+
+export const drawerMenu = style([
+  menu,
+  {
+    boxSizing: "border-box",
+    minHeight: "100%",
+  },
+]);

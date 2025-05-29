@@ -1,6 +1,7 @@
 import {
   card,
   cardPrimary,
+  cardXs,
   Menu,
   MenuItem,
   menuItemPrimary,
@@ -13,13 +14,10 @@ const page = () => {
   return (
     <div>
       <Preview style={{ height: "300px" }}>
-        <Menu style={{ width: "124px" }} className={clsx(card, cardPrimary)}>
+        <Menu className={clsx(card, cardXs, cardPrimary)}>
           <MenuItem className={menuItemPrimary}>
             Trees
-            <Menu
-              style={{ width: "124px" }}
-              className={clsx(card, cardPrimary)}
-            >
+            <Menu className={clsx(card, cardXs, cardPrimary)}>
               <MenuItem className={menuItemPrimary}>🌳 Deciduous</MenuItem>
               <MenuItem className={menuItemPrimary}>🌲 Evergreen</MenuItem>
               <MenuItem className={menuItemPrimary}>🌴 Palm</MenuItem>
@@ -27,10 +25,7 @@ const page = () => {
           </MenuItem>
           <MenuItem className={menuItemPrimary}>
             Vegetables
-            <Menu
-              style={{ width: "124px" }}
-              className={clsx(card, cardPrimary)}
-            >
+            <Menu className={clsx(card, cardXs, cardPrimary)}>
               <MenuItem className={menuItemPrimary}>🍆 Eggplant</MenuItem>
               <MenuItem className={menuItemPrimary}>🥔 Potato</MenuItem>
               <MenuItem className={menuItemPrimary}>🥕 Carrot</MenuItem>
@@ -38,10 +33,7 @@ const page = () => {
           </MenuItem>
           <MenuItem className={menuItemPrimary}>
             Fruits
-            <Menu
-              style={{ width: "124px" }}
-              className={clsx(card, cardPrimary)}
-            >
+            <Menu className={clsx(card, cardXs, cardPrimary)}>
               <MenuItem className={menuItemPrimary}>🍇 Grapes</MenuItem>
               <MenuItem className={menuItemPrimary}>🍊 Tangerine</MenuItem>
               <MenuItem className={menuItemPrimary}>🍋 Lemon</MenuItem>

@@ -1,8 +1,4 @@
-import {
-  drawerMenu,
-  drawerSide,
-  responsiveDrawerSide,
-} from "@idealjs/camphora-styled";
+import { drawerSide, responsiveDrawerSide } from "@idealjs/camphora-styled";
 import clsx from "clsx";
 import { PropsWithChildren, ReactNode } from "react";
 
