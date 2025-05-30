@@ -1,46 +1,56 @@
-# 组件设计规范
+# Component Design Guidelines
 
-## 1. 组件组成
+See [README-zh.md](./README-zh.md) for the Chinese version.
 
-组件由以下五个核心未读构成
+## 1. Component Composition
 
-| 维度     | 描述                                                                                                | 示例 |
-| -------- | --------------------------------------------------------------------------------------------------- | ---- |
-| 数据     | 使用 checkbox radio 表单元素、focus hover css 伪类，记录组件状态 抽屉组件是否弹出、下拉组件是否激活 |      |
-| 交互行为 | 在特定情况下，展示，或隐藏元素。予以用户交互反馈                                                    |      |
-| 布局     | 被交互行为决定的结构，及子元素排列方式                                                              |      |
-| 尺寸     | 对原组件起大小限定作用，但不影响布局、交互行为                                                      |      |
-| 颜色     | 对原组件起交互反馈增强效果，但不影响交互                                                            |      |
+A component consists of the following five core dimensions:
 
-由于实际开发过程中，部分组件的交互行为会决定视觉效果。估将视觉效果分离为三个部分。其中，布局是被交互行为决定的结构。尺寸，与颜色与原组件无直接关系。
+| Dimension   | Description                                                                                                                                                                 | Example |
+| ----------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------- |
+| Data        | Uses checkbox, radio form elements, focus and hover CSS pseudo-classes to record component state. For example, whether a drawer component is open, or a dropdown is active. |         |
+| Interaction | Shows or hides elements under specific conditions, providing user feedback.                                                                                                 |         |
+| Layout      | The structure determined by interaction behavior, and the arrangement of child elements.                                                                                    |         |
+| Size        | Restricts the size of the original component, but does not affect layout or interaction.                                                                                    |         |
+| Color       | Enhances interaction feedback for the original component, but does not affect interaction itself.                                                                           |         |
+
+In actual development, some component interactions determine visual effects.
+
+Therefore, visual effects are separated into three parts.
+
+Among them, layout is the structure determined by interaction behavior. Size and Color are not directly related to the original component.
 
 ```mermaid
 graph TD
-    A[组件] --> B[数据]
-    A --> C[交互行为]
-    A --> D[布局]
-    A --> E[尺寸]
-    A --> F[颜色]
-    C -->|触发| B
-    D -->|受限于| C
+    A[Component] --> B[Data]
+    A --> C[Interaction]
+    A --> D[Layout]
+    A --> E[Size]
+    A --> F[Color]
+    C -->|Triggers| B
+    D -->|Constrained by| C
 ```
 
-## 2. 维度边界规范
+## 2. Dimension Boundary Guidelines
 
-### 2.1 交集处理原则
+### 2.1 Intersection Handling Principles
 
-- 布局与尺寸
-  如 card 有单独的大 中 小 三个尺寸定义
-  但 card 圆角被定义在布局中
+- Layout and Size
 
-- 布局与颜色
-  如 paper 有 paperPrimary paperSecondary 两种颜色定义
-  而 preview 的布局背景为重复的圆点
+  For example, a card has separate definitions for large, medium, and small sizes.
 
-## 3. 设计原则
+  However, the card's border radius is defined in the layout.
 
-1. 明确边界：文档中标注布局与交互行为的关系
-2. 可扩展性：尺寸与颜色应支持组合
-3. 单一职责：尺寸或颜色只承担一个维度的责任
+- Layout and Color
 
+  For example, paper has two color definitions: paperPrimary and paperSecondary.
 
+  The layout background of preview uses repeated dots.
+
+## 3. Design Principles
+
+1. Clear boundaries: Document the relationship between layout and interaction behavior.
+2. Extensibility: Size and color should support combinations.
+3. Single responsibility: Size or color should only be responsible for one dimension.
+
+# FOUC Issue
