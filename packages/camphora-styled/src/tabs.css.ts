@@ -22,9 +22,7 @@ export const tabPrimary = style({
 export const tab = style({
   selectors: {
     [`${tabs} &`]: {
-      appearance: "none",
       gridRowStart: 1,
-      margin: "2px",
     },
   },
 });
