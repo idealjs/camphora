@@ -1,11 +1,10 @@
 import { style } from "@vanilla-extract/css";
 
-import { paletteVars, sizeVars } from "./themes";
+import { inputData } from "./interactive.css";
+import { paletteVars } from "./themes";
 
 export const tabs = style({
   display: "grid",
-  vars: {},
-  selectors: {},
 });
 
 export const tabPrimary = style({
@@ -14,7 +13,7 @@ export const tabPrimary = style({
       backgroundColor: paletteVars.primary.bg,
       color: paletteVars.primary.content,
     },
-    [`${tabs} &:checked`]: {
+    [`${tabs} &:has(${inputData}:checked)`]: {
       backgroundColor: paletteVars.primary.focus,
     },
   },
@@ -25,7 +24,7 @@ export const tab = style({
     [`${tabs} &`]: {
       appearance: "none",
       gridRowStart: 1,
-      margin: "0px",
+      margin: "2px",
     },
   },
 });
@@ -38,7 +37,7 @@ export const tabPanel = style({
       gridColumnEnd: "span 9999",
       display: "none",
     },
-    [`${tab}:checked+&`]: {
+    [`${tab}:has(${inputData}:checked)+&`]: {
       display: "block",
     },
   },

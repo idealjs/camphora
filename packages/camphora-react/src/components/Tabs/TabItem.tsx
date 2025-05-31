@@ -1,4 +1,4 @@
-import { tab } from "@idealjs/camphora-styled";
+import { inputData, tab } from "@idealjs/camphora-styled";
 import clsx from "clsx";
 import { Fragment, PropsWithChildren } from "react";
 
@@ -26,19 +26,20 @@ const TabItem = (props: PropsWithChildren<IProps>) => {
 
   return (
     <Fragment>
-      <label htmlFor={id} className={className}>
-        {children}
+      <label htmlFor={id} className={clsx(tab, className)}>
+        {label ?? value}
+        <input
+          id={id}
+          type="radio"
+          value={value}
+          name={groupName}
+          checked={checked}
+          className={inputData}
+          defaultChecked={defaultChecked}
+          aria-label={label ?? value}
+        />
       </label>
-      <input
-        id={id}
-        className={clsx(tab)}
-        type="radio"
-        value={value}
-        name={groupName}
-        checked={checked}
-        defaultChecked={defaultChecked}
-        aria-label={label ?? value}
-      />
+      {children}
     </Fragment>
   );
 };

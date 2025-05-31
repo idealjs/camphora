@@ -1,6 +1,6 @@
 import { keyframes, style } from "@vanilla-extract/css";
 
-import { IaData } from "./interactive.css";
+import { inputData } from "./interactive.css";
 
 const gradient = keyframes({
   "0%": { opacity: 0 },
@@ -15,7 +15,7 @@ export const overlay = style({
   cursor: "pointer",
   visibility: "hidden",
   selectors: {
-    [`${IaData}:checked ~ &`]: {
+    [`${inputData}:checked ~ &`]: {
       animation: `${gradient} 300ms`,
       opacity: 0.4,
       visibility: "visible",

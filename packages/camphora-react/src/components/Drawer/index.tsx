@@ -1,4 +1,4 @@
-import { drawer, Ia, IaData } from "@idealjs/camphora-styled";
+import { drawer, inputData } from "@idealjs/camphora-styled";
 import clsx from "clsx";
 import { PropsWithChildren } from "react";
 
@@ -11,10 +11,10 @@ const Drawer = (props: PropsWithChildren<IProps>) => {
   const { children, drawerId, className } = props;
 
   return (
-    <div className={clsx(Ia, drawer, className)}>
+    <div className={clsx(drawer, className)}>
       <input
         type="checkbox"
-        className={IaData}
+        className={inputData}
         name="user data"
         id={drawerId}
       />
