@@ -18,11 +18,8 @@ export const tab = style({
 export const tabPanel = style({
   selectors: {
     [`${tabs} &`]: {
-      gridColumn: "1 / -1",
-
-      // gridColumnStart: 1,
-      // gridRowStart: 0,
-      // gridColumnEnd: "span 3",
+      gridColumnStart: 1,
+      gridColumnEnd: "span 999",
       display: "none",
     },
     [`${tab}:has(${inputData}:checked)+&`]: {

@@ -35,7 +35,6 @@ export const cardXs = style({
 export const cardSm = style({
   selectors: {
     [`${card}&`]: {
-      boxShadow: sizeVars.card.shadow.sm,
       width: sizeVars.card.width.sm,
     },
   },
