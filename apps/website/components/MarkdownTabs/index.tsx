@@ -1,9 +1,10 @@
-import { paper, paperSecondary, tabs } from "@idealjs/camphora-styled";
+import { paper, paperSecondary } from "@idealjs/camphora-styled";
 import clsx from "clsx";
 import { nanoid } from "nanoid";
 import React, { PropsWithChildren } from "react";
 
 import { setDefaultValue, setGroupName } from "./context";
+import { tabs } from "./tabs.css";
 
 interface IProps {
   defaultValue?: string;
