@@ -1,6 +1,10 @@
+import clsx from "clsx";
 import "./global.css";
 
-import "@idealjs/camphora-styled/defaultTheme";
+import {
+  defaultThemePalette,
+  defaultThemeSize,
+} from "@idealjs/camphora-styled/themes";
 
 export const metadata = {
   title: "Next.js",
@@ -9,7 +13,7 @@ export const metadata = {
 
 export default function Layout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en">
+    <html lang="en" className={clsx(defaultThemePalette, defaultThemeSize)}>
       <body style={{ margin: 0, height: "100vh", overflowY: "hidden" }}>
         {children}
       </body>

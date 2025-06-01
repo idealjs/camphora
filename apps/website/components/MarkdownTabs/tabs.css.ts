@@ -1,4 +1,5 @@
-import { inputData, paletteVars } from "@idealjs/camphora-styled";
+import { inputData } from "@idealjs/camphora-styled";
+import { paletteVars } from "@idealjs/camphora-styled";
 import { style } from "@vanilla-extract/css";
 
 export const tabs = style({

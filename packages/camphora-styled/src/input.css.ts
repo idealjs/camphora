@@ -1,6 +1,6 @@
 import { style } from "@vanilla-extract/css";
 
-import { paletteVars, sizeVars } from "./themes";
+import { paletteVars,sizeVars } from "./themeContracts.css";
 
 export const inputActive = style({});
 export const inputGhost = style({});

@@ -12,7 +12,13 @@ interface IProps {
 const Tabs = (props: PropsWithChildren<IProps>) => {
   const { children, className, onChange } = props;
   return (
-    <form className={clsx(tabs, className)} onChange={onChange}>
+    <form
+      className={clsx(tabs, className)}
+      onChange={onChange}
+      style={{
+        gridAutoColumns: "1fr",
+      }}
+    >
       {children}
     </form>
   );

@@ -1,6 +1,6 @@
 import { style } from "@vanilla-extract/css";
 
-import { paletteVars, sizeVars } from "./themes/defaultTheme.css";
+import { paletteVars, sizeVars } from "./themeContracts.css";
 
 export const card = style({
   borderRadius: sizeVars.card.rounded.md,
@@ -24,18 +24,9 @@ export const cardSecondary = style({
   },
 });
 
-export const cardShadow = style({
-  selectors: {
-    [`${card}&`]: {
-      boxShadow: sizeVars.card.shadow.md,
-    },
-  },
-});
-
 export const cardXs = style({
   selectors: {
     [`${card}&`]: {
-      boxShadow: sizeVars.card.shadow.xs,
       width: sizeVars.card.width.xs,
     },
   },
@@ -53,7 +44,6 @@ export const cardSm = style({
 export const cardMd = style({
   selectors: {
     [`${card}&`]: {
-      boxShadow: sizeVars.card.shadow.md,
       width: sizeVars.card.width.md,
     },
   },
@@ -62,8 +52,27 @@ export const cardMd = style({
 export const cardLg = style({
   selectors: {
     [`${card}&`]: {
-      boxShadow: sizeVars.card.shadow.lg,
       width: sizeVars.card.width.lg,
+    },
+  },
+});
+
+export const cardShadow = style({
+  selectors: {
+    [`${card}&`]: {
+      boxShadow: sizeVars.card.shadow.md,
+    },
+    [`${cardXs}&`]: {
+      boxShadow: sizeVars.card.shadow.xs,
+    },
+    [`${cardSm}&`]: {
+      boxShadow: sizeVars.card.shadow.sm,
+    },
+    [`${cardMd}&`]: {
+      boxShadow: sizeVars.card.shadow.md,
+    },
+    [`${cardLg}&`]: {
+      boxShadow: sizeVars.card.shadow.lg,
     },
   },
 });

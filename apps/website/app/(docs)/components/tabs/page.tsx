@@ -4,10 +4,12 @@ import {
   card,
   cardMd,
   cardPrimary,
+  cardSecondary,
   Preview,
   TabItem,
   TabPanel,
   Tabs,
+  tabSlider,
 } from "@idealjs/camphora-react";
 import clsx from "clsx";
 import React from "react";
@@ -22,9 +24,10 @@ const page = () => {
             console.log("test test", e);
           }}
         >
+          <div className={clsx(tabSlider, card, cardSecondary)}></div>
           <TabItem
             id="test1"
-            value="test1"
+            value="test11111"
             groupName="group1"
             defaultChecked={true}
           >
@@ -34,7 +37,7 @@ const page = () => {
             <TabPanel>test2</TabPanel>
           </TabItem>
           <TabItem id="test3" value="test3" groupName="group1">
-            <TabPanel>test3</TabPanel>
+            <TabPanel>test33333</TabPanel>
           </TabItem>
         </Tabs>
       </Preview>

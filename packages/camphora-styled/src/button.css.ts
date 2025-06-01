@@ -1,6 +1,6 @@
 import { style } from "@vanilla-extract/css";
 
-import { paletteVars, sizeVars } from "./themes/defaultTheme.css";
+import { paletteVars, sizeVars } from "./themeContracts.css";
 
 export const button = style({
   cursor: "pointer",

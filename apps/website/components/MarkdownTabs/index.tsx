@@ -1,4 +1,12 @@
-import { paper, paperSecondary } from "@idealjs/camphora-styled";
+import {
+  card,
+  cardLg,
+  cardMd,
+  cardPrimary,
+  cardShadow,
+  paper,
+  paperSecondary,
+} from "@idealjs/camphora-styled";
 import clsx from "clsx";
 import { nanoid } from "nanoid";
 import React, { PropsWithChildren } from "react";
@@ -16,7 +24,14 @@ const Tabs = (props: PropsWithChildren<IProps>) => {
   setGroupName(groupName ?? nanoid());
   defaultValue != null && setDefaultValue(defaultValue);
 
-  return <div className={clsx(tabs, paper, paperSecondary)}>{children}</div>;
+  return (
+    <div
+      className={clsx(tabs, card, cardLg, cardPrimary, cardShadow)}
+      style={{ margin: "16px" }}
+    >
+      {children}
+    </div>
+  );
 };
 
 export default Tabs;

@@ -1,4 +1,5 @@
-import { dropdown, paletteVars } from "@idealjs/camphora-styled";
+import { dropdown } from "@idealjs/camphora-styled";
+import { paletteVars } from "@idealjs/camphora-styled";
 import { style } from "@vanilla-extract/css";
 
 export const selectedButtonStyle = style({

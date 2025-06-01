@@ -10,6 +10,6 @@ export * from "./overlay.css";
 export * from "./paper.css";
 export * from "./preview.css";
 export * from "./tabs.css";
-export * from "./themes";
+export * from "./themeContracts.css";
 export * from "./tooltip.css";
 export * from "./utils.css";

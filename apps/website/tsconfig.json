@@ -14,8 +14,8 @@
       "@idealjs/camphora-styled": [
         "../../packages/camphora-styled/src/index.ts"
       ],
-      "@idealjs/camphora-styled/defaultTheme": [
-        "../../packages/camphora-styled/src/themes/defaultTheme.css.ts"
+      "@idealjs/camphora-styled/themes": [
+        "../../packages/camphora-styled/src/themes/index.ts"
       ],
       "@idealjs/camphora-react": ["../../packages/camphora-react/src/index.ts"]
     }
