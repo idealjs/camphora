@@ -120,6 +120,14 @@ export const defaultSize = {
       lg: "512px",
     },
   },
+  tab: {
+    width: {
+      xs: "32px",
+      sm: "64px",
+      md: "96px",
+      lg: "128px",
+    },
+  },
 };
 
 export const paletteVars = createThemeContract(defaultPalette);

@@ -1,10 +1,11 @@
-import { style } from "@vanilla-extract/css";
+import { createVar, style } from "@vanilla-extract/css";
 
 import { inputData } from "./interactive.css";
-import { paletteVars } from "./themeContracts.css";
+import { paletteVars, sizeVars } from "./themeContracts.css";
 
 export const tabs = style({
   display: "grid",
+  gridTemplateColumns: `repeat(auto-fill, minmax(${sizeVars.tab.width.md}, 1fr))`,
 });
 
 export const tab = style({
@@ -18,8 +19,7 @@ export const tab = style({
 export const tabPanel = style({
   selectors: {
     [`${tabs} &`]: {
-      gridColumnStart: 1,
-      gridColumnEnd: "span 999",
+      gridColumn: "1/-1",
       display: "none",
     },
     [`${tab}:has(${inputData}:checked)+&`]: {
@@ -52,6 +52,35 @@ export const tabPrimary = style({
     },
     [`${tabs} &:has(${inputData}:checked)`]: {
       backgroundColor: paletteVars.primary.focus,
+    },
+  },
+});
+
+export const tabXs = style({
+  selectors: {
+    [`${tabs}&`]: {
+      gridTemplateColumns: `repeat(auto-fill, minmax(${sizeVars.tab.width.xs}, 1fr))`,
+    },
+  },
+});
+export const tabSm = style({
+  selectors: {
+    [`${tabs}&`]: {
+      gridTemplateColumns: `repeat(auto-fill, minmax(${sizeVars.tab.width.sm}, 1fr))`,
+    },
+  },
+});
+export const tabMd = style({
+  selectors: {
+    [`${tabs}&`]: {
+      gridTemplateColumns: `repeat(auto-fill, minmax(${sizeVars.tab.width.md}, 1fr))`,
+    },
+  },
+});
+export const tabLg = style({
+  selectors: {
+    [`${tabs}&`]: {
+      gridTemplateColumns: `repeat(auto-fill, minmax(${sizeVars.tab.width.lg}, 1fr))`,
     },
   },
 });

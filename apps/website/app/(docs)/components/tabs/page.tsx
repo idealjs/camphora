@@ -8,9 +8,12 @@ import {
   cardSecondary,
   Preview,
   TabItem,
+  tabLg,
+  tabMd,
   TabPanel,
   Tabs,
   tabSlider,
+  tabSm,
 } from "@idealjs/camphora-react";
 import clsx from "clsx";
 import React from "react";
@@ -18,14 +21,9 @@ import { customTab } from "./custom.css";
 
 const page = () => {
   return (
-    <div>
+    <div style={{ overflowY: "auto" }}>
       <Preview style={{ height: "300px" }}>
-        <Tabs
-          className={clsx(card, cardPrimary, cardMd)}
-          onChange={(e) => {
-            console.log("test test", e);
-          }}
-        >
+        <Tabs className={clsx(card, cardPrimary, cardMd, tabSm)}>
           <div className={clsx(tabSlider, card, cardSecondary)}></div>
           <TabItem
             id="test1"
@@ -70,17 +68,12 @@ const page = () => {
         </Tabs>
       </Preview>
       <Preview style={{ height: "300px" }}>
-        <Tabs
-          className={clsx(card, cardPrimary, cardLg)}
-          onChange={(e) => {
-            console.log("test test", e);
-          }}
-        >
+        <Tabs className={clsx(card, cardPrimary, cardLg)}>
           <div className={clsx(tabSlider, card, cardSecondary)}></div>
           <TabItem
             id="test11"
             value="loooooong test1"
-            groupName="group1"
+            groupName="group11"
             defaultChecked={true}
             className={customTab}
           >
@@ -94,7 +87,7 @@ const page = () => {
           <TabItem
             id="test22"
             value="test2"
-            groupName="group1"
+            groupName="group11"
             className={customTab}
           >
             <TabPanel>
@@ -107,7 +100,7 @@ const page = () => {
           <TabItem
             id="test33"
             value="test3"
-            groupName="group1"
+            groupName="group11"
             className={customTab}
           >
             <TabPanel>
@@ -117,6 +110,30 @@ const page = () => {
               doloribus blanditiis repellendus voluptas.
             </TabPanel>
           </TabItem>
+        </Tabs>
+      </Preview>
+      <Preview style={{ height: "300px" }}>
+        <Tabs className={clsx(card, cardPrimary, cardLg, tabLg)}>
+          <div className={clsx(tabSlider, card, cardSecondary)}></div>
+          <TabItem
+            id="test111"
+            value="loooooong test1"
+            groupName="group12"
+            defaultChecked={true}
+            className={customTab}
+          ></TabItem>
+          <TabItem
+            id="test222"
+            value="test2"
+            groupName="group12"
+            className={customTab}
+          ></TabItem>
+          <TabItem
+            id="test333"
+            value="test3"
+            groupName="group12"
+            className={customTab}
+          ></TabItem>
         </Tabs>
       </Preview>
     </div>

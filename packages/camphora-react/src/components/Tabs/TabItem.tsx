@@ -10,6 +10,7 @@ interface IProps {
   defaultChecked?: boolean;
   groupName: string;
   className?: string;
+  onClick?: React.MouseEventHandler<HTMLLabelElement>;
 }
 
 const TabItem = (props: PropsWithChildren<IProps>) => {
@@ -22,11 +23,12 @@ const TabItem = (props: PropsWithChildren<IProps>) => {
     label,
     checked,
     defaultChecked,
+    onClick,
   } = props;
 
   return (
     <Fragment>
-      <label htmlFor={id} className={clsx(tab, className)}>
+      <label htmlFor={id} className={clsx(tab, className)} onClick={onClick}>
         {label ?? value}
         <input
           id={id}
