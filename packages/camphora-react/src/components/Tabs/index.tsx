@@ -4,18 +4,11 @@ import { PropsWithChildren } from "react";
 
 interface IProps {
   className?: string;
-  defaultValue?: string;
-  value?: string;
-  onChange?: React.FormEventHandler<HTMLFormElement>;
 }
 
 const Tabs = (props: PropsWithChildren<IProps>) => {
-  const { children, className, onChange } = props;
-  return (
-    <form className={clsx(tabs, className)} onChange={onChange}>
-      {children}
-    </form>
-  );
+  const { children, className } = props;
+  return <div className={clsx(tabs, className)}>{children}</div>;
 };
 
 export default Tabs;
