@@ -614,6 +614,8 @@ __metadata:
     rollup-plugin-esbuild: "npm:^6.2.1"
     rollup-plugin-visualizer: "npm:^6.0.0"
     typescript: "npm:^5.8.3"
+  peerDependencies:
+    "@idealjs/camphora-styled": "workspace:^"
   languageName: unknown
   linkType: soft
 

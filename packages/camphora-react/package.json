@@ -16,6 +16,7 @@
     "prepack": "rimraf dist && yarn typings && yarn build"
   },
   "devDependencies": {
+    "@idealjs/camphora-styled": "workspace:^",
     "esbuild": "^0.25.5",
     "rimraf": "^6.0.1",
     "rollup": "^4.41.1",
@@ -24,7 +25,9 @@
     "typescript": "^5.8.3"
   },
   "dependencies": {
-    "@idealjs/camphora-styled": "workspace:^",
     "clsx": "^2.1.1"
+  },
+  "peerDependencies": {
+    "@idealjs/camphora-styled": "workspace:^"
   }
 }
