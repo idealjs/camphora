@@ -51,10 +51,24 @@ const page = () => {
               </div>
             </nav>
             <div>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia id
-              repudiandae quasi tempore dolore. Omnis cumque id modi dolor
-              veniam, hic voluptate odio. Ut, laudantium quod optio soluta hic
-              velit?
+              <div>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia id
+                repudiandae quasi tempore dolore. Omnis cumque id modi dolor
+                veniam, hic voluptate odio. Ut, laudantium quod optio soluta hic
+                velit?
+              </div>
+              <div>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia id
+                repudiandae quasi tempore dolore. Omnis cumque id modi dolor
+                veniam, hic voluptate odio. Ut, laudantium quod optio soluta hic
+                velit?
+              </div>
+              <div>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia id
+                repudiandae quasi tempore dolore. Omnis cumque id modi dolor
+                veniam, hic voluptate odio. Ut, laudantium quod optio soluta hic
+                velit?
+              </div>
             </div>
           </DrawerContent>
           <label htmlFor={"1-drawer"} className={overlay} />

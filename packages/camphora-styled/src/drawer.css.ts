@@ -3,6 +3,7 @@ import { style } from "@vanilla-extract/css";
 import { inputData } from "./interactive.css";
 
 export const drawer = style({
+  position: "relative",
   display: "grid",
   gridAutoColumns: "max-content auto",
   height: "100%",
