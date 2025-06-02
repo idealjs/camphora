@@ -2,8 +2,8 @@ import clsx from "clsx";
 import "./global.css";
 
 import {
-  defaultThemePalette,
-  defaultThemeSize,
+  lightThemePalette,
+  lightThemeSize,
 } from "@idealjs/camphora-styled/themes";
 
 export const metadata = {
@@ -13,10 +13,8 @@ export const metadata = {
 
 export default function Layout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en" className={clsx(defaultThemePalette, defaultThemeSize)}>
-      <body style={{ margin: 0, height: "100vh", overflowY: "hidden" }}>
-        {children}
-      </body>
+    <html lang="en" className={clsx(lightThemePalette, lightThemeSize)}>
+      <body style={{ margin: 0, height: "100vh" }}>{children}</body>
     </html>
   );
 }

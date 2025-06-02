@@ -3,7 +3,6 @@ import { style } from "@vanilla-extract/css";
 import { inputData } from "./interactive.css";
 
 export const drawer = style({
-  position: "relative",
   display: "grid",
   gridAutoColumns: "max-content auto",
   height: "100%",
@@ -15,7 +14,7 @@ export const drawerContent = style({
     [`${drawer} &`]: {
       gridColumnStart: 2,
       gridRowStart: 1,
-      overflowY: "auto",
+      overflowY: "hidden",
     },
   },
 });

@@ -1,6 +1,6 @@
 const Page = () => {
   return (
-    <main style={{ scrollbarGutter: "stable" }}>
+    <main style={{ scrollbarGutter: "stable", overflowY: "auto" }}>
       <div>
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia id
         repudiandae quasi tempore dolore. Omnis cumque id modi dolor veniam, hic
