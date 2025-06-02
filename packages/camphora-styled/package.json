@@ -8,10 +8,26 @@
       "require": "./dist/cjs/index.js",
       "import": "./dist/esm/index.js"
     },
-    "./defaultTheme": {
-      "types": "./dist/themes/defaultTheme.css.d.ts",
-      "require": "./dist/cjs/themes/defaultTheme.css.js",
-      "import": "./dist/esm/themes/defaultTheme.css.js"
+    "./index.css": {
+      "require": "./dist/cjs/index.css",
+      "import": "./dist/esm/index.css"
+    },
+    "./themes": {
+      "types": "./dist/themes/index.d.ts",
+      "require": "./dist/cjs/themes/index.js",
+      "import": "./dist/esm/themes/index.js"
+    },
+    "./themes.css": {
+      "require": "./dist/cjs/themes/index.css",
+      "import": "./dist/esm/themes/index.css"
+    },
+    "./lightTheme.css": {
+      "require": "./dist/cjs/themes/lightTheme.css",
+      "import": "./dist/esm/themes/lightTheme.css"
+    },
+    "./darkTheme.css": {
+      "require": "./dist/cjs/themes/darkTheme.css",
+      "import": "./dist/esm/themes/darkTheme.css"
     }
   },
   "license": "MIT",

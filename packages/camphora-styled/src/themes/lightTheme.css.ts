@@ -7,6 +7,6 @@ import {
   sizeVars,
 } from "../themeContracts.css";
 
-export const defaultThemeSize = createTheme(sizeVars, defaultSize);
+export const lightThemeSize = createTheme(sizeVars, defaultSize);
 
-export const defaultThemePalette = createTheme(paletteVars, defaultPalette);
+export const lightThemePalette = createTheme(paletteVars, defaultPalette);

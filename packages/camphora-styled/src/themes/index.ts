@@ -1,1 +1,2 @@
-export * from "./defaultTheme.css";
+export * from "./darkTheme.css";
+export * from "./lightTheme.css";
