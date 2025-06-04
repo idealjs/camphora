@@ -95,16 +95,16 @@ export const defaultSize = {
   },
   card: {
     rounded: {
-      xs: "4px",
-      sm: "6px",
-      md: "8px",
-      lg: "12px",
+      xs: "8px",
+      sm: "12px",
+      md: "16px",
+      lg: "20px",
     },
     padding: {
-      xs: "2px",
-      sm: "4px",
-      md: "4px",
-      lg: "8px",
+      xs: "16px",
+      sm: "20px",
+      md: "24px",
+      lg: "28px",
     },
     shadow: {
       none: "0",
