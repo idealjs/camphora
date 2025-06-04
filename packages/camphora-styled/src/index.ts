@@ -9,6 +9,7 @@ export * from "./navbar.css";
 export * from "./overlay.css";
 export * from "./paper.css";
 export * from "./preview.css";
+export * from "./stack.css";
 export * from "./tabs.css";
 export * from "./themeContracts.css";
 export * from "./tooltip.css";
