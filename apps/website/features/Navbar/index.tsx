@@ -1,9 +1,9 @@
 import {
   button,
   buttonGhost,
+  card,
+  cardShadow,
   navbar,
-  paper,
-  paperShadow,
 } from "@idealjs/camphora-styled";
 import clsx from "clsx";
 import Link from "next/link";
@@ -21,7 +21,7 @@ interface IProps {
 const Navbar = (props: IProps) => {
   const { drawerId, responsive } = props;
   return (
-    <nav className={clsx(navbar, paper, paperShadow)}>
+    <nav className={clsx(navbar, card, cardShadow)}>
       <div style={{ display: "flex", flex: 1, gap: "8px" }}>
         <DrawerToggle
           drawerId={drawerId}

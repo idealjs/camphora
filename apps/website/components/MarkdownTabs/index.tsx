@@ -4,8 +4,6 @@ import {
   cardMd,
   cardPrimary,
   cardShadow,
-  paper,
-  paperSecondary,
   tabs,
 } from "@idealjs/camphora-styled";
 import clsx from "clsx";

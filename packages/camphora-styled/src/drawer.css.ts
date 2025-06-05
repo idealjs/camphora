@@ -33,6 +33,8 @@ export const drawerSide = style({
       transitionProperty: "all",
       transitionTimingFunction: "cubic-bezier(0.4, 0, 0.2, 1)",
       transitionDuration: "0.3s",
+      display: "flex",
+      flexDirection: "column",
     },
     [`${inputData}:checked ~ &`]: {
       visibility: "visible",

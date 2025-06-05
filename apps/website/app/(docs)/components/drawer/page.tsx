@@ -1,29 +1,35 @@
 import {
-  button,
-  buttonGhost,
-  card,
-  cardMd,
-  cardPrimary,
   Drawer,
   DrawerContent,
   DrawerSide,
   DrawerToggle,
-  navbar,
-  overlay,
-  paper,
-  paperShadow,
   Preview,
 } from "@idealjs/camphora-react";
+import {
+  navbar,
+  button,
+  buttonGhost,
+  overlay,
+  card,
+  cardMd,
+  cardPrimary,
+} from "@idealjs/camphora-styled";
+import { cardSprinkles } from "@idealjs/camphora-styled/utils";
 import clsx from "clsx";
 import React from "react";
 
 const page = () => {
   return (
-    <div>
+    <div style={{ overflowY: "auto" }}>
       <Preview style={{ height: "300px" }}>
         <Drawer drawerId="1-drawer">
           <DrawerContent>
-            <nav className={clsx(navbar, paper, paperShadow)}>
+            <nav
+              className={clsx(
+                navbar,
+                cardSprinkles({ background: "base100", borderRadius: "xs" })
+              )}
+            >
               <div
                 style={{ display: "flex", flex: 1, gap: "8px", minHeight: 48 }}
               >
@@ -90,7 +96,12 @@ const page = () => {
       <Preview style={{ height: "300px" }}>
         <Drawer drawerId="2-drawer">
           <DrawerContent>
-            <nav className={clsx(navbar, paper, paperShadow)}>
+            <nav
+              className={clsx(
+                navbar,
+                cardSprinkles({ background: "base100", borderRadius: "xs" })
+              )}
+            >
               <div
                 style={{ display: "flex", flex: 1, gap: "8px", minHeight: 48 }}
               >

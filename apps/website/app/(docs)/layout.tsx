@@ -12,5 +12,9 @@ export default function RootLayout({
 }: {
   children: React.ReactNode;
 }) {
-  return <LayoutDrawer responsive={true}>{children}</LayoutDrawer>;
+  return (
+    <LayoutDrawer responsive={true}>
+      <div style={{ overflowY: "auto" }}>{children}</div>
+    </LayoutDrawer>
+  );
 }

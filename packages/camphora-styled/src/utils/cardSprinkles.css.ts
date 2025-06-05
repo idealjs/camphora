@@ -10,7 +10,10 @@ const cardProperties = defineProperties({
     background: {
       primary: paletteVars.primary.bg,
       secondary: paletteVars.secondary.bg,
-      accent: paletteVars.accent.content,
+      accent: paletteVars.accent.bg,
+      base100: paletteVars.base[100],
+      base200: paletteVars.base[200],
+      base300: paletteVars.base[300],
     },
     color: {
       primary: paletteVars.primary.content,

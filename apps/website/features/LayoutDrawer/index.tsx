@@ -20,6 +20,7 @@ import SearchInput from "@/components/SearchInput";
 
 import Navbar from "../Navbar";
 import { customDrawerContent } from "./style.css";
+import { cardSprinkles } from "@idealjs/camphora-styled/utils";
 
 interface IProps {
   responsive?: boolean;
@@ -40,7 +41,7 @@ const LayoutDrawer = (props: PropsWithChildren<IProps>) => {
         responsive={responsive}
         className={clsx(card, cardMd, cardPrimary)}
       >
-        <DrawerMenu className={card}>
+        <DrawerMenu>
           <li>
             <SearchInput />
           </li>

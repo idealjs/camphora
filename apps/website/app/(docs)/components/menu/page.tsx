@@ -1,18 +1,16 @@
+import { Menu, MenuItem, Preview } from "@idealjs/camphora-react";
 import {
   card,
-  cardPrimary,
   cardXs,
-  Menu,
-  MenuItem,
+  cardPrimary,
   menuItemPrimary,
-  Preview,
-} from "@idealjs/camphora-react";
+} from "@idealjs/camphora-styled";
 import clsx from "clsx";
 import React from "react";
 
 const page = () => {
   return (
-    <div>
+    <div style={{ overflowY: "auto" }}>
       <Preview style={{ height: "300px" }}>
         <Menu className={clsx(card, cardXs, cardPrimary)}>
           <MenuItem className={menuItemPrimary}>
