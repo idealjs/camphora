@@ -1,25 +1,12 @@
 import { createSprinkles, defineProperties } from "@vanilla-extract/sprinkles";
 
-import { paletteVars, sizeVars } from "../themeContracts.css";
+import { sizeVars } from "../themeContracts.css";
 
 const cardProperties = defineProperties({
   conditions: {
     default: {},
   },
   properties: {
-    background: {
-      primary: paletteVars.primary.bg,
-      secondary: paletteVars.secondary.bg,
-      accent: paletteVars.accent.bg,
-      base100: paletteVars.base[100],
-      base200: paletteVars.base[200],
-      base300: paletteVars.base[300],
-    },
-    color: {
-      primary: paletteVars.primary.content,
-      secondary: paletteVars.secondary.content,
-      accent: paletteVars.accent.content,
-    },
     width: {
       xs: sizeVars.card.width.xs,
       sm: sizeVars.card.width.sm,
@@ -37,6 +24,12 @@ const cardProperties = defineProperties({
       sm: sizeVars.card.rounded.sm,
       md: sizeVars.card.rounded.md,
       lg: sizeVars.card.rounded.lg,
+    },
+    boxShadow: {
+      xs: sizeVars.card.shadow.xs,
+      sm: sizeVars.card.shadow.sm,
+      md: sizeVars.card.shadow.md,
+      lg: sizeVars.card.shadow.lg,
     },
   },
   defaultCondition: "default",

@@ -14,7 +14,7 @@ import {
   cardMd,
   cardPrimary,
 } from "@idealjs/camphora-styled";
-import { cardSprinkles } from "@idealjs/camphora-styled/utils";
+import { cardSprinkles, colorsSprinkles } from "@idealjs/camphora-styled/utils";
 import clsx from "clsx";
 import React from "react";
 
@@ -27,7 +27,8 @@ const page = () => {
             <nav
               className={clsx(
                 navbar,
-                cardSprinkles({ background: "base100", borderRadius: "xs" })
+                cardSprinkles({ borderRadius: "xs" }),
+                colorsSprinkles({ background: "base100" })
               )}
             >
               <div
@@ -99,7 +100,8 @@ const page = () => {
             <nav
               className={clsx(
                 navbar,
-                cardSprinkles({ background: "base100", borderRadius: "xs" })
+                cardSprinkles({ borderRadius: "xs" }),
+                colorsSprinkles({ background: "base100" })
               )}
             >
               <div
