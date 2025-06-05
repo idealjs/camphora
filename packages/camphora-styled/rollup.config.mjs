@@ -10,7 +10,7 @@ import styles from "rollup-plugin-styles";
 import { visualizer } from "rollup-plugin-visualizer";
 
 const config = {
-  input: ["./src/index.ts", "./src/themes/index.ts"],
+  input: ["./src/index.ts", "./src/themes/index.ts", "./src/utils/index.ts"],
   plugins: [
     esbuild(),
     vanillaExtractPlugin(),

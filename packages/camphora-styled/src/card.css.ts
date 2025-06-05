@@ -4,7 +4,6 @@ import { paletteVars, sizeVars } from "./themeContracts.css";
 
 export const card = style({
   borderRadius: sizeVars.card.rounded.md,
-  padding: sizeVars.card.padding.md,
   boxSizing: "border-box",
 });
 
@@ -27,6 +26,7 @@ export const cardSecondary = style({
 export const cardXs = style({
   selectors: {
     [`${card}&`]: {
+      borderRadius: sizeVars.card.rounded.xs,
       width: sizeVars.card.width.xs,
     },
   },
@@ -35,6 +35,7 @@ export const cardXs = style({
 export const cardSm = style({
   selectors: {
     [`${card}&`]: {
+      borderRadius: sizeVars.card.rounded.sm,
       width: sizeVars.card.width.sm,
     },
   },
@@ -43,6 +44,7 @@ export const cardSm = style({
 export const cardMd = style({
   selectors: {
     [`${card}&`]: {
+      borderRadius: sizeVars.card.rounded.md,
       width: sizeVars.card.width.md,
     },
   },
@@ -51,6 +53,7 @@ export const cardMd = style({
 export const cardLg = style({
   selectors: {
     [`${card}&`]: {
+      borderRadius: sizeVars.card.rounded.lg,
       width: sizeVars.card.width.lg,
     },
   },

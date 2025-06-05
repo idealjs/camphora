@@ -28,6 +28,16 @@
     "./darkTheme.css": {
       "require": "./dist/cjs/themes/darkTheme.css",
       "import": "./dist/esm/themes/darkTheme.css"
+    },
+    "./utils": {
+      "types": "./dist/utils/index.d.ts",
+      "require": "./dist/cjs/utils/index.js",
+      "import": "./dist/esm/utils/index.js"
+    },
+    "./cardSprinkles": {
+      "types": "./dist/cardSprinkles/index.d.ts",
+      "require": "./dist/cjs/cardSprinkles/index.js",
+      "import": "./dist/esm/cardSprinkles/index.js"
     }
   },
   "license": "MIT",

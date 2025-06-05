@@ -7,7 +7,6 @@ export * from "./interactive.css";
 export * from "./menu.css";
 export * from "./navbar.css";
 export * from "./overlay.css";
-export * from "./paper.css";
 export * from "./preview.css";
 export * from "./stack.css";
 export * from "./tabs.css";
