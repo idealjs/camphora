@@ -34,10 +34,13 @@
       "require": "./dist/cjs/utils/index.js",
       "import": "./dist/esm/utils/index.js"
     },
-    "./cardSprinkles": {
-      "types": "./dist/cardSprinkles/index.d.ts",
-      "require": "./dist/cjs/cardSprinkles/index.js",
-      "import": "./dist/esm/cardSprinkles/index.js"
+    "./cardSprinkles.css": {
+      "require": "./dist/cjs/utils/cardSprinkles.css",
+      "import": "./dist/esm/utils/cardSprinkles.css"
+    },
+    "./colorsSprinkles.css": {
+      "require": "./dist/cjs/utils/colorsSprinkles.css",
+      "import": "./dist/esm/utils/colorsSprinkles.css"
     }
   },
   "license": "MIT",

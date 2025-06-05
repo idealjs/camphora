@@ -28,7 +28,7 @@ const config = {
       format: "esm",
       preserveModules: true,
       assetFileNames({ name }) {
-        return name?.replace(".css.ts", "") ?? "";
+        return name?.replace(".css.css", ".css") ?? "";
       },
     },
     {
@@ -36,7 +36,7 @@ const config = {
       format: "cjs",
       preserveModules: true,
       assetFileNames({ name }) {
-        return name?.replace(".css.ts", "") ?? "";
+        return name?.replace(".css.css", ".css") ?? "";
       },
     },
   ],
