@@ -626,6 +626,7 @@ __metadata:
     "@vanilla-extract/css": "npm:^1.17.2"
     "@vanilla-extract/css-utils": "npm:^0.1.4"
     "@vanilla-extract/rollup-plugin": "npm:^1.3.15"
+    "@vanilla-extract/sprinkles": "npm:^1.6.3"
     esbuild: "npm:^0.25.5"
     rimraf: "npm:^6.0.1"
     rollup: "npm:^4.41.1"
@@ -2532,6 +2533,15 @@ __metadata:
   peerDependencies:
     rollup: ^2.0.0 || ^3.0.0 || ^4.0.0
   checksum: fc09ffa3a2d65c656aa5cbbc9f4a56ff1dbc43064c2f91e81c64039ca9be87fac3931b7172e231f5d5e49797545dac15d356c8f6bacd03457a38ca3a5102cc82
+  languageName: node
+  linkType: hard
+
+"@vanilla-extract/sprinkles@npm:^1.6.3":
+  version: 1.6.3
+  resolution: "@vanilla-extract/sprinkles@npm:1.6.3"
+  peerDependencies:
+    "@vanilla-extract/css": ^1.0.0
+  checksum: 74f8e2b189c0d48e279f1b85b5fedebf1f615ab31839964cf3861f2c5cf574567c0caeddf9c8b11327d81213f81d195efc79f136b725e6013b6d645d238d5c2b
   languageName: node
   linkType: hard
 

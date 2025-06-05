@@ -57,5 +57,8 @@
     "rollup-plugin-styles": "^4.0.0",
     "rollup-plugin-visualizer": "^6.0.0",
     "typescript": "^5.8.3"
+  },
+  "dependencies": {
+    "@vanilla-extract/sprinkles": "^1.6.3"
   }
 }
