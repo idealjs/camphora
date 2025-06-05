@@ -1,6 +1,6 @@
 import { style } from "@vanilla-extract/css";
 
-import { paletteVars,sizeVars } from "./themeContracts.css";
+import { paletteVars, sizeVars } from "./themeContracts.css";
 
 export const menuItem = style({
   position: "relative",
@@ -22,6 +22,7 @@ export const menuItem = style({
 
 export const menu = style([
   {
+    padding: sizeVars.menu.padding.md,
     selectors: {
       ["ul&"]: {
         listStyleType: "none",

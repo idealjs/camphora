@@ -1,5 +1,4 @@
-import { drawerMenu, menu } from "@idealjs/camphora-styled";
-import { cardSprinkles } from "@idealjs/camphora-styled/utils";
+import { drawerMenu } from "@idealjs/camphora-styled";
 import clsx from "clsx";
 import React, { PropsWithChildren } from "react";
 
@@ -12,10 +11,7 @@ const DrawerMenu = (props: PropsWithChildren<IProps>) => {
   const { className, children, style } = props;
 
   return (
-    <ul
-      className={clsx(className, drawerMenu, cardSprinkles({ padding: "xs" }))}
-      style={style}
-    >
+    <ul className={clsx(className, drawerMenu)} style={style}>
       {children}
     </ul>
   );
