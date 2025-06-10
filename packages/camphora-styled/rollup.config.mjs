@@ -9,22 +9,6 @@ import esbuild from "rollup-plugin-esbuild";
 import styles from "rollup-plugin-styles";
 import { visualizer } from "rollup-plugin-visualizer";
 
-function renamePlugin() {
-  return {
-    name: "rename-css-js",
-    generateBundle(options, bundle) {
-      Object.entries(bundle).forEach(([key, value]) => {
-        if (key.endsWith(".css.js")) {
-          const newKey = key.replace(".css.js", ".js");
-          bundle[newKey] = value;
-          delete bundle[key];
-          value.fileName = newKey;
-        }
-      });
-    },
-  };
-}
-
 const config = {
   input: ["./src/index.ts", "./src/themes/index.ts", "./src/utils/index.ts"],
   plugins: [
@@ -33,7 +17,6 @@ const config = {
     styles({
       mode: "extract",
     }),
-    renamePlugin(),
     visualizer({
       emitFile: true,
       filename: "stats.html",
@@ -44,6 +27,9 @@ const config = {
       dir: "./dist/esm",
       format: "esm",
       preserveModules: true,
+      entryFileNames({ name }) {
+        return `${name.replace(/\.css$/, "")}.js`;
+      },
       assetFileNames({ name }) {
         return name?.replace(".css.css", ".css") ?? "";
       },
@@ -52,6 +38,9 @@ const config = {
       dir: "./dist/cjs",
       format: "cjs",
       preserveModules: true,
+      entryFileNames({ name }) {
+        return `${name.replace(/\.css$/, "")}.js`;
+      },
       assetFileNames({ name }) {
         return name?.replace(".css.css", ".css") ?? "";
       },
