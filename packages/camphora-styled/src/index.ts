@@ -2,6 +2,7 @@ export * from "./button.css";
 export * from "./card.css";
 export * from "./drawer.css";
 export * from "./dropdown.css";
+export * from "./glass.css";
 export * from "./input.css";
 export * from "./interactive.css";
 export * from "./menu.css";

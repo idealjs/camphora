@@ -14,7 +14,7 @@ export default function RootLayout({
 }) {
   return (
     <LayoutDrawer responsive={true}>
-      <div style={{ overflowY: "auto" }}>{children}</div>
+      <div style={{ overflowY: "auto", height: "100%" }}>{children}</div>
     </LayoutDrawer>
   );
 }

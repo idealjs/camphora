@@ -14,6 +14,7 @@ export const overlay = style({
   background: "black",
   cursor: "pointer",
   visibility: "hidden",
+  zIndex: 300,
   selectors: {
     [`${inputData}:checked ~ &`]: {
       animation: `${gradient} 300ms`,

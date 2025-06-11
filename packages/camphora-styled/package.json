@@ -62,6 +62,7 @@
     "typescript": "^5.8.3"
   },
   "dependencies": {
+    "@vanilla-extract/recipes": "^0.5.6",
     "@vanilla-extract/sprinkles": "^1.6.3"
   }
 }

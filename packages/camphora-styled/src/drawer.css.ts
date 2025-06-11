@@ -35,6 +35,7 @@ export const drawerSide = style({
       transitionDuration: "0.3s",
       display: "flex",
       flexDirection: "column",
+      zIndex: 400,
     },
     [`${inputData}:checked ~ &`]: {
       visibility: "visible",
