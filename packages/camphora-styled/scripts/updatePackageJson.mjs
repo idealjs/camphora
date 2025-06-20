@@ -8,107 +8,132 @@ const __dirname = path.dirname(__filename);
 const srcDir = path.resolve(__dirname, "../src");
 const packageJsonPath = path.resolve(__dirname, "../package.json");
 
-/**
- * Creates an export configuration for a file
- */
+function createExportConfig(basePath) {
+  return {
+    js: {
+      types: `./dist/${basePath}.d.ts`,
+      require: `./dist/cjs/${basePath}.js`,
+      import: `./dist/esm/${basePath}.js`,
+    },
+    css: {
+      require: `./dist/cjs/${basePath}.css`,
+      import: `./dist/esm/${basePath}.css`,
+    },
+  };
+}
+
 function createExports(filePath, isIndex = false) {
   const basePath = filePath.replace(/\.(ts|css\.ts)$/, "");
   const dirName = path.dirname(basePath);
-  const fileName = path.basename(basePath);
-  
-  // Determine export key
-  let exportKey;
-  if (isIndex) {
-    if (dirName === ".") {
-      exportKey = "."; // Root index file
-    } else {
-      exportKey = dirName; // Index file in subdirectory
-    }
-  } else {
-    exportKey = basePath;
-  }
-  
-  const exports = {};
-  
-  // Add both JS and CSS exports for every file
+
+  const exportKey = isIndex
+    ? dirName === "."
+      ? "."
+      : dirName
+    : basePath;
+
   const mainExportKey = exportKey === "." ? "." : `./${exportKey}`;
-  
-  // Add JS export
-  exports[mainExportKey] = {
-    types: `./dist/${basePath}.d.ts`,
-    require: `./dist/cjs/${basePath}.js`,
-    import: `./dist/esm/${basePath}.js`
-  };
+  const cssExportKey =
+    exportKey === "."
+      ? "./index.css"
+      : isIndex && dirName !== "."
+      ? `./${dirName}.css`
+      : `./${basePath}.css`;
 
-  // Add CSS export
-  const cssExportKey = exportKey === "." 
-    ? "./index.css"  // Root index file
-    : isIndex && dirName !== "." 
-      ? `./${dirName}.css`  // Index files in subdirectories (e.g. "./themes.css")
-      : `./${basePath}.css`; // Regular files
+  const config = createExportConfig(basePath);
 
-  exports[cssExportKey] = {
-    require: `./dist/cjs/${basePath}.css`,
-    import: `./dist/esm/${basePath}.css`
+  return {
+    [mainExportKey]: config.js,
+    [cssExportKey]: config.css,
   };
-  
-  return exports;
 }
 
-/**
- * Recursively finds TypeScript files and generates their exports
- */
+const FILE_PATTERNS = {
+  isTypeScript: (name) => name.endsWith(".ts"),
+  isIndex: (name) => name === "index.ts" || name === "index.css.ts",
+};
+
 async function findFiles(dir, root = dir) {
   const entries = await fs.readdir(dir, { withFileTypes: true });
-  const results = [];
-  
-  for (const entry of entries) {
+
+  const processEntry = async (entry) => {
     const fullPath = path.join(dir, entry.name);
+
     if (entry.isDirectory()) {
-      results.push(...(await findFiles(fullPath, root)));
-      continue;
+      return await findFiles(fullPath, root);
     }
-    
-    if (entry.isFile() && entry.name.endsWith(".ts")) {
+
+    if (entry.isFile() && FILE_PATTERNS.isTypeScript(entry.name)) {
       const relativePath = path.relative(root, fullPath);
-      const isIndex = entry.name === "index.ts" || entry.name === "index.css.ts";
-      results.push({ path: relativePath, isIndex });
+      return [
+        {
+          path: relativePath,
+          isIndex: FILE_PATTERNS.isIndex(entry.name),
+        },
+      ];
     }
-  }
-  
-  return results;
+
+    return [];
+  };
+
+  const results = await Promise.all(entries.map(processEntry));
+  return results.flat();
 }
 
-/**
- * Generate package.json exports
- */
 function generateExports(files) {
-  // Sort files to ensure index files come first
   files.sort((a, b) => {
     if (a.isIndex !== b.isIndex) return a.isIndex ? -1 : 1;
     return a.path.localeCompare(b.path);
   });
-  
-  // Generate exports for each file
+
   return files.reduce((exports, file) => {
     const fileExports = createExports(file.path, file.isIndex);
     return { ...exports, ...fileExports };
   }, {});
 }
 
+async function getTypeScriptFiles() {
+  const files = await findFiles(srcDir);
+  if (files.length === 0) {
+    throw new Error("No TypeScript files found in src directory");
+  }
+  return files;
+}
+
+async function readPackageJson() {
+  try {
+    const content = await fs.readFile(packageJsonPath, "utf8");
+    return JSON.parse(content);
+  } catch (error) {
+    throw new Error(`Failed to parse package.json: ${error.message}`);
+  }
+}
+
+async function writePackageJson(packageJson) {
+  const content = JSON.stringify(packageJson, null, 2) + "\n";
+  await fs.writeFile(packageJsonPath, content, "utf8");
+}
+
 async function updatePackageJson() {
   try {
-    // Find all TypeScript files
-    const files = await findFiles(srcDir);
-    
-    // Read and update package.json
-    const packageJson = JSON.parse(await fs.readFile(packageJsonPath, "utf8"));
+    await fs.access(srcDir);
+    await fs.access(packageJsonPath);
+
+    const files = await getTypeScriptFiles();
+    console.log(`Found ${files.length} TypeScript files`);
+
+    const packageJson = await readPackageJson();
     packageJson.exports = generateExports(files);
-    await fs.writeFile(packageJsonPath, JSON.stringify(packageJson, null, 2) + "\n", "utf8");
-    
+    await writePackageJson(packageJson);
+
     console.log("Successfully updated package.json exports");
   } catch (error) {
-    console.error("Error updating package.json:", error.message);
+    console.error("\nError updating package.json:");
+    console.error(`  ${error.message}`);
+    if (error.stack) {
+      console.error("\nStack trace:");
+      console.error(error.stack);
+    }
     process.exit(1);
   }
 }
