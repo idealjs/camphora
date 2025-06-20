@@ -53,4 +53,29 @@ graph TD
 2. Extensibility: Size and color should support combinations.
 3. Single responsibility: Size or color should only be responsible for one dimension.
 
+## 4. CSS Selector Guidelines
+
+1. **Selector Weight Principles**
+   - Selector specificity should be as low as possible by default
+   - Avoid using ID selectors (`#id`)
+   - Prefer class selectors (`.class`) and element selectors
+   - Minimize selector nesting levels
+
+2. **Component Cohesion Scenarios**
+   - Component-specific selectors are allowed when handling styles within components
+   - Selectors within component scope can have appropriate specificity
+   - Selectors should clearly express component structure relationships
+
+3. **Best Practices**
+   - JavaScript variable naming should reflect the five core dimensions:
+     - Base layout: Use component name as base, e.g., `card`
+     - Data state: Use state descriptors, e.g., `cardActive`, `cardOpen`
+     - Interaction behavior: Use behavior descriptors, e.g., `cardInteractive`, `cardHoverable`
+     - Size variants: Use size descriptors, e.g., `cardSmall`, `cardLarge`
+     - Color variants: Use color descriptors, e.g., `cardPrimary`, `cardSecondary`
+   - Use Sprinkles for composable style variants, e.g., `cardSprinkles`
+   - Avoid global styles and `!important`
+   - Ensure variable names clearly express style purpose and dimension
+   - Maintain style definition independence and maintainability
+
 # FOUC Issue
