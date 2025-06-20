@@ -22,13 +22,13 @@
       "import": "./dist/esm/themes/index.css"
     },
     "./utils": {
-      "types": "./dist/utils.d.ts",
-      "require": "./dist/cjs/utils.js",
-      "import": "./dist/esm/utils.js"
+      "types": "./dist/utils/index.d.ts",
+      "require": "./dist/cjs/utils/index.js",
+      "import": "./dist/esm/utils/index.js"
     },
     "./utils.css": {
-      "require": "./dist/cjs/utils.css",
-      "import": "./dist/esm/utils.css"
+      "require": "./dist/cjs/utils/index.css",
+      "import": "./dist/esm/utils/index.css"
     },
     "./button": {
       "types": "./dist/button.d.ts",
@@ -74,6 +74,15 @@
     "./glass.css": {
       "require": "./dist/cjs/glass.css",
       "import": "./dist/esm/glass.css"
+    },
+    "./hidden": {
+      "types": "./dist/hidden.d.ts",
+      "require": "./dist/cjs/hidden.js",
+      "import": "./dist/esm/hidden.js"
+    },
+    "./hidden.css": {
+      "require": "./dist/cjs/hidden.css",
+      "import": "./dist/esm/hidden.css"
     },
     "./input": {
       "types": "./dist/input.d.ts",
