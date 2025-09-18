@@ -93,6 +93,14 @@ const LayoutDrawer = (props: PropsWithChildren<IProps>) => {
               glass
             </Link>
           </li>
+          <li>
+            <Link
+              href={"/components/dropdown"}
+              className={clsx(menuItem, menuItemPrimary)}
+            >
+              dropdown
+            </Link>
+          </li>
         </DrawerMenu>
       </DrawerSide>
     </Drawer>
