@@ -20,6 +20,16 @@ export const drawerContent = style({
   },
 });
 
+export const drawerContentReverse = style({
+  selectors: {
+    [`${inputData}:checked ~ &`]: {},
+    [`${drawer} &`]: {
+      display: "flex",
+      flexDirection: "column-reverse",
+    },
+  },
+});
+
 export const drawerSide = style({
   selectors: {
     [`${drawer} > &`]: {

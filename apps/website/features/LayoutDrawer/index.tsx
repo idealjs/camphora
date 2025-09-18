@@ -31,9 +31,9 @@ const LayoutDrawer = (props: PropsWithChildren<IProps>) => {
 
   return (
     <Drawer drawerId="main-drawer">
-      <DrawerContent className={customDrawerContent}>
-        <Navbar drawerId="main-drawer" responsive={responsive} />
+      <DrawerContent className={customDrawerContent} reverse={true}>
         {children}
+        <Navbar drawerId="main-drawer" responsive={responsive} />
       </DrawerContent>
       <label htmlFor={"main-drawer"} className={overlay} />
       <DrawerSide

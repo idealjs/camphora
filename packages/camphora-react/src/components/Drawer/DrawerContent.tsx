@@ -1,15 +1,26 @@
-import { drawerContent } from "@idealjs/camphora-styled";
+import { drawerContent, drawerContentReverse } from "@idealjs/camphora-styled";
 import clsx from "clsx";
 import { PropsWithChildren } from "react";
 
 interface IProps {
   className?: string;
+  reverse?: boolean;
 }
 
 const DrawerContent = (props: PropsWithChildren<IProps>) => {
-  const { children, className } = props;
+  const { children, className, reverse } = props;
 
-  return <div className={clsx(drawerContent, className)}>{children}</div>;
+  return (
+    <div
+      className={clsx(
+        { [drawerContentReverse]: reverse },
+        drawerContent,
+        className
+      )}
+    >
+      {children}
+    </div>
+  );
 };
 
 export default DrawerContent;
