@@ -6,5 +6,7 @@ export * from "./Glass";
 export * from "./Menu";
 export { default as Menu } from "./Menu";
 export { default as Preview } from "./Preview";
+export * from "./Swap";
+export { default as Swap } from "./Swap";
 export * from "./Tabs";
 export { default as Tabs } from "./Tabs";

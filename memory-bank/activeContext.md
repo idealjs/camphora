@@ -37,20 +37,25 @@
 - Documentation-driven development
 - Continuous testing and integration
 
-## Important Patterns
+- 每个文件仅包含一个导出的组件（single-component-per-file）；此约定有助于提高可维护性、便于代码审查、并增强 tree-shaking 效果 — 将此规则列为重点。
 
 ### Component Development
+- Props 类型尽可能不要导出。使用接口命名为 `IProps`（例如 `interface IProps { ... }`），并在组件中以 `props: IProps` 使用。
+- 避免使用 `React.FC`；推荐直接使用函数表达式：`const Component = (props: IProps) => {}`。
+
 ```tsx
-// Standard component structure
+// Recommended component structure
 import React from 'react'
 import { styled } from '@vanilla-extract/css'
 
-interface ComponentProps {
+interface IProps {
   // Type definitions
 }
 
-export const Component: React.FC<ComponentProps> = (props) => {
+const Component = (props: IProps) => {
   // Implementation
+}
+```
 }
 ```
 

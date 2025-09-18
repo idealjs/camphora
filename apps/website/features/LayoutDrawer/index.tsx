@@ -101,6 +101,14 @@ const LayoutDrawer = (props: PropsWithChildren<IProps>) => {
               dropdown
             </Link>
           </li>
+          <li>
+            <Link
+              href={"/components/swap"}
+              className={clsx(menuItem, menuItemPrimary)}
+            >
+              swap
+            </Link>
+          </li>
         </DrawerMenu>
       </DrawerSide>
     </Drawer>
