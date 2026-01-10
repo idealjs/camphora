@@ -1,3 +1,4 @@
+import { DrawerToggle } from "@idealjs/camphora-react";
 import {
   button,
   buttonGhost,
@@ -7,11 +8,9 @@ import {
 } from "@idealjs/camphora-styled";
 import clsx from "clsx";
 import Link from "next/link";
-
 import LanguageDropdown from "./LanguageDropdown";
 import ThemeDropdown from "./ThemeDropdown";
 import VersionDropdown from "./VersionDropdown";
-import { DrawerToggle } from "@idealjs/camphora-react";
 
 interface IProps {
   drawerId: string;
@@ -36,6 +35,7 @@ const Navbar = (props: IProps) => {
             viewBox="0 0 24 24"
             stroke="currentColor"
           >
+            <title>Menu</title>
             <path
               strokeLinecap="round"
               strokeLinejoin="round"

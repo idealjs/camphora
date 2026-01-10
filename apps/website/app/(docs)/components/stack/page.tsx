@@ -1,3 +1,4 @@
+import { Preview } from "@idealjs/camphora-react";
 import {
   card,
   cardPrimary,
@@ -6,7 +7,6 @@ import {
   stackItem,
 } from "@idealjs/camphora-styled";
 import clsx from "clsx";
-import { Preview } from "@idealjs/camphora-react";
 
 const StackPage = () => {
   return (

@@ -2,7 +2,8 @@ import { glassFilter } from "@idealjs/camphora-styled";
 
 const GlassFilter = () => {
   return (
-    <svg style={{ display: "none" }}>
+    <svg style={{ display: "none" }} aria-hidden="true">
+      <title>Glass filter (decorative)</title>
       <filter id={glassFilter} x="0%" y="0%" width="100%" height="100%">
         <feTurbulence
           type="fractalNoise"

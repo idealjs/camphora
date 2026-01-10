@@ -18,6 +18,6 @@
     }
   },
   "files": {
-    "includes": ["**/*.ts*", "!**/node_module","!**/.*"]
+    "includes": ["**/*.ts*", "!**/node_module", "!**/.*"]
   }
 }

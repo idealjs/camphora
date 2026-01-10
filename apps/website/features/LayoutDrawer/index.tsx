@@ -34,7 +34,11 @@ const LayoutDrawer = (props: PropsWithChildren<IProps>) => {
         {children}
         <Navbar drawerId="main-drawer" responsive={responsive} />
       </DrawerContent>
-      <label htmlFor={"main-drawer"} className={overlay} />
+      <label
+        htmlFor={"main-drawer"}
+        className={overlay}
+        aria-label="Close drawer"
+      />
       <DrawerSide
         drawerId="main-drawer"
         responsive={responsive}

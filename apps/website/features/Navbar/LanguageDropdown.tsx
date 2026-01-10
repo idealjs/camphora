@@ -20,6 +20,7 @@ const LanguageDropdown = () => {
   return (
     <div className={clsx(dropdown, dropdownEnd)}>
       <button
+        type="button"
         tabIndex={0}
         className={clsx(button, buttonGhost, selectedButtonStyle)}
       >

@@ -1,4 +1,4 @@
-import { Preview, SwapOn, SwapOff, SwapRsc } from "@idealjs/camphora-react";
+import { Preview, SwapOff, SwapOn, SwapRsc } from "@idealjs/camphora-react";
 import { button } from "@idealjs/camphora-styled";
 import clsx from "clsx";
 

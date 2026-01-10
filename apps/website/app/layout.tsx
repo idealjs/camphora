@@ -2,10 +2,10 @@ import clsx from "clsx";
 import "./global.css";
 
 import {
-  lightColorTheme,
-  sizeTheme,
   fontTheme,
   layerTheme,
+  lightColorTheme,
+  sizeTheme,
 } from "@idealjs/camphora-styled";
 
 export const metadata = {

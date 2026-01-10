@@ -14,7 +14,6 @@ import {
 import clsx from "clsx";
 import getConfig from "next/config";
 import Link from "next/link";
-import React from "react";
 
 import { selectedButtonStyle } from "./style.css";
 
@@ -24,21 +23,17 @@ const version = publicRuntimeConfig?.version;
 const VersionDropdown = () => {
   return (
     <div className={dropdown}>
-      <div
-        tabIndex={0}
-        className={clsx(button, buttonGhost, selectedButtonStyle)}
-      >
+      <div className={clsx(button, buttonGhost, selectedButtonStyle)}>
         {version}
       </div>
       <ul
-        tabIndex={0}
         className={clsx(
           dropdownContent,
           menu,
           card,
           cardPrimary,
           cardXs,
-          cardShadow
+          cardShadow,
         )}
       >
         <li>
@@ -53,6 +48,7 @@ const VersionDropdown = () => {
               fill="none"
               xmlns="http://www.w3.org/2000/svg"
             >
+              <title>Changelog icon</title>
               <path
                 d="M5.81836 6.72729V14H13.0911"
                 stroke="currentColor"
@@ -90,6 +86,7 @@ const VersionDropdown = () => {
               fill="none"
               xmlns="http://www.w3.org/2000/svg"
             >
+              <title>Roadmap icon</title>
               <path
                 d="M17 12L4 6V36L17 42L31 36L44 42V12L31 6L17 12Z"
                 fill="none"

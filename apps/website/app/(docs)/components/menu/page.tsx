@@ -1,8 +1,8 @@
 import { Menu, MenuItem, Preview } from "@idealjs/camphora-react";
 import {
   card,
-  cardXs,
   cardPrimary,
+  cardXs,
   menuItemPrimary,
 } from "@idealjs/camphora-styled";
 import clsx from "clsx";

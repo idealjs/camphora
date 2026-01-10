@@ -6,15 +6,16 @@ import {
   Preview,
 } from "@idealjs/camphora-react";
 import {
-  navbar,
   button,
   buttonGhost,
-  overlay,
   card,
   cardMd,
   cardPrimary,
+  cardSprinkles,
+  colorsSprinkles,
+  navbar,
+  overlay,
 } from "@idealjs/camphora-styled";
-import { cardSprinkles, colorsSprinkles } from "@idealjs/camphora-styled";
 import clsx from "clsx";
 
 const page = () => {
@@ -46,6 +47,7 @@ const page = () => {
                     viewBox="0 0 24 24"
                     stroke="currentColor"
                   >
+                    <title>Menu</title>
                     <path
                       strokeLinecap="round"
                       strokeLinejoin="round"
@@ -77,7 +79,11 @@ const page = () => {
               </div>
             </div>
           </DrawerContent>
-          <label htmlFor={"1-drawer"} className={overlay} />
+          <label
+            htmlFor={"1-drawer"}
+            className={overlay}
+            aria-label="Close drawer"
+          />
           <DrawerSide
             drawerId="1-drawer"
             responsive={true}
@@ -119,6 +125,7 @@ const page = () => {
                     viewBox="0 0 24 24"
                     stroke="currentColor"
                   >
+                    <title>Menu</title>
                     <path
                       strokeLinecap="round"
                       strokeLinejoin="round"
@@ -136,7 +143,11 @@ const page = () => {
               velit?
             </div>
           </DrawerContent>
-          <label htmlFor={"2-drawer"} className={overlay} />
+          <label
+            htmlFor={"2-drawer"}
+            className={overlay}
+            aria-label="Close drawer"
+          />
           <DrawerSide
             drawerId="2-drawer"
             responsive={false}

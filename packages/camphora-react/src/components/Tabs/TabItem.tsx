@@ -1,6 +1,6 @@
 import { inputData, tab } from "@idealjs/camphora-styled";
 import clsx from "clsx";
-import { Fragment, type PropsWithChildren } from "react";
+import { Fragment, type PropsWithChildren, useRef } from "react";
 
 interface IProps {
   id: string;
@@ -26,9 +26,24 @@ const TabItem = (props: PropsWithChildren<IProps>) => {
     onClick,
   } = props;
 
+  const labelRef = useRef<HTMLLabelElement | null>(null);
+
+  const handleKeyDown = (e: React.KeyboardEvent<HTMLLabelElement>) => {
+    if (e.key === "Enter" || e.key === " ") {
+      e.preventDefault();
+      labelRef.current?.click();
+    }
+  };
+
   return (
     <Fragment>
-      <label htmlFor={id} className={clsx(tab, className)} onClick={onClick}>
+      <label
+        ref={labelRef}
+        htmlFor={id}
+        className={clsx(tab, className)}
+        onClick={onClick}
+        onKeyDown={handleKeyDown}
+      >
         {label ?? value}
         <input
           id={id}

@@ -1,8 +1,7 @@
+import { inputData, tab, tabPanel, tabPrimary } from "@idealjs/camphora-styled";
 import clsx from "clsx";
 import { Fragment, type PropsWithChildren } from "react";
-
 import { getDefaultValue, getGroupName } from "./context";
-import { inputData, tab, tabPanel, tabPrimary } from "@idealjs/camphora-styled";
 
 interface IProps {
   label?: string;

@@ -1,18 +1,18 @@
 "use client";
 
 import { Preview, TabItem, TabPanel, Tabs } from "@idealjs/camphora-react";
-import clsx from "clsx";
-import { customTab } from "./custom.css";
 import {
   card,
-  cardPrimary,
-  cardMd,
-  tabSm,
-  tabSlider,
-  cardSecondary,
   cardLg,
+  cardMd,
+  cardPrimary,
+  cardSecondary,
   tabLg,
+  tabSlider,
+  tabSm,
 } from "@idealjs/camphora-styled";
+import clsx from "clsx";
+import { customTab } from "./custom.css";
 
 const page = () => {
   return (
