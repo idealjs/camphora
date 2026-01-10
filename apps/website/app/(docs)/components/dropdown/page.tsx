@@ -1,7 +1,6 @@
 import { Dropdown, Preview } from "@idealjs/camphora-react";
 import {
   button,
-  buttonGhost,
   card,
   cardPrimary,
   cardShadow,
@@ -11,25 +10,21 @@ import {
   menuItemPrimary,
 } from "@idealjs/camphora-styled";
 import clsx from "clsx";
-import React from "react";
 
 const page = () => {
   return (
     <div style={{ overflowY: "auto" }}>
       <Preview style={{ height: "300px" }}>
         <Dropdown>
-          <div tabIndex={0} className={clsx(button)}>
-            Dropdown
-          </div>
+          <div className={clsx(button)}>Dropdown</div>
           <ul
-            tabIndex={0}
             className={clsx(
               dropdownContent,
               menu,
               card,
               cardPrimary,
               cardXs,
-              cardShadow
+              cardShadow,
             )}
           >
             <li className={menuItemPrimary}>Option 1</li>

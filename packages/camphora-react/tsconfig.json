@@ -10,9 +10,6 @@
       "@idealjs/camphora-styled": [
         "../../packages/camphora-styled/src/index.ts"
       ],
-      "@idealjs/camphora-styled/utils": [
-        "../../packages/camphora-styled/src/utils/index.ts"
-      ]
     },
     "jsx": "react-jsx"
   },

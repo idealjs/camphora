@@ -1,7 +1,6 @@
 import { Preview, SwapOn, SwapOff, SwapRsc } from "@idealjs/camphora-react";
 import { button } from "@idealjs/camphora-styled";
 import clsx from "clsx";
-import React from "react";
 
 const page = () => {
   return (

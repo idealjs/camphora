@@ -1,6 +1,5 @@
-import React from "react";
 import { GlassContainer, GlassFilter } from "@idealjs/camphora-react";
-import { card, cardPrimary, cardShadow } from "@idealjs/camphora-styled";
+import { card, cardShadow } from "@idealjs/camphora-styled";
 import clsx from "clsx";
 
 const GlassPage = () => {

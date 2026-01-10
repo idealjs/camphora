@@ -1,16 +1,17 @@
 import { style } from "@vanilla-extract/css";
 
-import { paletteVars, sizeVars } from "./themeContracts.css";
+import { colorTokenVars } from "./tokens/color.css";
+import { sizeTokenVars } from "./tokens/size.css";
 
 export const card = style({
-  borderRadius: sizeVars.card.rounded.md,
+  borderRadius: sizeTokenVars.borderRadius.md,
   boxSizing: "border-box",
 });
 
 export const cardPrimary = style({
   selectors: {
     [`${card}&`]: {
-      backgroundColor: paletteVars.base[100],
+      backgroundColor: colorTokenVars.common[100],
     },
   },
 });
@@ -18,7 +19,7 @@ export const cardPrimary = style({
 export const cardSecondary = style({
   selectors: {
     [`${card}&`]: {
-      backgroundColor: paletteVars.base[200],
+      backgroundColor: colorTokenVars.common[200],
     },
   },
 });
@@ -26,8 +27,8 @@ export const cardSecondary = style({
 export const cardXs = style({
   selectors: {
     [`${card}&`]: {
-      borderRadius: sizeVars.card.rounded.xs,
-      width: sizeVars.card.width.xs,
+      borderRadius: sizeTokenVars.borderRadius.xs,
+      width: "144px",
     },
   },
 });
@@ -35,8 +36,8 @@ export const cardXs = style({
 export const cardSm = style({
   selectors: {
     [`${card}&`]: {
-      borderRadius: sizeVars.card.rounded.sm,
-      width: sizeVars.card.width.sm,
+      borderRadius: sizeTokenVars.borderRadius.sm,
+      width: "192px",
     },
   },
 });
@@ -44,8 +45,8 @@ export const cardSm = style({
 export const cardMd = style({
   selectors: {
     [`${card}&`]: {
-      borderRadius: sizeVars.card.rounded.md,
-      width: sizeVars.card.width.md,
+      borderRadius: sizeTokenVars.borderRadius.md,
+      width: "256px",
     },
   },
 });
@@ -53,8 +54,8 @@ export const cardMd = style({
 export const cardLg = style({
   selectors: {
     [`${card}&`]: {
-      borderRadius: sizeVars.card.rounded.lg,
-      width: sizeVars.card.width.lg,
+      borderRadius: sizeTokenVars.borderRadius.lg,
+      width: "512px",
     },
   },
 });
@@ -62,19 +63,19 @@ export const cardLg = style({
 export const cardShadow = style({
   selectors: {
     [`${card}&`]: {
-      boxShadow: sizeVars.card.shadow.md,
+      boxShadow: sizeTokenVars.shadow.md,
     },
     [`${cardXs}&`]: {
-      boxShadow: sizeVars.card.shadow.xs,
+      boxShadow: sizeTokenVars.shadow.xs,
     },
     [`${cardSm}&`]: {
-      boxShadow: sizeVars.card.shadow.sm,
+      boxShadow: sizeTokenVars.shadow.sm,
     },
     [`${cardMd}&`]: {
-      boxShadow: sizeVars.card.shadow.md,
+      boxShadow: sizeTokenVars.shadow.md,
     },
     [`${cardLg}&`]: {
-      boxShadow: sizeVars.card.shadow.lg,
+      boxShadow: sizeTokenVars.shadow.lg,
     },
   },
 });

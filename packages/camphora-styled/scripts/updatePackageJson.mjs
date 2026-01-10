@@ -1,6 +1,6 @@
-import fs from "fs/promises";
-import path from "path";
-import { fileURLToPath } from "url";
+import fs from "node:fs/promises";
+import path from "node:path";
+import { fileURLToPath } from "node:url";
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -26,19 +26,15 @@ function createExports(filePath, isIndex = false) {
   const basePath = filePath.replace(/\.(ts|css\.ts)$/, "");
   const dirName = path.dirname(basePath);
 
-  const exportKey = isIndex
-    ? dirName === "."
-      ? "."
-      : dirName
-    : basePath;
+  const exportKey = isIndex ? (dirName === "." ? "." : dirName) : basePath;
 
   const mainExportKey = exportKey === "." ? "." : `./${exportKey}`;
   const cssExportKey =
     exportKey === "."
       ? "./index.css"
       : isIndex && dirName !== "."
-      ? `./${dirName}.css`
-      : `./${basePath}.css`;
+        ? `./${dirName}.css`
+        : `./${basePath}.css`;
 
   const config = createExportConfig(basePath);
 
@@ -110,7 +106,7 @@ async function readPackageJson() {
 }
 
 async function writePackageJson(packageJson) {
-  const content = JSON.stringify(packageJson, null, 2) + "\n";
+  const content = `${JSON.stringify(packageJson, null, 2)}\n`;
   await fs.writeFile(packageJsonPath, content, "utf8");
 }
 

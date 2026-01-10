@@ -1,6 +1,7 @@
 import { style } from "@vanilla-extract/css";
 
-import { paletteVars, sizeVars } from "./themeContracts.css";
+import { colorTokenVars } from "./tokens/color.css";
+import { sizeTokenVars } from "./tokens/size.css";
 
 export const button = style({
   cursor: "pointer",
@@ -10,13 +11,13 @@ export const button = style({
   height: "48px",
   minHeight: "48px",
   padding: "0px 16px 0px 16px",
-  borderRadius: sizeVars.btn.rounded.md,
+  borderRadius: sizeTokenVars.borderRadius.sm,
   transition: "background-color 0.2s ease-in-out",
   border: "none",
   fontSize: "16px",
   textDecoration: "none",
   selectors: {
-    ["&:active"]: {
+    "&:active": {
       transform: "scale(0.95)",
     },
   },
@@ -33,11 +34,11 @@ export const buttonActive = style({
 export const buttonPrimary = style({
   selectors: {
     [`${button}&`]: {
-      backgroundColor: paletteVars.primary.bg,
-      color: paletteVars.primary.content,
+      backgroundColor: colorTokenVars.primary[500],
+      color: colorTokenVars.primary[900],
     },
     [`${button}&:hover`]: {
-      backgroundColor: paletteVars.primary.focus,
+      backgroundColor: colorTokenVars.primary[600],
     },
     [`${button}&:active`]: {},
   },
@@ -46,11 +47,11 @@ export const buttonPrimary = style({
 export const buttonSecondary = style({
   selectors: {
     [`${button}&`]: {
-      backgroundColor: paletteVars.secondary.bg,
-      color: paletteVars.secondary.content,
+      backgroundColor: colorTokenVars.secondary[500],
+      color: colorTokenVars.secondary[900],
     },
     [`${button}&:hover`]: {
-      backgroundColor: paletteVars.secondary.focus,
+      backgroundColor: colorTokenVars.secondary[600],
     },
     [`${button}&:active`]: {},
   },
@@ -59,11 +60,11 @@ export const buttonSecondary = style({
 export const buttonNeutral = style({
   selectors: {
     [`${button}&`]: {
-      backgroundColor: paletteVars.neutral.bg,
-      color: paletteVars.neutral.content,
+      backgroundColor: colorTokenVars.neutral[500],
+      color: colorTokenVars.neutral[900],
     },
     [`${button}&:hover`]: {
-      backgroundColor: paletteVars.neutral.focus,
+      backgroundColor: colorTokenVars.neutral[600],
     },
     [`${button}&:active`]: {},
   },
@@ -72,11 +73,11 @@ export const buttonNeutral = style({
 export const buttonAccent = style({
   selectors: {
     [`${button}&`]: {
-      backgroundColor: paletteVars.accent.bg,
-      color: paletteVars.accent.content,
+      backgroundColor: colorTokenVars.accent[500],
+      color: colorTokenVars.accent[900],
     },
     [`${button}&:hover`]: {
-      backgroundColor: paletteVars.accent.focus,
+      backgroundColor: colorTokenVars.accent[600],
     },
     [`${button}&:active`]: {},
   },
@@ -89,11 +90,11 @@ export const buttonGhost = style({
       color: "currentcolor",
     },
     [`${button}&:hover`]: {
-      backgroundColor: `color-mix(in srgb, ${paletteVars.base[300]} 20%, #fff0)`,
+      backgroundColor: `color-mix(in srgb, ${colorTokenVars.common[300]} 20%, #fff0)`,
     },
     [`${button}&:active`]: {},
     [`${button}&:focus-within`]: {
-      backgroundColor: `color-mix(in srgb, ${paletteVars.base.content} 20%, #fff0)`,
+      backgroundColor: `color-mix(in srgb, ${colorTokenVars.common[900]} 20%, #fff0)`,
     },
   },
 });

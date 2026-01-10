@@ -12,7 +12,7 @@ export default serverContext;
 export const getServerContext = <T>(
   context: () => {
     current: T;
-  }
+  },
 ) => {
   return context().current;
 };
@@ -21,7 +21,7 @@ export const setServerContext = <T>(
   context: () => {
     current: T;
   },
-  value: T
+  value: T,
 ) => {
   context().current = value;
 };

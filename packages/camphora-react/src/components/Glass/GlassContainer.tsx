@@ -1,11 +1,11 @@
-import { 
+import {
   glassBackgroundLayer,
   glassBorderLayer,
-  glassContainer, 
-  glassContentLayer 
+  glassContainer,
+  glassContentLayer,
 } from "@idealjs/camphora-styled";
 import clsx from "clsx";
-import { PropsWithChildren } from "react";
+import type { PropsWithChildren } from "react";
 
 interface IProps {
   className?: string;
@@ -17,9 +17,7 @@ export const GlassContainer = (props: PropsWithChildren<IProps>) => {
     <div className={clsx(glassContainer, className)}>
       <div className={glassBackgroundLayer} />
       <div className={glassBorderLayer} />
-      <div className={glassContentLayer}>
-        {children}
-      </div>
+      <div className={glassContentLayer}>{children}</div>
     </div>
   );
 };

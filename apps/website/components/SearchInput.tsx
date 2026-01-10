@@ -1,6 +1,5 @@
 import { input, inputContainer, inputGhost } from "@idealjs/camphora-styled";
 import clsx from "clsx";
-import React from "react";
 
 const SearchInput = () => {
   return (

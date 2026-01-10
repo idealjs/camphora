@@ -2,7 +2,6 @@
 
 import { Preview, TabItem, TabPanel, Tabs } from "@idealjs/camphora-react";
 import clsx from "clsx";
-import React from "react";
 import { customTab } from "./custom.css";
 import {
   card,

@@ -1,11 +1,11 @@
 import { style } from "@vanilla-extract/css";
 
-import { paletteVars, sizeVars } from "./themeContracts.css";
+import { colorTokenVars } from "./tokens/color.css";
 
 export const menuItem = style({
   position: "relative",
-  borderRadius: sizeVars.menuItem.rounded.md,
-  padding: sizeVars.menuItem.padding.md,
+  borderRadius: "4px",
+  padding: "4px 8px",
   get selectors() {
     return {
       [`${menu} &`]: {
@@ -22,13 +22,13 @@ export const menuItem = style({
 
 export const menu = style([
   {
-    padding: sizeVars.menu.padding.md,
+    padding: "4px",
     selectors: {
-      ["ul&"]: {
+      "ul&": {
         listStyleType: "none",
         margin: "0px",
       },
-      ["& &"]: {
+      "& &": {
         position: "absolute",
         display: "none",
       },
@@ -44,10 +44,10 @@ export const menu = style([
 export const menuItemPrimary = style({
   selectors: {
     [`${menu} &:hover`]: {
-      backgroundColor: paletteVars.primary.bg,
+      backgroundColor: colorTokenVars.primary[500],
     },
     [`${menu} &:not(:has(${menu})):active`]: {
-      backgroundColor: paletteVars.primary.focus,
+      backgroundColor: colorTokenVars.primary[600],
     },
   },
 });

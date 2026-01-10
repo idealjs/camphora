@@ -1,6 +1,6 @@
 import { inputData, tab } from "@idealjs/camphora-styled";
 import clsx from "clsx";
-import { Fragment, PropsWithChildren } from "react";
+import { Fragment, type PropsWithChildren } from "react";
 
 interface IProps {
   id: string;

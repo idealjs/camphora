@@ -2,12 +2,10 @@ import {
   card,
   cardPrimary,
   cardShadow,
-  cardXs,
   stack,
   stackItem,
 } from "@idealjs/camphora-styled";
 import clsx from "clsx";
-import React from "react";
 import { Preview } from "@idealjs/camphora-react";
 
 const StackPage = () => {

@@ -2,7 +2,8 @@
 
 import { inputData, swap } from "@idealjs/camphora-styled";
 import clsx from "clsx";
-import React, { PropsWithChildren } from "react";
+import type React from "react";
+import type { PropsWithChildren } from "react";
 
 import SwapOff from "./SwapOff";
 import SwapOn from "./SwapOn";

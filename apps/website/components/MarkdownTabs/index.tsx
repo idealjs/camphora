@@ -1,14 +1,13 @@
 import {
   card,
   cardLg,
-  cardMd,
   cardPrimary,
   cardShadow,
   tabs,
 } from "@idealjs/camphora-styled";
 import clsx from "clsx";
 import { nanoid } from "nanoid";
-import React, { PropsWithChildren } from "react";
+import type { PropsWithChildren } from "react";
 
 import { setDefaultValue, setGroupName } from "./context";
 

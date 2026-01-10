@@ -1,0 +1,8 @@
+{
+  "recommendations": [
+    "mhutchie.git-graph",
+    "biomejs.biome",
+    "prettier.prettier-vscode",
+    "eamodio.gitlens"
+  ]
+}

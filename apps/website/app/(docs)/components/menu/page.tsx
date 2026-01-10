@@ -6,7 +6,6 @@ import {
   menuItemPrimary,
 } from "@idealjs/camphora-styled";
 import clsx from "clsx";
-import React from "react";
 
 const page = () => {
   return (

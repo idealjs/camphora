@@ -1,6 +1,6 @@
 import { createSprinkles, defineProperties } from "@vanilla-extract/sprinkles";
 
-import { sizeVars } from "../themeContracts.css";
+import { sizeTokenVars } from "../tokens/size.css";
 
 const cardProperties = defineProperties({
   conditions: {
@@ -8,28 +8,28 @@ const cardProperties = defineProperties({
   },
   properties: {
     width: {
-      xs: sizeVars.card.width.xs,
-      sm: sizeVars.card.width.sm,
-      md: sizeVars.card.width.md,
-      lg: sizeVars.card.width.lg,
+      xs: "144px",
+      sm: "192px",
+      md: "256px",
+      lg: "512px",
     },
     padding: {
-      xs: sizeVars.card.padding.xs,
-      sm: sizeVars.card.padding.sm,
-      md: sizeVars.card.padding.md,
-      lg: sizeVars.card.padding.lg,
+      xs: sizeTokenVars.padding.md,
+      sm: "20px",
+      md: sizeTokenVars.padding.lg,
+      lg: "28px",
     },
     borderRadius: {
-      xs: sizeVars.card.rounded.xs,
-      sm: sizeVars.card.rounded.sm,
-      md: sizeVars.card.rounded.md,
-      lg: sizeVars.card.rounded.lg,
+      xs: sizeTokenVars.borderRadius.sm,
+      sm: "12px",
+      md: sizeTokenVars.borderRadius.md,
+      lg: sizeTokenVars.borderRadius.lg,
     },
     boxShadow: {
-      xs: sizeVars.card.shadow.xs,
-      sm: sizeVars.card.shadow.sm,
-      md: sizeVars.card.shadow.md,
-      lg: sizeVars.card.shadow.lg,
+      xs: sizeTokenVars.shadow.xs,
+      sm: sizeTokenVars.shadow.sm,
+      md: sizeTokenVars.shadow.md,
+      lg: sizeTokenVars.shadow.lg,
     },
   },
   defaultCondition: "default",

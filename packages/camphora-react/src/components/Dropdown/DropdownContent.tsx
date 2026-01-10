@@ -1,6 +1,6 @@
 import { dropdownContent } from "@idealjs/camphora-styled";
 import clsx from "clsx";
-import React, { CSSProperties, PropsWithChildren } from "react";
+import type { CSSProperties, PropsWithChildren } from "react";
 
 interface IProps {
   className?: string;

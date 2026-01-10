@@ -13,7 +13,6 @@ import {
   menuItemPrimary,
 } from "@idealjs/camphora-styled";
 import clsx from "clsx";
-import React from "react";
 
 import { selectedButtonStyle } from "./style.css";
 
@@ -21,20 +20,20 @@ const ThemeDropdown = () => {
   return (
     <div className={clsx(dropdown, dropdownEnd)}>
       <button
+        type="button"
         tabIndex={0}
         className={clsx(button, buttonGhost, selectedButtonStyle)}
       >
         theme
       </button>
       <ul
-        tabIndex={0}
         className={clsx(
           dropdownContent,
           menu,
           card,
           cardPrimary,
           cardXs,
-          cardShadow
+          cardShadow,
         )}
       >
         <li>

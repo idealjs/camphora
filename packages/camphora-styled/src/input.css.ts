@@ -1,6 +1,6 @@
 import { style } from "@vanilla-extract/css";
 
-import { paletteVars,sizeVars } from "./themeContracts.css";
+import { colorTokenVars } from "./tokens/color.css";
 
 export const inputActive = style({});
 export const inputGhost = style({});
@@ -19,15 +19,15 @@ export const inputLg = style({});
 
 export const inputContainer = style({
   margin: "4px",
-  height: sizeVars.input.height.md,
-  lineHeight: sizeVars.input.lineHeight.md,
+  height: "48px",
+  lineHeight: "28px",
   display: "flex",
   alignItems: "center",
   borderRadius: "8px",
   paddingRight: "16px",
   paddingLeft: "16px",
   selectors: {
-    ["&:focus-within"]: {
+    "&:focus-within": {
       outlineStyle: "solid",
       outlineWidth: "2px",
       outlineOffset: "2px",
@@ -41,10 +41,10 @@ export const inputContainer = style({
 export const inputContainerPrimary = style({
   selectors: {
     [`${inputContainer}&`]: {
-      border: `1px solid ${paletteVars.neutral.bg}`,
+      border: `1px solid ${colorTokenVars.neutral[500]}`,
     },
     [`${inputContainer}&:focus-within`]: {
-      outlineColor: paletteVars.neutral.bg,
+      outlineColor: colorTokenVars.neutral[500],
     },
   },
 });
@@ -52,13 +52,13 @@ export const inputContainerPrimary = style({
 export const input = style({
   width: "100%",
   boxSizing: "border-box",
-  height: sizeVars.input.height.md,
-  lineHeight: sizeVars.input.lineHeight.md,
+  height: "48px",
+  lineHeight: "28px",
   borderRadius: "8px",
   paddingRight: "16px",
   paddingLeft: "16px",
   selectors: {
-    ["&:focus"]: {
+    "&:focus": {
       outlineStyle: "solid",
       outlineWidth: "2px",
       outlineOffset: "2px",
@@ -81,10 +81,10 @@ export const inputGroup = style({});
 export const inputPrimary = style({
   selectors: {
     [`${input}&`]: {
-      border: `1px solid ${paletteVars.neutral.bg}`,
+      border: `1px solid ${colorTokenVars.neutral[500]}`,
     },
     [`${input}&:focus`]: {
-      outlineColor: paletteVars.neutral.bg,
+      outlineColor: colorTokenVars.neutral[500],
     },
   },
 });

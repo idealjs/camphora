@@ -14,13 +14,12 @@ import {
 } from "@idealjs/camphora-styled";
 import clsx from "clsx";
 import Link from "next/link";
-import React, { PropsWithChildren } from "react";
+import type { PropsWithChildren } from "react";
 
 import SearchInput from "@/components/SearchInput";
 
 import Navbar from "../Navbar";
 import { customDrawerContent } from "./style.css";
-import { cardSprinkles } from "@idealjs/camphora-styled/utils";
 
 interface IProps {
   responsive?: boolean;

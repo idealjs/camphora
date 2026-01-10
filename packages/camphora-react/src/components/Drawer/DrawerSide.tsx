@@ -1,6 +1,6 @@
 import { drawerSide, responsiveDrawerSide } from "@idealjs/camphora-styled";
 import clsx from "clsx";
-import { PropsWithChildren, ReactNode } from "react";
+import type { PropsWithChildren } from "react";
 
 interface IProps {
   drawerId: string;
@@ -16,7 +16,7 @@ const DrawerSide = (props: PropsWithChildren<IProps>) => {
       className={clsx(
         drawerSide,
         { [responsiveDrawerSide]: responsive },
-        className
+        className,
       )}
     >
       {children}

@@ -1,6 +1,6 @@
 import { createSprinkles, defineProperties } from "@vanilla-extract/sprinkles";
 
-import { paletteVars } from "../themeContracts.css";
+import { colorTokenVars } from "../tokens/color.css";
 
 const colorsProperties = defineProperties({
   conditions: {
@@ -14,43 +14,43 @@ const colorsProperties = defineProperties({
   },
   properties: {
     background: {
-      base100: paletteVars.base[100],
-      base200: paletteVars.base[200],
-      base300: paletteVars.base[300],
+      base100: colorTokenVars.common[100],
+      base200: colorTokenVars.common[200],
+      base300: colorTokenVars.common[300],
 
-      primary: paletteVars.primary.bg,
-      secondary: paletteVars.secondary.bg,
-      accent: paletteVars.accent.bg,
-      neutral: paletteVars.neutral.bg,
-      info: paletteVars.info.bg,
-      success: paletteVars.success.bg,
-      warning: paletteVars.warning.bg,
-      error: paletteVars.error.bg,
+      primary: colorTokenVars.primary[500],
+      secondary: colorTokenVars.secondary[500],
+      accent: colorTokenVars.accent[500],
+      neutral: colorTokenVars.neutral[500],
+      info: colorTokenVars.info[500],
+      success: colorTokenVars.success[500],
+      warning: colorTokenVars.warning[500],
+      error: colorTokenVars.error[500],
 
-      primaryFocus: paletteVars.primary.focus,
-      secondaryFocus: paletteVars.secondary.focus,
-      accentFocus: paletteVars.accent.focus,
-      neutralFocus: paletteVars.neutral.focus,
+      primaryFocus: colorTokenVars.primary[600],
+      secondaryFocus: colorTokenVars.secondary[600],
+      accentFocus: colorTokenVars.accent[600],
+      neutralFocus: colorTokenVars.neutral[600],
 
-      primaryContent: paletteVars.primary.content,
-      secondaryContent: paletteVars.secondary.content,
-      accentContent: paletteVars.accent.content,
-      neutralContent: paletteVars.neutral.content,
-      infoContent: paletteVars.info.content,
-      successContent: paletteVars.success.content,
-      warningContent: paletteVars.warning.content,
-      errorContent: paletteVars.error.content,
-      baseContent: paletteVars.base.content,
+      primaryContent: colorTokenVars.primary[900],
+      secondaryContent: colorTokenVars.secondary[900],
+      accentContent: colorTokenVars.accent[900],
+      neutralContent: colorTokenVars.neutral[900],
+      infoContent: colorTokenVars.info[900],
+      successContent: colorTokenVars.success[900],
+      warningContent: colorTokenVars.warning[900],
+      errorContent: colorTokenVars.error[900],
+      baseContent: colorTokenVars.common[900],
     },
     color: {
-      primary: paletteVars.primary.content,
-      secondary: paletteVars.secondary.content,
-      accent: paletteVars.accent.content,
-      neutral: paletteVars.neutral.content,
-      info: paletteVars.info.content,
-      success: paletteVars.success.content,
-      warning: paletteVars.warning.content,
-      error: paletteVars.error.content,
+      primary: colorTokenVars.primary[900],
+      secondary: colorTokenVars.secondary[900],
+      accent: colorTokenVars.accent[900],
+      neutral: colorTokenVars.neutral[900],
+      info: colorTokenVars.info[900],
+      success: colorTokenVars.success[900],
+      warning: colorTokenVars.warning[900],
+      error: colorTokenVars.error[900],
     },
   },
   shorthands: {

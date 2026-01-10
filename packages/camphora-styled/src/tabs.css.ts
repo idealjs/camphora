@@ -1,11 +1,11 @@
-import { createVar, style } from "@vanilla-extract/css";
+import { style } from "@vanilla-extract/css";
 
 import { inputData } from "./interactive.css";
-import { paletteVars, sizeVars } from "./themeContracts.css";
+import { colorTokenVars } from "./tokens/color.css";
 
 export const tabs = style({
   display: "grid",
-  gridTemplateColumns: `repeat(auto-fill, minmax(${sizeVars.tab.width.md}, 1fr))`,
+  gridTemplateColumns: `repeat(auto-fill, minmax(96px, 1fr))`,
 });
 
 export const tab = style({
@@ -47,11 +47,11 @@ export const tabSlider = style({
 export const tabPrimary = style({
   selectors: {
     [`${tabs} &`]: {
-      backgroundColor: paletteVars.primary.bg,
-      color: paletteVars.primary.content,
+      backgroundColor: colorTokenVars.primary[500],
+      color: colorTokenVars.primary[900],
     },
     [`${tabs} &:has(${inputData}:checked)`]: {
-      backgroundColor: paletteVars.primary.focus,
+      backgroundColor: colorTokenVars.primary[600],
     },
   },
 });
@@ -59,28 +59,28 @@ export const tabPrimary = style({
 export const tabXs = style({
   selectors: {
     [`${tabs}&`]: {
-      gridTemplateColumns: `repeat(auto-fill, minmax(${sizeVars.tab.width.xs}, 1fr))`,
+      gridTemplateColumns: `repeat(auto-fill, minmax(32px, 1fr))`,
     },
   },
 });
 export const tabSm = style({
   selectors: {
     [`${tabs}&`]: {
-      gridTemplateColumns: `repeat(auto-fill, minmax(${sizeVars.tab.width.sm}, 1fr))`,
+      gridTemplateColumns: `repeat(auto-fill, minmax(64px, 1fr))`,
     },
   },
 });
 export const tabMd = style({
   selectors: {
     [`${tabs}&`]: {
-      gridTemplateColumns: `repeat(auto-fill, minmax(${sizeVars.tab.width.md}, 1fr))`,
+      gridTemplateColumns: `repeat(auto-fill, minmax(96px, 1fr))`,
     },
   },
 });
 export const tabLg = style({
   selectors: {
     [`${tabs}&`]: {
-      gridTemplateColumns: `repeat(auto-fill, minmax(${sizeVars.tab.width.lg}, 1fr))`,
+      gridTemplateColumns: `repeat(auto-fill, minmax(128px, 1fr))`,
     },
   },
 });
