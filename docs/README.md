@@ -11,47 +11,43 @@ A component consists of the following five core dimensions:
 | Data        | Uses checkbox, radio form elements, focus and hover CSS pseudo-classes to record component state. For example, whether a drawer component is open, or a dropdown is active. |         |
 | Interaction | Shows or hides elements under specific conditions, providing user feedback.                                                                                                 |         |
 | Layout      | The structure determined by interaction behavior, and the arrangement of child elements.                                                                                    |         |
-| Size        | Restricts the size of the original component, but does not affect layout or interaction.                                                                                    |         |
-| Color       | Enhances interaction feedback for the original component, but does not affect interaction itself.                                                                           |         |
+| Tokens      | Design tokens that define visual and scale primitives (color, size, typography, and layer). Size tokens restrict component dimensions while color tokens enhance feedback; font and layer tokens define typography scale and stacking/layering. |         |
 
 In actual development, some component interactions determine visual effects.
 
 Therefore, visual effects are separated into three parts.
 
-Among them, layout is the structure determined by interaction behavior. Size and Color are not directly related to the original component.
+Among them, layout is the structure determined by interaction behavior. Tokens (color, size, font, layer) are separate design primitives not tied to a single component's interaction logic.
 
 ```mermaid
 graph TD
-    A[Component] --> B[Data]
-    A --> C[Interaction]
-    A --> D[Layout]
-    A --> E[Size]
-    A --> F[Color]
-    C -->|Triggers| B
-    D -->|Constrained by| C
+  A[Component] --> B[Data]
+  A --> C[Interaction]
+  A --> D[Layout]
+  A --> E[Tokens]
+  E --> G[Color]
+  E --> H[Size]
+  E --> I[Font]
+  E --> J[Layer]
+  C -->|Triggers| B
+  D -->|Constrained by| C
 ```
 
 ## 2. Dimension Boundary Guidelines
 
 ### 2.1 Intersection Handling Principles
 
-- Layout and Size
+- Layout and Tokens
 
-  For example, a card has separate definitions for large, medium, and small sizes.
+  For example, a card can have separate size tokens such as large, medium, and small. Border radius and structural details remain part of the layout tokenization and should be defined in layout styles rather than in size tokens.
 
-  However, the card's border radius is defined in the layout.
-
-- Layout and Color
-
-  For example, paper has two color definitions: paperPrimary and paperSecondary.
-
-  The layout background of preview uses repeated dots.
+  Color tokens (e.g., `paperPrimary`, `paperSecondary`) control semantic colors used across components. Layouts like `preview` can combine color tokens with layout-specific backgrounds (e.g., repeated dots).
 
 ## 3. Design Principles
 
 1. Clear boundaries: Document the relationship between layout and interaction behavior.
-2. Extensibility: Size and color should support combinations.
-3. Single responsibility: Size or color should only be responsible for one dimension.
+2. Extensibility: Tokens (color, size, font, layer) should be composable and support combination.
+3. Single responsibility: Tokens should have single responsibility; e.g., size tokens control scale, color tokens control semantic color values.
 
 ## 4. CSS Selector Guidelines
 
@@ -71,8 +67,7 @@ graph TD
      - Base layout: Use component name as base, e.g., `card`
      - Data state: Use state descriptors, e.g., `cardActive`, `cardOpen`
      - Interaction behavior: Use behavior descriptors, e.g., `cardInteractive`, `cardHoverable`
-     - Size variants: Use size descriptors, e.g., `cardSmall`, `cardLarge`
-     - Color variants: Use color descriptors, e.g., `cardPrimary`, `cardSecondary`
+    - Tokens: Expose token-driven variants for `color`, `size`, `font`, and `layer`. Examples: `cardSmall` (size token), `cardPrimary` (color token), `bodyFont` (font token), `elevationLayer` (layer token).
    - Use Sprinkles for composable style variants, e.g., `cardSprinkles`
    - Avoid global styles and `!important`
    - Ensure variable names clearly express style purpose and dimension
