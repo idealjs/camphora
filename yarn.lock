@@ -982,6 +982,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@idealjs/camphora-styled@workspace:packages/camphora-styled"
   dependencies:
+    "@biomejs/biome": "npm:^2.3.11"
     "@vanilla-extract/css": "npm:^1.18.0"
     "@vanilla-extract/css-utils": "npm:^0.1.6"
     "@vanilla-extract/recipes": "npm:^0.5.7"

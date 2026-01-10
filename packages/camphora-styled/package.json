@@ -17,6 +17,7 @@
     "prepack": "rimraf dist && yarn updatePackageJson && yarn typings && yarn build"
   },
   "devDependencies": {
+    "@biomejs/biome": "^2.3.11",
     "@vanilla-extract/css": "^1.18.0",
     "@vanilla-extract/css-utils": "^0.1.6",
     "@vanilla-extract/rollup-plugin": "^1.5.1",

@@ -108,3 +108,27 @@ export const buttonLink = style({
     [`${button}&:active`]: {},
   },
 });
+
+export const buttonSm = style({
+  selectors: {
+    [`${button}&`]: {
+      height: "32px",
+      minHeight: "32px",
+      padding: "0px 12px",
+      fontSize: "14px",
+      borderRadius: sizeTokenVars.borderRadius.xs,
+    },
+  },
+});
+
+export const buttonLg = style({
+  selectors: {
+    [`${button}&`]: {
+      height: "56px",
+      minHeight: "56px",
+      padding: "0px 20px",
+      fontSize: "18px",
+      borderRadius: sizeTokenVars.borderRadius.md,
+    },
+  },
+});

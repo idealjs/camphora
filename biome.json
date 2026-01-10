@@ -1,4 +1,5 @@
 {
+  "$schema": "https://biomejs.dev/schemas/2.3.11/schema.json",
   "linter": {
     "enabled": true,
     "rules": {
@@ -18,6 +19,12 @@
     }
   },
   "files": {
-    "includes": ["**/*.ts*", "!**/node_module", "!**/.*"]
+    "includes": [
+      "**/*.ts*",
+      "**/*.json",
+      "!**/.next",
+      "!**/node_module",
+      "!**/*.json"
+    ]
   }
 }
