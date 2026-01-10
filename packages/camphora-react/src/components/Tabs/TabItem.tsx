@@ -1,6 +1,11 @@
 import { inputData, tab } from "@idealjs/camphora-styled";
 import clsx from "clsx";
-import { Fragment, type PropsWithChildren, useRef } from "react";
+import {
+  Fragment,
+  type KeyboardEventHandler,
+  type MouseEventHandler,
+  type PropsWithChildren,
+} from "react";
 
 interface IProps {
   id: string;
@@ -10,7 +15,8 @@ interface IProps {
   defaultChecked?: boolean;
   groupName: string;
   className?: string;
-  onClick?: React.MouseEventHandler<HTMLLabelElement>;
+  onClick?: MouseEventHandler<HTMLLabelElement>;
+  onKeyDown?: KeyboardEventHandler<HTMLLabelElement>;
 }
 
 const TabItem = (props: PropsWithChildren<IProps>) => {
@@ -24,25 +30,16 @@ const TabItem = (props: PropsWithChildren<IProps>) => {
     checked,
     defaultChecked,
     onClick,
+    onKeyDown,
   } = props;
-
-  const labelRef = useRef<HTMLLabelElement | null>(null);
-
-  const handleKeyDown = (e: React.KeyboardEvent<HTMLLabelElement>) => {
-    if (e.key === "Enter" || e.key === " ") {
-      e.preventDefault();
-      labelRef.current?.click();
-    }
-  };
 
   return (
     <Fragment>
       <label
-        ref={labelRef}
         htmlFor={id}
         className={clsx(tab, className)}
         onClick={onClick}
-        onKeyDown={handleKeyDown}
+        onKeyDown={onKeyDown}
       >
         {label ?? value}
         <input
