@@ -12,7 +12,7 @@ import {
   cardMd,
   cardPrimary,
   cardSprinkles,
-  colorsSprinkles,
+  colorTokenVars,
   navbar,
   overlay,
 } from "@idealjs/camphora-styled";
@@ -25,11 +25,8 @@ const page = () => {
         <Drawer drawerId="1-drawer">
           <DrawerContent>
             <nav
-              className={clsx(
-                navbar,
-                cardSprinkles({ borderRadius: "xs" }),
-                colorsSprinkles({ background: "base100" }),
-              )}
+              className={clsx(navbar, cardSprinkles({ borderRadius: "xs" }))}
+              style={{ backgroundColor: colorTokenVars.common[100] }}
             >
               <div
                 style={{ display: "flex", flex: 1, gap: "8px", minHeight: 48 }}
@@ -103,11 +100,8 @@ const page = () => {
         <Drawer drawerId="2-drawer">
           <DrawerContent>
             <nav
-              className={clsx(
-                navbar,
-                cardSprinkles({ borderRadius: "xs" }),
-                colorsSprinkles({ background: "base100" }),
-              )}
+              className={clsx(navbar, cardSprinkles({ borderRadius: "xs" }))}
+              style={{ backgroundColor: colorTokenVars.common[100] }}
             >
               <div
                 style={{ display: "flex", flex: 1, gap: "8px", minHeight: 48 }}
