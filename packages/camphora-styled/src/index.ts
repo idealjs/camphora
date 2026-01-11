@@ -1,5 +1,6 @@
 export * from "./button.css";
 export * from "./card.css";
+export * from "./cardSprinkles.css";
 export * from "./drawer.css";
 export * from "./dropdown.css";
 export * from "./glass.css";

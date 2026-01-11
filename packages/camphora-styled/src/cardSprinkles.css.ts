@@ -1,6 +1,6 @@
 import { createSprinkles, defineProperties } from "@vanilla-extract/sprinkles";
 
-import { sizeTokenVars } from "../tokens/size.css";
+import { sizeTokenVars } from "./tokens/size.css";
 
 const cardProperties = defineProperties({
   conditions: {
