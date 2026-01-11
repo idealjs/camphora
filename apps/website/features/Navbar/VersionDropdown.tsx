@@ -23,9 +23,13 @@ const version = publicRuntimeConfig?.version;
 const VersionDropdown = () => {
   return (
     <div className={dropdown}>
-      <div className={clsx(button, buttonGhost, selectedButtonStyle)}>
+      <button
+        type="button"
+        tabIndex={0}
+        className={clsx(button, buttonGhost, selectedButtonStyle)}
+      >
         {version}
-      </div>
+      </button>
       <ul
         className={clsx(
           dropdownContent,

@@ -16,7 +16,9 @@ const page = () => {
     <div style={{ overflowY: "auto" }}>
       <Preview style={{ height: "300px" }}>
         <Dropdown>
-          <div className={clsx(button)}>Dropdown</div>
+          <button type="button" tabIndex={0} className={clsx(button)}>
+            Dropdown
+          </button>
           <ul
             className={clsx(
               dropdownContent,
