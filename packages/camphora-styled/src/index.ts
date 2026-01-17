@@ -1,6 +1,7 @@
 export * from "./alert.css";
 export * from "./avatar.css";
 export * from "./badge.css";
+export * from "./breadcrumb.css";
 export * from "./button.css";
 export * from "./card.css";
 export * from "./cardSprinkles.css";
@@ -13,6 +14,7 @@ export * from "./interactive.css";
 export * from "./menu.css";
 export * from "./navbar.css";
 export * from "./overlay.css";
+export * from "./pagination.css";
 export * from "./preview.css";
 export * from "./stack.css";
 export * from "./swap.css";
