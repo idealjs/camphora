@@ -1,3 +1,8 @@
+---
+name: create-component-nextjs-page
+description: "本技能用于在网站文档中为组件创建示例页，说明示例页应包含的要素与组织规范：组件定位、可复制运行的基础示例、常见变体、交互与边界条件、可访问性要点以及测试与视觉回归快照路径。示例采用 MDX/TSX 格式并保证代码可直接复制运行。"
+---
+
 **新组件实践指南（中文）——创建示例页**
 
 **本次示例涉及的文件**
@@ -26,47 +31,3 @@
 		expect(await page.screenshot({ fullPage: true })).toMatchSnapshot();
 	});
 	```
-
-- **运行与更新快照**：
-	- 在 `apps/website` 目录运行测试：
-
-		```bash
-		cd apps/website
-		# 运行 Playwright 指定测试文件并比较快照
-		npx playwright test "apps/website/app/(docs)/components/<component>/page.spec.ts"
-
-		# 若需要更新（首次生成或接受变更）：
-		npx playwright test "apps/website/app/(docs)/components/<component>/page.spec.ts" -u
-		```
-
-		- 我们也在仓库中提供 `yarn` 脚本别名，推荐使用以下快捷方式来运行单组件测试：
-
-		```bash
-		# 在 apps/website 目录下运行：
-		# 运行匹配组件名的测试（例如 <component>）
-		yarn test <component>
-
-		# 更新视觉快照（如需接受变更）
-		yarn test <component> -u
-		```
-
-		该 `yarn test <component>` 命令会使用仓库中的测试脚本别名，按测试文件名或测试描述匹配并运行相关测试，便于快速验证单个组件的视觉回归。
-
-- **容器/远程运行注意事项**：
-	- 如果 Playwright 在容器中运行，需要用容器可访问的 URL（示例：`http://10.255.255.254:3000/components/<component>`），或确保容器能访问宿主的 dev server。
-	- 路径中包含括号或空格时，在 shell 中使用单引号或双引号包裹（例如测试文件路径）。
-
-- **查看测试报告**：运行测试后可生成 HTML 报告：
-
-	```bash
-	# 在 apps/website
-	yarn playwright show-report
-	```
-
-- **快照存储**：Playwright 自动管理快照文件（与测试文件相关联的 snapshots 目录）；如需将视觉快照保存在特定目录，也可以改为使用 `page.screenshot({ path })` 将文件写到项目内的 snapshot 目录，但这将由维护者自行管理版本控制。
-
-**示例运行记录**
-
-- 本次演示已在本地执行 `yarn test <component>`，测试通过且 Playwright 生成/更新了视觉快照；要查看快照或将其加入仓库，请运行上述命令并在需要时提交生成的 snapshot 文件。
-
-记录时间：2026-01-10

@@ -1,3 +1,8 @@
+---
+name: create-component-react
+description: "创建可复用的 React 组件实践指南，涵盖 props 与类型约定、无状态原则、类名合并（clsx）、原生属性透传及导出规范，附示例实现。"
+---
+
 **新组件实践指南（中文）——创建组件**
 
 **本次示例涉及的文件**
@@ -9,23 +14,23 @@
 	 - 在 `packages/camphora-react/src/components/<Component>/index.tsx` 中创建组件。
 	 - 组件约定：
 		 - 默认导出 `<Component>` 函数组件。
-		 - 接受 `PropsWithChildren<React.ButtonHTMLAttributes<HTMLButtonElement>>`，以便透传 `onClick`、`disabled`、`aria-*` 等原生属性。
+		 - 接受 `PropsWithChildren<React.DivHTMLAttributes<HTMLDivElement>>`，以便透传 `onClick`、`disabled`、`aria-*` 等原生属性。
 		 - 组件的 props 应在组件内展开（spread）并透传到原生元素，确保 `aria-*`、`onClick`、`disabled` 等原生属性被保留（例如使用 `{...rest}`）。
-		 - 组件的 props 类型应通过接口定义，并使用 `I` 前缀命名，例如 `interface I<Component>Props extends React.ButtonHTMLAttributes<HTMLButtonElement> {}`；组件应使用该接口进行类型注解。
+		 - 组件的 props 类型应通过接口定义，并使用 `I` 前缀命名，例如 `interface I<Component>Props extends React.DivHTMLAttributes<HTMLDivElement> {}`；组件应使用该接口进行类型注解。
 		 - 使用 `clsx` 将外部 `className` 与基础 `<component>` 类合并；不引入变体类型的 props（例如 `variant="primary"`）——所有视觉变体通过类名控制。
 	 - 示例实现：
 
 		 ```tsx
 		 import React from "react";
-		 import { button } from "@idealjs/camphora-styled";
+		 import { <component> } from "@idealjs/camphora-styled";
 		 import clsx from "clsx";
 
-		 interface I<Component>Props extends React.ButtonHTMLAttributes<HTMLButtonElement> {}
+		 interface I<Component>Props extends React.DivHTMLAttributes<HTMLDivElement> {}
 
 		 const <Component>: React.FC<I<Component>Props> = ({ children, className, ...rest }) => (
-			 <button type="button" className={clsx(button, className)} {...rest}>
+			 <div className={clsx(<component>, className)} {...rest}>
 				 {children}
-			 </button>
+			 </div>
 		 );
 
 		 export default <Component>;
@@ -41,5 +46,4 @@
 
 **组件状态约定**
 - 组件应保持无状态（stateless）。若组件需要 UI 状态（例如 `visible` / 打开-关闭），应由外部通过 props 传入并由外部控制（例如传入 `visible` 和 `onClose`），组件内部不应持有 UI 可变状态。
-
-记录时间：2026-01-10
+- 这里的“组件内部不应持有 UI 可变状态”明确指不得在组件内部使用 React Hook 来管理可变的 UI 状态，例如不得使用 `useState`、`useReducer`、`useRef`（用于保存可变 UI 状态）、`useEffect`（用于在组件内维持状态相关副作用）等来保存或控制显示/打开-关闭等 UI 行为。若需要状态，请采用受控模式（由父组件通过 props + 回调，如 `value`/`onChange`、`visible`/`onClose`）来管理。

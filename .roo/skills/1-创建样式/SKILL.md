@@ -1,3 +1,8 @@
+---
+name: create-component-style
+description: "在 monorepo 中为新组件编写样式的步骤、约定与示例，说明如何使用 @vanilla-extract 和统一 token 管理、实现变体类与低优先级选择器的最佳实践。"
+---
+
 **新组件实践指南（中文）——创建样式**
 
 本文档记录了在本 monorepo 中新增 UI 组件的可复用流程，以 <component> 组件为示例。目标是形成一套可重复、可复用的惯例：样式通过类名控制、React 组件保持精简。
