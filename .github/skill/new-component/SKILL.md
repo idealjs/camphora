@@ -22,21 +22,27 @@
 	 - 在 `packages/camphora-styled/src/tokens` 中新增或复用所需 token（颜色、尺寸、层级、排版）。
 	 - 使用 `@vanilla-extract/css` 在 `packages/camphora-styled/src/button.css.ts` 中实现基础 `button` 样式。
 	 - 将变体（颜色、尺寸、状态）实现为独立类，且通过选择器与基础 `button` 组合（例如使用 `${button}&` 模式），保持选择器简洁且低优先级。
+	 - 注意：在 `selectors` 对象中，使用 `${baseClass}&` 来表示当元素同时具有基础类和当前变体类时应用样式。这利用了 vanilla-extract 的 `&` 占位符，代表当前类的名称。避免直接嵌套选择器，因为 vanilla-extract 不支持 Sass 风格的嵌套。
 
 2. 编写 React 组件
 	 - 在 `packages/camphora-react/src/components/Button/index.tsx` 中创建组件。
 	 - 组件约定：
 		 - 默认导出 `Button` 函数组件。
 		 - 接受 `PropsWithChildren<React.ButtonHTMLAttributes<HTMLButtonElement>>`，以便透传 `onClick`、`disabled`、`aria-*` 等原生属性。
+		 - 组件的 props 应在组件内展开（spread）并透传到原生元素，确保 `aria-*`、`onClick`、`disabled` 等原生属性被保留（例如使用 `{...rest}`）。
+		 - 组件的 props 类型应通过接口定义，并使用 `I` 前缀命名，例如 `interface IButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {}`；组件应使用该接口进行类型注解。
 		 - 使用 `clsx` 将外部 `className` 与基础 `button` 类合并；不引入变体类型的 props（例如 `variant="primary"`）——所有视觉变体通过类名控制。
 	 - 示例实现：
 
 		 ```tsx
+		 import React from "react";
 		 import { button } from "@idealjs/camphora-styled";
 		 import clsx from "clsx";
 
-		 const Button = ({ children, className, ...rest }) => (
-			 <button className={clsx(button, className)} {...rest}>
+		 interface IButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {}
+
+		 const Button: React.FC<IButtonProps> = ({ children, className, ...rest }) => (
+			 <button type="button" className={clsx(button, className)} {...rest}>
 				 {children}
 			 </button>
 		 );

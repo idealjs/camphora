@@ -1,5 +1,7 @@
 export * from "./Alert";
 export { default as Alert } from "./Alert";
+export * from "./Avatar";
+export { default as Avatar } from "./Avatar";
 export * from "./Button";
 export { default as Button } from "./Button";
 export * from "./Drawer";

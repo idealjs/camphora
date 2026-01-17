@@ -1,4 +1,5 @@
 export * from "./alert.css";
+export * from "./avatar.css";
 export * from "./button.css";
 export * from "./card.css";
 export * from "./cardSprinkles.css";
